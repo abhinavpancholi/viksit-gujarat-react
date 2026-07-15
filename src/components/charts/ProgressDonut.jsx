@@ -15,7 +15,7 @@ const SHORT_NAMES = {
   'Critical (gap > 75%)': 'Critical / Behind'
 }
 
-export default function ProgressDonut({ title, counts = {} }) {
+export default function ProgressDonut({ title, counts = {}, activeStatus = 'All', onSelectStatus }) {
   const total = Object.values(counts).reduce((a, b) => a + b, 0)
   
   // Format data for Recharts Pie
@@ -29,6 +29,16 @@ export default function ProgressDonut({ title, counts = {} }) {
       pct: total > 0 ? ((value / total) * 100).toFixed(1) : '0.0'
     }
   })
+
+  const handlePieClick = (data) => {
+    if (!onSelectStatus) return
+    const clickedKey = data.key
+    if (activeStatus === clickedKey) {
+      onSelectStatus('All')
+    } else {
+      onSelectStatus(clickedKey)
+    }
+  }
 
   return (
     <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col justify-between h-full">
@@ -50,13 +60,23 @@ export default function ProgressDonut({ title, counts = {} }) {
                 paddingAngle={2}
                 dataKey="value"
                 animationDuration={600}
+                onClick={handlePieClick}
+                className="cursor-pointer"
               >
-                {rawData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} className="outline-hidden" />
-                ))}
+                {rawData.map((entry, index) => {
+                  const isDimmed = activeStatus !== 'All' && activeStatus !== entry.key
+                  return (
+                    <Cell 
+                      key={`cell-${index}`} 
+                      fill={entry.color} 
+                      opacity={isDimmed ? 0.35 : 1}
+                      className="outline-hidden transition-all duration-300 hover:opacity-85" 
+                    />
+                  )
+                })}
               </Pie>
               <Tooltip 
-                formatter={(value) => [value, 'Goals']} 
+                formatter={(value, name) => [value, name]} 
                 contentStyle={{ 
                   fontFamily: 'var(--font-body)', 
                   fontSize: '11px',
@@ -75,21 +95,37 @@ export default function ProgressDonut({ title, counts = {} }) {
         </div>
 
         {/* Custom Legend Section */}
-        <div className="flex-1 w-full flex flex-col gap-2">
-          {rawData.map((item) => (
-            <div key={item.key} className="flex items-center justify-between text-xs border-b border-surface-2/40 pb-1 last:border-0">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
-                <span className="font-semibold text-ink-body truncate select-none" title={item.name}>
-                  {item.name}
+        <div className="flex-1 w-full flex flex-col gap-1.5 min-w-0">
+          {rawData.map((item) => {
+            const isDimmed = activeStatus !== 'All' && activeStatus !== item.key
+            return (
+              <div 
+                key={item.key} 
+                onClick={() => {
+                  if (onSelectStatus) {
+                    if (activeStatus === item.key) {
+                      onSelectStatus('All')
+                    } else {
+                      onSelectStatus(item.key)
+                    }
+                  }
+                }}
+                className={`flex items-center justify-between text-[11px] border-b border-surface-2/40 pb-1 last:border-0 min-w-0 gap-2 cursor-pointer transition-all duration-300 ${
+                  isDimmed ? 'opacity-35 hover:opacity-75' : 'opacity-100 font-semibold'
+                }`}
+              >
+                <div className="flex items-center gap-1.5 min-w-0 flex-1">
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
+                  <span className="text-ink-body truncate select-none block" title={item.name}>
+                    {item.name}
+                  </span>
+                </div>
+                <span className="font-mono-num font-bold text-navy-800 flex-shrink-0">
+                  {item.value}
                 </span>
               </div>
-              <div className="flex items-center gap-2 font-mono-num font-bold text-navy-800 pl-2">
-                <span>{item.value}</span>
-                <span className="text-ink-muted text-[10px] font-normal w-12 text-right">({item.pct}%)</span>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </div>

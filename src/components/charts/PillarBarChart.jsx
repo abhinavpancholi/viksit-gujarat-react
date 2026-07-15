@@ -13,7 +13,7 @@ const SHORT_NAMES = {
   'Key Enablers': 'Key Enablers'
 }
 
-export default function PillarBarChart({ goals = [] }) {
+export default function PillarBarChart({ goals = [], activePillar = 'All', onSelectPillar }) {
   // Group and count goals by pillar
   const pillarCounts = goals.reduce((acc, goal) => {
     acc[goal.pillar] = (acc[goal.pillar] || 0) + 1
@@ -31,11 +31,27 @@ export default function PillarBarChart({ goals = [] }) {
     }
   })
 
+  const handleBarClick = (data) => {
+    if (!onSelectPillar) return
+    const clickedPillarName = data.name
+    // Toggle behavior: if clicked on the active pillar, reset to 'All'
+    if (activePillar === clickedPillarName) {
+      onSelectPillar('All')
+    } else {
+      onSelectPillar(clickedPillarName)
+    }
+  }
+
   return (
     <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full">
-      <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider mb-4 border-b border-surface-2 pb-2">
-        Number of Macro Goals by Pillars
-      </h3>
+      <div className="flex items-center justify-between mb-4 border-b border-surface-2 pb-2">
+        <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
+          Number of Macro Goals by Pillars
+        </h3>
+        <span className="text-[10px] font-bold text-ink-muted bg-surface-0 border border-surface-border px-2 py-0.5 rounded-full uppercase tracking-wider">
+          Click Bars to Filter
+        </span>
+      </div>
 
       <div className="flex-1 min-h-[220px] w-full mt-2">
         <ResponsiveContainer width="100%" height="100%">
@@ -66,10 +82,25 @@ export default function PillarBarChart({ goals = [] }) {
               formatter={(value) => [value, 'Goals']}
               labelFormatter={(label) => `Pillar: ${label}`}
             />
-            <Bar dataKey="value" radius={[6, 6, 0, 0]} animationDuration={600}>
-              {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
+            <Bar 
+              dataKey="value" 
+              radius={[6, 6, 0, 0]} 
+              animationDuration={600}
+              onClick={handleBarClick}
+              className="cursor-pointer"
+            >
+              {chartData.map((entry, index) => {
+                // If a specific pillar is active, dim the others
+                const isDimmed = activePillar !== 'All' && activePillar !== entry.name
+                return (
+                  <Cell 
+                    key={`cell-${index}`} 
+                    fill={entry.color} 
+                    opacity={isDimmed ? 0.35 : 1}
+                    className="transition-all duration-300 hover:opacity-85"
+                  />
+                )
+              })}
             </Bar>
           </BarChart>
         </ResponsiveContainer>
