@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette ----
+     Deep institutional indigo (not the generic near-black), a warm
+     Gujarat saffron accent for CTAs/highlights, and a slate-cool
+     neutral background instead of the default warm cream. */
+  --color-ink-950: #0b1120;
+  --color-ink-900: #10192f;
+  --color-navy-800: #16294f;
+  --color-navy-700: #1e3660;
+  --color-navy-600: #2a4a80;
+  --color-navy-500: #3c62a0;
+
+  --color-saffron-600: #c96a1f;
+  --color-saffron-500: #e08e24;
+  --color-saffron-400: #eba84f;
+
+  --color-surface-0: #f4f6fa;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #eef1f7;
+  --color-surface-border: #dde3ee;
+
+  --color-ink-body: #1b2436;
+  --color-ink-muted: #5a6577;
+  --color-ink-faint: #8b93a3;
+
+  /* ---- Status semantics (fixed meaning, do not remix) ---- */
+  --color-status-ontrack: #1e8a5f;
+  --color-status-ontrack-soft: #e3f5ec;
+  --color-status-slight: #c98a12;
+  --color-status-slight-soft: #fbf1dc;
+  --color-status-atrisk: #d9711f;
+  --color-status-atrisk-soft: #fde9db;
+  --color-status-critical: #c53d3d;
+  --color-status-critical-soft: #fbe4e4;
+
+  /* ---- Pillar accents ---- */
+  --color-pillar-economy: #2a6f4f;
+  --color-pillar-citizen: #2a4a80;
+  --color-pillar-enablers: #8a4fae;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-surface-0);
+  color: var(--color-ink-body);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Thin top accent spine used as the app's signature motif */
+.brand-spine {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-pillar-economy) 0%,
+    var(--color-pillar-economy) 33%,
+    var(--color-pillar-citizen) 33%,
+    var(--color-pillar-citizen) 66%,
+    var(--color-pillar-enablers) 66%,
+    var(--color-pillar-enablers) 100%
+  );
+}
+
+::selection {
+  background: var(--color-saffron-400);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-navy-500);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

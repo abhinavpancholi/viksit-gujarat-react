@@ -1,0 +1,80 @@
+﻿mg_code,macro_goal,direction,current_cagr,recommended_cagr_2030,recommended_cagr_2047,target_2030,target_2047,target_2030_achievement,target_2047_achievement
+ACSM1,Number of UN recognized global tangible and intangible heritage,UP,0.157558,0.148698,0.065041,10,20,2029-30,2034-35
+ACSM6,Number of Centers of Excellence for sports,UP,0.124438,-0.263032,-0.037152,5,10,2025-26,2025-26
+ACSM7,Host of a major tournament,UP,0.065041,-0.653428,-0.031016,0,1,2025-26,2025-26
+AIRM1,Yield of Cereal crops (MT/ha),UP,0.011735,0.011415,0.004129,2.9,3,2029-30,2032-33
+AIRM10,Area under irrigation (Net irrigated/Net Sown Area),UP,0.037675,-0.019323,-0.001173,60.5,65,2025-26,2025-26
+AIRM11,Area under micro irrigation (per unit Gross Sown Area),UP,0.094113,-0.016852,0.016639,23,36,2025-26,2029-30
+AIRM12,Share of Canal irrigation (including tanks),UP,0.034004,0.029462,0.026706,38.85,60,2029-30,2042-43
+AIRM13,Share of ultimate irrigation potential created,UP,0.024851,0.002317,0.001353,98.2,100,2025-26,2026-27
+AIRM15,Share of land for Horticulture/Gross Sown Area,UP,0.013584,0.019883,0.014725,16,20,2032-33,2048-49
+AIRM19,Average cattle productivity (kg/animal/year),UP,0.021221,-0.005642,0.007685,2300,2800,2025-26,2033-34
+AIRM2,Yield of Pulses crops (MT/ha),UP,0.048598,-0.013704,0,1.4,1.5,2025-26,2025-26
+AIRM20,Ratio of milk processing capacity over total milk production,UP,0.035173,0.007035,0.00918,72,85,2026-27,2030-31
+AIRM21,Ratio of Milk Procurement under organized sector over milk total production,UP,0.018375,0.025936,0.014967,58,70,2032-33,2042-43
+AIRM22,Per capita Milk availability (gm/person/day),UP,0.03932,0.016012,0.015628,770,1000,2026-27,2033-34
+AIRM23,Per capita egg availability (Number/person/Annum),UP,0.008036,0.024137,0.013008,30,35,Critically Lagging,Critically Lagging
+AIRM29,Share of women having a bank or savings account that they themselves use,UP,0.124599,0.025703,0.014664,87,100,2022-23,2023-24
+AIRM3,Yield of Foodgrains (MT/ha),UP,0.007941,0.008198,0.003645,2.5,2.6,2030-31,2035-36
+AIRM30,Households with any usual member covered under a health insurance/financing scheme,UP,0.152448,0.046905,0.029455,65,90,2023-24,2025-26
+AIRM31,Self Help Groups with Credit (bank) linkage,UP,0.139833,0.148698,0.056251,60,100,2030-31,2034-35
+AIRM32,Multi-Dimensional Poverty Index (MPI) Score (for Rural),DOWN,-0.116332,-0.087556,-0.07191,0.03,0.01,2027-28,2036-37
+AIRM33,Infant Mortality Ratio (for Rural),DOWN,-0.060653,-0.161389,-0.100745,8,2,Critically Lagging,Critically Lagging
+AIRM34,Households using clean fuel as primary source of energy for cooking (for Rural),UP,0.144161,0.056669,0.028325,80,98,2024-25,2025-26
+AIRM35,Population living in households that use an improved sanitation facility (for Rural),UP,0.077275,0.045739,0.017081,99,100,2026-27,2026-27
+AIRM36,Percentage surfaced rural roads,UP,-0.001809,0.004558,0.004784,92,100,Negative Trend,Negative Trend
+AIRM38,Internet Subscribers per 100 population (for Rural),UP,0.104612,0.115572,0.030089,90,100,2030-31,2031-32
+AIRM39,Rural Drinking water supply per capita (LPCD),UP,0.061221,0.053937,0.012011,100,100,2029-30,2029-30
+AIRM4,Yield of Oilseeds (MT/ha),UP,-0.009974,0.013985,0.003161,2.4,2.4,Negative Trend,Negative Trend
+AIRM40,Share of villages covered by surface based Multi Village Scheme (MVS),UP,0.028535,0.053417,0.011897,100,100,2034-35,2034-35
+AIRM5,Yield of Fruits (MT/ha),UP,-0.011342,0.013532,0.013469,20,25.1,Negative Trend,Negative Trend
+AIRM6,Yield of Vegetables (MT/ha),UP,0.056242,0.014341,0.007835,22.7,25.1,2026-27,2028-29
+AIRM7,Yield of Spices (MT/ha),UP,-0.005496,0.034968,0.01458,1.9,2.2,Negative Trend,Negative Trend
+AIRM8,Yield of Floriculture (MT/ha),UP,-0.00146,0.021516,0.009495,10.3,11.4,Negative Trend,Negative Trend
+CAM1,Percentage of households having access to piped drinking water - all cities,UP,0.01174,0.030074,0.006757,100,100,2037-38,2037-38
+CAM2,Per capita water supply (municipal corporations),UP,0.015184,-0.022085,-0.005063,150,150,2025-26,2025-26
+CAM3,Percentage of population living in slums - all cities,DOWN,-0.008417,-0.72038,-0.251451,0,0,Critically Lagging,Critically Lagging
+CAM4,Average AQI across all major cities,DOWN,-0.09624,-0.039776,-0.030125,80,50,2027-28,2031-32
+CAM5,Percentage of wastewater recycled or reused - all cities,UP,0.509734,0.112528,0.06134,46,100,2026-27,2028-29
+ESM1,GER (secondary) - Male In %,UP,-0.005711,0.022636,0.012553,85,100,Negative Trend,Negative Trend
+ESM10,Average number of enrollments per institution,UP,-0.023589,0.045994,0.041945,769.5,1500,Negative Trend,Negative Trend
+ESM11,% of patents filed in India,UP,-0.016549,-0.094292,0.009966,2.45,5,Negative Trend,Negative Trend
+ESM2,GER (secondary) - Female In %,UP,0.010515,0.030061,0.014219,85,100,2039-40,2054-55
+ESM3,Literacy rate In %,UP,0,0.028955,0.01134,90,100,Critically Lagging,Critically Lagging
+ESM4,% schools with pupil teacher ratio< 30,UP,0.009555,0.017093,0.014093,80,100,2033-34,Critically Lagging
+ESM5,Dropout rates – upper primary In %,DOWN,0.010135,-0.719996,-0.251218,0,0,Negative Trend,Negative Trend
+ESM6,Dropout rates – secondary In %,DOWN,0.02052,-0.773917,-0.286748,0,0,Negative Trend,Negative Trend
+ESM7,Higher Education - GER (tertiary),UP,0.022523,0.043741,0.033674,40,65,2037-38,Critically Lagging
+ESM8,Higher Education - GER (tertiary) - ST,UP,0.073617,0.078944,0.043302,40,65,2030-31,2037-38
+ESM9,Gender Parity Index,UP,0.014832,0.013257,0.004223,1,1,2029-30,2029-30
+GTHM1,Share of international tourist visits out of total footfall in the state,UP,0.079692,0.215551,0.073963,5,8,2039-40,2045-46
+GTHM4,Ranking in number of domestic tourists in India,DOWN,0,-0.178124,-0.043604,3,3,Critically Lagging,Critically Lagging
+GTHM5,Ranking in number of foreign tourists in India,DOWN,-0.118409,0.201124,-0.012991,10,3,2025-26,2027-28
+GTHM7,Average annual footfall for Top 5 tourism spots,UP,0.357366,-0.297212,-0.021696,12.5,45,2025-26,2025-26
+GVM1,Good Governance Index Rank (within group A),DOWN,-0.8,0,0,1,1,2021-22,2021-22
+GVM2,SDG Index Performance Rankings,DOWN,0.176079,-0.306639,-0.09111,1,1,Negative Trend,Negative Trend
+GVM3,National E-service delivery ranking (within group A),DOWN,0.118034,-0.074125,-0.084753,5,1,Negative Trend,Negative Trend
+HM1,Life expectancy (years),UP,0.001,0.015047,0.007709,77,84,Critically Lagging,Critically Lagging
+HM2,Maternal Mortality Ratio (per lakh live births),DOWN,-0.093654,-0.034111,-0.092232,40,5,2025-26,2046-47
+HM3,Infant Mortality Rate (per 1000 live births),DOWN,-0.057085,-0.141626,-0.095264,8,2,2039-40,Critically Lagging
+HM4,Out-of-Pocket Expenditure (as % of Total Health Expenditure),DOWN,-0.057809,-0.100496,-0.057327,15,8,2036-37,2046-47
+HM5,Doctors per 10000 population,UP,0.041704,0.020653,0.035458,15,30,2026-27,2043-44
+HM6,Nurses and midwives per 10000,UP,0.132897,0.133873,0.077694,40,100,2030-31,2037-38
+HM7,No. of Ayush Professionals,UP,0.040515,0.085877,0.063251,100000,250000,2036-37,Critically Lagging
+INM2,"Growth in value of goods exported ($, nominal)",UP,0.041829,0.338684,0.171024,500,3750,Critically Lagging,Critically Lagging
+NSM2,% women age 15-49 years who are anaemic,DOWN,-0.032779,-0.024214,-0.086487,45,5,2027-28,Critically Lagging
+NSM3,"Number of crimes against women per 1,00,000 population",DOWN,-0.015494,-0.787226,-0.296516,0,0,Critically Lagging,Critically Lagging
+NSM4,% of seats held by women in state legislation,UP,-0.01208,0.157814,0.077833,16,40,Negative Trend,Negative Trend
+NSM5,% Female Labor Force Participation Rate (LFPR),UP,0.149875,0.013994,0.021482,50,75,2024-25,2027-28
+NSM6,% Women with an operating bank or savings account,UP,0.073941,0.028317,0.013813,90,100,2024-25,2025-26
+NSM7,% Gross enrolment ratio (elementary),UP,-0.01366,0.034135,0.007658,100,100,Negative Trend,Negative Trend
+NSM8,% Gross enrolment ratio (secondary),UP,0.003909,0.026034,0.013316,85,100,Critically Lagging,Critically Lagging
+NSM9,Gap between male and female literacy levels,DOWN,-0.034656,-0.089848,-0.243176,6,0,Critically Lagging,Critically Lagging
+SEM1,Contribution to India's Services GVA (%),UP,0,0.094218,0.050259,8,15,Critically Lagging,Critically Lagging
+SEM2,Contribution to India’s Services exports (%),UP,0.052864,0.103042,0.081955,3,10,2036-37,Critically Lagging
+TLIM1,Total state highway length (km),UP,-0.013433,0.036696,0.025222,19537,27910,Negative Trend,Negative Trend
+TLIM10,Road accident fatalities per 100 km road length,DOWN,-0.027605,-0.456085,-0.280319,0.5,0,Critically Lagging,Critically Lagging
+TLIM4,Share of Cargo handling in India,UP,-0.00792,0.009919,0.004707,40,42,Negative Trend,Negative Trend
+TLIM5,Ports with >18m draft,UP,0,0.148698,0.065041,2,4,Critically Lagging,Critically Lagging
+TLIM7,Container dwell time - exports (hours),DOWN,0.02277,-0.071619,-0.041443,70,40,Negative Trend,Negative Trend
+TLIM9,Average Vessel Turnaround time (hours),DOWN,-0.004328,-0.106643,-0.038364,50,40,Critically Lagging,Critically Lagging
