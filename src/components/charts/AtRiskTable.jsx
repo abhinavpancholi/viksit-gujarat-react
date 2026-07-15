@@ -25,7 +25,7 @@ export default function AtRiskTable({ goals = [] }) {
     .slice(0, 10)
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full overflow-hidden">
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col" style={{ height: 440 }}>
       <div className="flex items-center justify-between mb-4 border-b border-surface-2 pb-2">
         <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
           Top 10 Macro Goals at Risk / Critical

@@ -17,7 +17,7 @@ export const useFilterStore = create((set, get) => ({
   initData: async () => {
     try {
       set({ loading: true })
-      
+
       const [goalsRes, trendRes] = await Promise.all([
         fetch('/data/macroGoals.json'),
         fetch('/data/trendData.json')
@@ -42,7 +42,7 @@ export const useFilterStore = create((set, get) => ({
     // When pillar changes, reset theme if the selected theme is not in the new pillar's themes
     const currentTheme = get().theme
     const goals = get().macroGoals
-    
+
     let newTheme = currentTheme
     if (pillar !== 'All' && currentTheme !== 'All') {
       const themeBelongsToPillar = goals.some(g => g.pillar === pillar && g.theme === currentTheme)
@@ -50,29 +50,29 @@ export const useFilterStore = create((set, get) => ({
         newTheme = 'All'
       }
     }
-    
+
     set({ pillar, theme: newTheme })
   },
-  
+
   setTheme: (theme) => {
     // If a specific theme is selected, auto-select its pillar
     const goals = get().macroGoals
     let newPillar = get().pillar
-    
+
     if (theme !== 'All') {
       const match = goals.find(g => g.theme === theme)
       if (match) {
         newPillar = match.pillar
       }
     }
-    
+
     set({ theme, pillar: newPillar })
   },
-  
+
   setStatus2030: (status2030) => set({ status2030 }),
   setStatus2047: (status2047) => set({ status2047 }),
   setSearchQuery: (searchQuery) => set({ searchQuery }),
-  
+
   resetFilters: () => set({
     pillar: 'All',
     theme: 'All',
@@ -84,16 +84,16 @@ export const useFilterStore = create((set, get) => ({
   // Selectors/Getters
   getFilteredGoals: () => {
     const { macroGoals, pillar, theme, status2030, status2047, searchQuery } = get()
-    
+
     return macroGoals.filter(goal => {
       const matchesPillar = pillar === 'All' || goal.pillar === pillar
       const matchesTheme = theme === 'All' || goal.theme === theme
       const matchesStatus2030 = status2030 === 'All' || goal.status2030 === status2030
       const matchesStatus2047 = status2047 === 'All' || goal.status2047 === status2047
-      
+
       const query = searchQuery.trim().toLowerCase()
-      const matchesSearch = query === '' || 
-        goal.macroGoal.toLowerCase().includes(query) || 
+      const matchesSearch = query === '' ||
+        goal.macroGoal.toLowerCase().includes(query) ||
         goal.mgCode.toLowerCase().includes(query)
 
       return matchesPillar && matchesTheme && matchesStatus2030 && matchesStatus2047 && matchesSearch
@@ -110,8 +110,8 @@ export const useFilterStore = create((set, get) => ({
   getThemes: () => {
     const { macroGoals, pillar } = get()
     // If a pillar is selected, only show themes belonging to that pillar
-    const filtered = pillar === 'All' 
-      ? macroGoals 
+    const filtered = pillar === 'All'
+      ? macroGoals
       : macroGoals.filter(g => g.pillar === pillar)
     const themes = new Set(filtered.map(g => g.theme))
     return ['All', ...Array.from(themes)]

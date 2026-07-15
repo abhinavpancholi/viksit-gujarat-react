@@ -28,6 +28,7 @@ const THEME_PILLAR_MAP = {
 export default function OverviewDashboard() {
   const {
     trendData,
+    macroGoals,
     getFilteredGoals,
     setTheme,
     pillar,
@@ -36,7 +37,8 @@ export default function OverviewDashboard() {
     setStatus2030,
     status2047,
     setStatus2047,
-    theme
+    theme,
+    resetFilters
   } = useFilterStore()
 
   const filteredGoals = getFilteredGoals()
@@ -200,9 +202,10 @@ export default function OverviewDashboard() {
         {/* Theme Tree Map (Vibrant Colors, Click Toggle Deselect) */}
         <div className="lg:col-span-8 xl:col-span-5">
           <ThemeTreeMap 
-            goals={filteredGoals} 
+            goals={macroGoals}
             activeTheme={theme}
-            onSelectTheme={setTheme} 
+            onSelectTheme={setTheme}
+            onResetFilters={resetFilters}
           />
         </div>
 

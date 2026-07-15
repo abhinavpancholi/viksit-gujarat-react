@@ -43,7 +43,7 @@ export default function PillarBarChart({ goals = [], activePillar = 'All', onSel
   }
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full">
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col" style={{ height: 440 }}>
       <div className="flex items-center justify-between mb-4 border-b border-surface-2 pb-2">
         <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
           Number of Macro Goals by Pillars
@@ -53,7 +53,7 @@ export default function PillarBarChart({ goals = [], activePillar = 'All', onSel
         </span>
       </div>
 
-      <div className="flex-1 min-h-[220px] w-full mt-2">
+      <div style={{ flex: 1, minHeight: 0 }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
