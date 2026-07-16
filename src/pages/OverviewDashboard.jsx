@@ -81,30 +81,32 @@ export default function OverviewDashboard() {
     }, {})
   }, [filteredGoals])
 
-  // Generate lists of goals/attributes for KPI hover tooltips (tabular design layout)
+  // Generate lists of goals/attributes for KPI hover tooltips
   const kpiTooltips = useMemo(() => {
     const pillarsList = Array.from(new Set(filteredGoals.map((g) => g.pillar)))
-    
-    // Map theme strings to objects to render in tabular layout
+
+    // Themes: Pillar | Theme (no Code)
     const themesList = Array.from(new Set(filteredGoals.map((g) => g.theme))).map((themeName) => ({
-      code: 'Theme',
       name: themeName,
       pillar: THEME_PILLAR_MAP[themeName] || 'N/A'
     }))
-    
+
+    // Goals: Pillar | Theme | Macro Goal (no Code)
     const goalsList = filteredGoals.map((g) => ({
-      code: g.mgCode,
       name: g.macroGoal,
+      theme: g.theme,
       pillar: g.pillar
     }))
-    
+
+    // Near Achievement 2030: same structure as goals
     const nearAchievement2030List = filteredGoals
       .filter((g) => g.status2030 && g.status2030.startsWith('On Track'))
-      .map((g) => ({ code: g.mgCode, name: g.macroGoal, pillar: g.pillar }))
-      
+      .map((g) => ({ name: g.macroGoal, theme: g.theme, pillar: g.pillar }))
+
+    // Near Achievement 2047: same structure as goals
     const nearAchievement2047List = filteredGoals
       .filter((g) => g.status2047 && g.status2047.startsWith('On Track'))
-      .map((g) => ({ code: g.mgCode, name: g.macroGoal, pillar: g.pillar }))
+      .map((g) => ({ name: g.macroGoal, theme: g.theme, pillar: g.pillar }))
 
     return {
       pillars: pillarsList,
@@ -123,7 +125,7 @@ export default function OverviewDashboard() {
       {/* 5 KPI Cards Row with Hover Tooltips */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         <KpiCard
-          title="Total Pillars"
+          title="Pillars"
           value={kpis.pillarsCount}
           icon={Building2}
           colorClass="bg-purple-500/10 text-purple-600"
@@ -131,20 +133,22 @@ export default function OverviewDashboard() {
           tooltipItems={kpiTooltips.pillars}
         />
         <KpiCard
-          title="Total Themes"
+          title="Themes"
           value={kpis.themesCount}
           icon={Layers}
           colorClass="bg-blue-500/10 text-blue-600"
           borderClass="border-blue-500/20"
           tooltipItems={kpiTooltips.themes}
+          tooltipMode="themes"
         />
         <KpiCard
-          title="Total Macro Goals"
+          title="Macro Goals"
           value={kpis.goalsCount}
           icon={Target}
           colorClass="bg-emerald-500/10 text-emerald-600"
           borderClass="border-emerald-500/20"
           tooltipItems={kpiTooltips.goals}
+          tooltipMode="goals"
         />
         <KpiCard
           title="Near Achievement (2030)"
@@ -153,6 +157,7 @@ export default function OverviewDashboard() {
           colorClass="bg-saffron-500/10 text-saffron-600"
           borderClass="border-saffron-500/20"
           tooltipItems={kpiTooltips.near2030}
+          tooltipMode="near"
         />
         <KpiCard
           title="Near Achievement (2047)"
@@ -161,31 +166,26 @@ export default function OverviewDashboard() {
           colorClass="bg-rose-500/10 text-rose-600"
           borderClass="border-rose-500/20"
           tooltipItems={kpiTooltips.near2047}
+          tooltipMode="near"
         />
       </div>
 
-      {/* Middle Row: Status Summary & Donut Progress */}
+      {/* Middle Row: Status Summary (clickable, replaces 2030 donut) + 2047 Donut */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Status Summary with Goal Hover list */}
-        <div className="lg:col-span-6 xl:col-span-6">
-          <StatusSummaryCard goals={filteredGoals} />
-        </div>
-        
-        {/* 2030 Donut (Click to filter status) */}
-        <div className="lg:col-span-3 xl:col-span-3">
-          <ProgressDonut 
-            title="Progress Toward 2030 Target" 
-            counts={statusCounts2030} 
+        {/* Status Summary — now clickable (filters status2030), expands to fill freed space */}
+        <div className="lg:col-span-8">
+          <StatusSummaryCard
+            goals={filteredGoals}
             activeStatus={status2030}
             onSelectStatus={setStatus2030}
           />
         </div>
 
-        {/* 2047 Donut (Click to filter status) */}
-        <div className="lg:col-span-3 xl:col-span-3">
-          <ProgressDonut 
-            title="Progress Toward 2047 Target" 
-            counts={statusCounts2047} 
+        {/* 2047 Donut — expanded to use freed space */}
+        <div className="lg:col-span-4">
+          <ProgressDonut
+            title="Progress Toward 2047 Target"
+            counts={statusCounts2047}
             activeStatus={status2047}
             onSelectStatus={setStatus2047}
           />
@@ -213,11 +213,6 @@ export default function OverviewDashboard() {
         <div className="lg:col-span-12 xl:col-span-4">
           <AtRiskTable goals={filteredGoals} />
         </div>
-      </div>
-
-      {/* Full-width Line Chart */}
-      <div className="w-full">
-        <AllYearsTrendChart goals={filteredGoals} trendData={trendData} />
       </div>
     </div>
   )

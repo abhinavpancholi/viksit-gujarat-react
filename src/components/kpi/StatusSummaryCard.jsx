@@ -41,7 +41,7 @@ const PILLAR_SHORT_MAP = {
   'Key Enablers': 'Enablers'
 }
 
-export default function StatusSummaryCard({ goals = [] }) {
+export default function StatusSummaryCard({ goals = [], activeStatus = 'All', onSelectStatus }) {
   const { counts, goalsByStatus } = React.useMemo(() => {
     const listMap = {
       'On Track (gap ≤ 25%)': [],
@@ -88,7 +88,14 @@ export default function StatusSummaryCard({ goals = [] }) {
           return (
             <div key={statusKey} className="relative group/status">
               <div 
-                className={`p-4 rounded-xl border ${meta.borderClass} ${meta.bgClass} flex flex-col justify-between transition-all duration-300 hover:shadow-2xs cursor-help h-full`}
+                onClick={() => {
+                  if (!onSelectStatus) return
+                  // Toggle: clicking the active status resets to 'All'
+                  onSelectStatus(activeStatus === statusKey ? 'All' : statusKey)
+                }}
+                className={`p-4 rounded-xl border ${meta.borderClass} ${meta.bgClass} flex flex-col justify-between transition-all duration-300 hover:shadow-sm cursor-pointer h-full ${
+                  activeStatus !== 'All' && activeStatus !== statusKey ? 'opacity-40' : 'opacity-100'
+                }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-1">
@@ -123,7 +130,7 @@ export default function StatusSummaryCard({ goals = [] }) {
                 <div className="absolute top-full left-0 z-50 mt-2 hidden group-hover/status:block w-[420px] bg-surface-1 border border-surface-border rounded-xl shadow-lg max-h-64 overflow-y-auto select-none">
                   <div className="p-2.5 border-b border-surface-border bg-surface-0 rounded-t-xl sticky top-0 z-20">
                     <p className="text-[10px] font-bold text-navy-800 uppercase tracking-wider">
-                      Goals in this Status ({statusGoalsList.length})
+                      {meta.label} — Macro Goals ({statusGoalsList.length})
                     </p>
                   </div>
                   

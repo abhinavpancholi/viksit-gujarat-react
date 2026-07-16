@@ -68,9 +68,9 @@ export default function AtRiskTable({ goals = [] }) {
                   >
                     <td className="py-3 pr-4 text-xs font-semibold text-ink-body group-hover:text-navy-800 transition">
                       <div className="flex items-center gap-1.5 align-middle">
-                        <span className="font-mono text-[10px] font-bold text-navy-600 bg-surface-2 px-1 rounded-sm flex-shrink-0">
+                        {/* <span className="font-mono text-[10px] font-bold text-navy-600 bg-surface-2 px-1 rounded-sm flex-shrink-0">
                           {goal.mgCode}
-                        </span>
+                        </span> */}
                         <span className="line-clamp-2 leading-tight">
                           {goal.macroGoal}
                         </span>

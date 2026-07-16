@@ -1,6 +1,28 @@
 import React from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
 
+// Custom label rendered just inside the outer edge of each slice
+const SliceLabel = ({ cx, cy, midAngle, outerRadius, value }) => {
+  if (!value) return null
+  const RADIAN = Math.PI / 180
+  const r = outerRadius + 14
+  const x = cx + r * Math.cos(-midAngle * RADIAN)
+  const y = cy + r * Math.sin(-midAngle * RADIAN)
+  return (
+    <text
+      x={x} y={y}
+      textAnchor={x > cx ? 'start' : 'end'}
+      dominantBaseline="central"
+      fontSize={12}
+      fontWeight="700"
+      fontFamily="var(--font-mono)"
+      fill="var(--color-navy-800)"
+    >
+      {value}
+    </text>
+  )
+}
+
 const STATUS_COLORS = {
   'On Track (gap ≤ 25%)': '#1e8a5f',
   'Slightly Off Track (gap ≤ 50%)': '#c98a12',
@@ -48,20 +70,22 @@ export default function ProgressDonut({ title, counts = {}, activeStatus = 'All'
 
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
         {/* Pie Chart Section */}
-        <div className="relative w-[180px] h-[180px] flex-shrink-0">
+        <div className="relative w-[200px] h-[200px] flex-shrink-0">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={rawData}
                 cx="50%"
                 cy="50%"
-                innerRadius={55}
-                outerRadius={75}
+                innerRadius={50}
+                outerRadius={68}
                 paddingAngle={2}
                 dataKey="value"
                 animationDuration={600}
                 onClick={handlePieClick}
                 className="cursor-pointer"
+                label={SliceLabel}
+                labelLine={false}
               >
                 {rawData.map((entry, index) => {
                   const isDimmed = activeStatus !== 'All' && activeStatus !== entry.key

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts'
 
 const PILLAR_COLOR_MAP = {
   'Thriving Economy - Earning Well': 'var(--color-pillar-economy)',
@@ -66,9 +66,8 @@ export default function PillarBarChart({ goals = [], activePillar = 'All', onSel
               axisLine={{ stroke: 'var(--color-surface-border)' }}
               tickLine={false}
               interval={0} // Ensure all bars are shown
-              textAnchor="middle" // Center the text
+              textAnchor="middle" 
               // angle={-5} // Rotate labels to prevent overlap
-              // height={100} // Increase height to fit rotated labels
             />
             <YAxis 
               tick={{ fill: 'var(--color-ink-muted)', fontSize: 10, fontFamily: 'var(--font-mono)' }}
@@ -92,7 +91,15 @@ export default function PillarBarChart({ goals = [], activePillar = 'All', onSel
               animationDuration={600}
               onClick={handleBarClick}
               className="cursor-pointer"
+              
             >
+              <LabelList
+                dataKey="value"
+                position="top"
+                fill="var(--color-ink)"
+                fontSize={15}
+                fontWeight={600}
+              />
               {chartData.map((entry, index) => {
                 // If a specific pillar is active, dim the others
                 const isDimmed = activePillar !== 'All' && activePillar !== entry.name
