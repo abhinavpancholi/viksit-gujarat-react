@@ -11,13 +11,13 @@ const THEME_DEPARTMENT_MAP = {
   'Human Capital: Education and Skilling': 'Education / Labor & Employment Dept.',
   'Nari Shakti: Women-led Development': 'Women & Child Development Dept.',
   'Art Culture and Sports': 'Sports, Youth & Cultural Activities Dept.',
-  'City Agglomeration': 'Urban Development & Urban Housing Dept.',
+  'City Agglomerations: Vibrant Socio-Economic Epicenters': 'Urban Development & Urban Housing Dept.',
   'Healthcare and Nutrition for all': 'Health & Family Welfare Dept.',
-  'Industry, MSME and Services': 'Industries & Mines Dept.',
+  'Industries of the Future': 'Industries & Mines Dept.',
   'Gujarat as Tourism Hub': 'Tourism & Civil Aviation Dept.',
-  'Transport and Logistics': 'Ports & Transport / Roads & Buildings',
-  'Services of Future': 'Science & Technology Dept.',
-  'Governance Reforms': 'General Administration / Finance Dept.'
+  'Transport and Logistics Infrastructure': 'Ports & Transport / Roads & Buildings',
+  'Services of the Future': 'Science & Technology Dept.',
+  'Governance 2.0: Reform, Perform and Transform': 'General Administration / Finance Dept.'
 }
 
 // Custom initiatives by Theme
@@ -50,7 +50,7 @@ const THEME_INITIATIVES_MAP = {
     'District Sports Complexes (DSC) development across all 33 districts.',
     'Financial assistance scheme for traditional folk artists & artisans.'
   ],
-  'City Agglomeration': [
+  'City Agglomerations: Vibrant Socio-Economic Epicenters': [
     'GIFT City (Gujarat International Finance Tec-City) development.',
     'Swarnim Jayanti Mukhya Mantri Urban Development Scheme.',
     'Ahmedabad-Gandhinagar Metro Link Express (MEGA) project.',
@@ -64,7 +64,7 @@ const THEME_INITIATIVES_MAP = {
     'Special Newborn Care Units (SNCU) & Neonatal Stabilization Units (NBSU).',
     'Community-Level Nutrition & Care expansion (2009-2011).'
   ],
-  'Industry, MSME and Services': [
+  'Industries of the Future': [
     'Vibrant Gujarat Global Summit - biennial investment promotion forum.',
     'Gujarat MSME Policy - interest subsidy and cluster infrastructure funding.',
     'Industrial Infrastructure Development (GIDC) estate expansion.',
@@ -78,21 +78,21 @@ const THEME_INITIATIVES_MAP = {
     'Dwarka-Somnath coastal spiritual circuit development.',
     'Seaplane service & Ropeways projects (e.g. Girnar Ropeway).'
   ],
-  'Transport and Logistics': [
+  'Transport and Logistics Infrastructure': [
     'Gujarat State Highway Project (GSHP) - high density road widening.',
     'PM GatiShakti Gujarat Portal - integrated infrastructure planning.',
     'Delhi-Mumbai Industrial Corridor (DMIC) logistics parks.',
     'RO-RO Ferry service between Ghogha and Dahej.',
     'Dholera Greenfield International Airport development.'
   ],
-  'Services of Future': [
+  'Services of the Future': [
     'IT & ITeS Policy - capital subsidy for digital tech parks.',
     'Science City (Ahmedabad) expansion - robotics, space, and aquatic galleries.',
     'Gujarat Biotechnology Policy - vaccine and genomic research grants.',
     'Dron Technology promotion for agricultural spraying and surveillance.',
     'Semiconductor Fab setup facilitation (Sanand Industrial cluster).'
   ],
-  'Governance Reforms': [
+  'Governance 2.0: Reform, Perform and Transform': [
     'SWAGAT (State Wide Attention on Grievances by Application of Technology).',
     'e-GujCop - integrated policing and crime tracking network.',
     'Digital Seva Setu - delivery of civic services to panchayats.',

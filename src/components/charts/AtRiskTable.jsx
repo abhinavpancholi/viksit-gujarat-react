@@ -25,7 +25,7 @@ export default function AtRiskTable({ goals = [] }) {
     .slice(0, 10)
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full overflow-hidden">
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col" style={{ height: 440 }}>
       <div className="flex items-center justify-between mb-4 border-b border-surface-2 pb-2">
         <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
           Top 10 Macro Goals at Risk / Critical
@@ -68,9 +68,9 @@ export default function AtRiskTable({ goals = [] }) {
                   >
                     <td className="py-3 pr-4 text-xs font-semibold text-ink-body group-hover:text-navy-800 transition">
                       <div className="flex items-center gap-1.5 align-middle">
-                        <span className="font-mono text-[10px] font-bold text-navy-600 bg-surface-2 px-1 rounded-sm flex-shrink-0">
+                        {/* <span className="font-mono text-[10px] font-bold text-navy-600 bg-surface-2 px-1 rounded-sm flex-shrink-0">
                           {goal.mgCode}
-                        </span>
+                        </span> */}
                         <span className="line-clamp-2 leading-tight">
                           {goal.macroGoal}
                         </span>

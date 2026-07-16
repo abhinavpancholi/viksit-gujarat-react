@@ -6,15 +6,39 @@ import KpiCard from '../components/kpi/KpiCard'
 import StatusSummaryCard from '../components/kpi/StatusSummaryCard'
 import ProgressDonut from '../components/charts/ProgressDonut'
 import PillarBarChart from '../components/charts/PillarBarChart'
-import ThemeTileGrid from '../components/charts/ThemeTileGrid'
+import ThemeTreeMap from '../components/charts/ThemeTreeMap'
 import AtRiskTable from '../components/charts/AtRiskTable'
 import AllYearsTrendChart from '../components/charts/AllYearsTrendChart'
+
+// Mapping actual themes to pillars
+const THEME_PILLAR_MAP = {
+  'Healthcare and Nutrition for all': 'Empowered Citizen - Living Well',
+  'Gujarat as Tourism Hub': 'Thriving Economy - Earning Well',
+  'Agriculture, Irrigation and Rural Development': 'Thriving Economy - Earning Well',
+  'Human Capital: Education and Skilling': 'Empowered Citizen - Living Well',
+  'Art Culture and Sports': 'Empowered Citizen - Living Well',
+  'Nari Shakti: Women-led Development': 'Empowered Citizen - Living Well',
+  'Transport and Logistics Infrastructure': 'Key Enablers',
+  'City Agglomerations: Vibrant Socio-Economic Epicenters': 'Key Enablers',
+  'Industries of the Future': 'Thriving Economy - Earning Well',
+  'Services of the Future': 'Thriving Economy - Earning Well',
+  'Governance 2.0: Reform, Perform and Transform': 'Key Enablers'
+}
 
 export default function OverviewDashboard() {
   const {
     trendData,
+    macroGoals,
     getFilteredGoals,
-    setTheme
+    setTheme,
+    pillar,
+    setPillar,
+    status2030,
+    setStatus2030,
+    status2047,
+    setStatus2047,
+    theme,
+    resetFilters
   } = useFilterStore()
 
   const filteredGoals = getFilteredGoals()
@@ -42,7 +66,7 @@ export default function OverviewDashboard() {
     }
   }, [filteredGoals])
 
-  // Count goals by status
+  // Count goals by status for donuts
   const statusCounts2030 = useMemo(() => {
     return filteredGoals.reduce((acc, goal) => {
       acc[goal.status2030] = (acc[goal.status2030] || 0) + 1
@@ -57,41 +81,74 @@ export default function OverviewDashboard() {
     }, {})
   }, [filteredGoals])
 
-  // Combine counts for total status summary card
-  const statusSummaryCounts = useMemo(() => {
-    // We average/combine or just show 2030 statuses by default (standard for overview)
-    // The screenshot has a status card row called "MACRO GOALS STATUS SUMMARY (All Years)"
-    // Since "All Years" isn't a single status field, we'll display 2030 statuses for overview, which represents the intermediate target
-    return statusCounts2030
-  }, [statusCounts2030])
+  // Generate lists of goals/attributes for KPI hover tooltips
+  const kpiTooltips = useMemo(() => {
+    const pillarsList = Array.from(new Set(filteredGoals.map((g) => g.pillar)))
+
+    // Themes: Pillar | Theme (no Code)
+    const themesList = Array.from(new Set(filteredGoals.map((g) => g.theme))).map((themeName) => ({
+      name: themeName,
+      pillar: THEME_PILLAR_MAP[themeName] || 'N/A'
+    }))
+
+    // Goals: Pillar | Theme | Macro Goal (no Code)
+    const goalsList = filteredGoals.map((g) => ({
+      name: g.macroGoal,
+      theme: g.theme,
+      pillar: g.pillar
+    }))
+
+    // Near Achievement 2030: same structure as goals
+    const nearAchievement2030List = filteredGoals
+      .filter((g) => g.status2030 && g.status2030.startsWith('On Track'))
+      .map((g) => ({ name: g.macroGoal, theme: g.theme, pillar: g.pillar }))
+
+    // Near Achievement 2047: same structure as goals
+    const nearAchievement2047List = filteredGoals
+      .filter((g) => g.status2047 && g.status2047.startsWith('On Track'))
+      .map((g) => ({ name: g.macroGoal, theme: g.theme, pillar: g.pillar }))
+
+    return {
+      pillars: pillarsList,
+      themes: themesList,
+      goals: goalsList,
+      near2030: nearAchievement2030List,
+      near2047: nearAchievement2047List
+    }
+  }, [filteredGoals])
 
   return (
     <div className="flex flex-col gap-6">
       {/* Search and Filters Section */}
       <FilterBar />
 
-      {/* 5 KPI Cards Row */}
+      {/* 5 KPI Cards Row with Hover Tooltips */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         <KpiCard
-          title="Total Pillars"
+          title="Pillars"
           value={kpis.pillarsCount}
           icon={Building2}
           colorClass="bg-purple-500/10 text-purple-600"
           borderClass="border-purple-500/20"
+          tooltipItems={kpiTooltips.pillars}
         />
         <KpiCard
-          title="Total Themes"
+          title="Themes"
           value={kpis.themesCount}
           icon={Layers}
           colorClass="bg-blue-500/10 text-blue-600"
           borderClass="border-blue-500/20"
+          tooltipItems={kpiTooltips.themes}
+          tooltipMode="themes"
         />
         <KpiCard
-          title="Total Macro Goals"
+          title="Macro Goals"
           value={kpis.goalsCount}
           icon={Target}
           colorClass="bg-emerald-500/10 text-emerald-600"
           borderClass="border-emerald-500/20"
+          tooltipItems={kpiTooltips.goals}
+          tooltipMode="goals"
         />
         <KpiCard
           title="Near Achievement (2030)"
@@ -99,6 +156,8 @@ export default function OverviewDashboard() {
           icon={Trophy}
           colorClass="bg-saffron-500/10 text-saffron-600"
           borderClass="border-saffron-500/20"
+          tooltipItems={kpiTooltips.near2030}
+          tooltipMode="near"
         />
         <KpiCard
           title="Near Achievement (2047)"
@@ -106,48 +165,54 @@ export default function OverviewDashboard() {
           icon={Trophy}
           colorClass="bg-rose-500/10 text-rose-600"
           borderClass="border-rose-500/20"
+          tooltipItems={kpiTooltips.near2047}
+          tooltipMode="near"
         />
       </div>
 
-      {/* Middle Row: Status Summary & Donut Progress */}
+      {/* Middle Row: Status Summary (clickable, replaces 2030 donut) + 2047 Donut */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Status Summary */}
-        <div className="lg:col-span-6 xl:col-span-6">
-          <StatusSummaryCard counts={statusSummaryCounts} />
-        </div>
-        
-        {/* 2030 Donut */}
-        <div className="lg:col-span-3 xl:col-span-3">
-          <ProgressDonut title="Progress Toward 2030 Target" counts={statusCounts2030} />
+        {/* Status Summary — now clickable (filters status2030), expands to fill freed space */}
+        <div className="lg:col-span-8">
+          <StatusSummaryCard
+            goals={filteredGoals}
+            activeStatus={status2030}
+            onSelectStatus={setStatus2030}
+          />
         </div>
 
-        {/* 2047 Donut */}
-        <div className="lg:col-span-3 xl:col-span-3">
-          <ProgressDonut title="Progress Toward 2047 Target" counts={statusCounts2047} />
+        {/* 2047 Donut — expanded to use freed space */}
+        <div className="lg:col-span-4">
+          <ProgressDonut
+            title="Progress Toward 2047 Target"
+            counts={statusCounts2047}
+            activeStatus={status2047}
+            onSelectStatus={setStatus2047}
+          />
         </div>
       </div>
 
-      {/* Bottom Chart Row: Pillar Bar, Theme Grid, At Risk Table */}
+      {/* Bottom Chart Row: Interactive Pillar Bar, Tree Map, At Risk Table */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Pillar Bar */}
+        {/* Pillar Bar (Click to Cross-Highlight) */}
         <div className="lg:col-span-4 xl:col-span-3">
-          <PillarBarChart goals={filteredGoals} />
+          <PillarBarChart goals={filteredGoals} activePillar={pillar} onSelectPillar={setPillar} />
         </div>
 
-        {/* Theme Tile Grid */}
+        {/* Theme Tree Map (Vibrant Colors, Click Toggle Deselect) */}
         <div className="lg:col-span-8 xl:col-span-5">
-          <ThemeTileGrid goals={filteredGoals} onSelectTheme={setTheme} />
+          <ThemeTreeMap 
+            goals={macroGoals}
+            activeTheme={theme}
+            onSelectTheme={setTheme}
+            onResetFilters={resetFilters}
+          />
         </div>
 
         {/* At Risk Table */}
         <div className="lg:col-span-12 xl:col-span-4">
           <AtRiskTable goals={filteredGoals} />
         </div>
-      </div>
-
-      {/* Full-width Line Chart */}
-      <div className="w-full">
-        <AllYearsTrendChart goals={filteredGoals} trendData={trendData} />
       </div>
     </div>
   )
