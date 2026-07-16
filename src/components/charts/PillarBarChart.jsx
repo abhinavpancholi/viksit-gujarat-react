@@ -48,23 +48,27 @@ export default function PillarBarChart({ goals = [], activePillar = 'All', onSel
         <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
           Number of Macro Goals by Pillars
         </h3>
-        <span className="text-[10px] font-bold text-ink-muted bg-surface-0 border border-surface-border px-2 py-0.5 rounded-full uppercase tracking-wider">
+        {/* <span className="text-[10px] font-bold text-ink-muted bg-surface-0 border border-surface-border px-2 py-0.5 rounded-full uppercase tracking-wider">
           Click Bars to Filter
-        </span>
+        </span> */}
       </div>
 
       <div style={{ flex: 1, minHeight: 0 }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
-            margin={{ top: 10, right: 10, left: -20, bottom: 5 }}
+            margin={{ top: 25, right: 5, left: -40, bottom: 5 }}
             barSize={45}
           >
             <XAxis 
               dataKey="shortName" 
-              tick={{ fill: 'var(--color-ink-muted)', fontSize: 10, fontWeight: 500 }}
+              tick={{ fill: 'var(--color-ink-muted)', fontSize: 10, fontWeight: 500}}
               axisLine={{ stroke: 'var(--color-surface-border)' }}
               tickLine={false}
+              interval={0} // Ensure all bars are shown
+              textAnchor="middle" // Center the text
+              // angle={-5} // Rotate labels to prevent overlap
+              // height={100} // Increase height to fit rotated labels
             />
             <YAxis 
               tick={{ fill: 'var(--color-ink-muted)', fontSize: 10, fontFamily: 'var(--font-mono)' }}

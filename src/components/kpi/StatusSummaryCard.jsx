@@ -129,21 +129,21 @@ export default function StatusSummaryCard({ goals = [] }) {
                   
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse text-[10px] table-fixed">
-                      <thead className="sticky top-[33px] bg-surface-1 border-b border-surface-border text-navy-800 font-bold uppercase tracking-wider z-10 shadow-2xs">
+                      <thead className="sticky top-[3px] bg-surface-1 border-b border-surface-border text-navy-800 font-bold uppercase tracking-wider z-10 shadow-2xs">
                         <tr>
-                          <th className="py-2 px-3 w-20 text-center">Code</th>
-                          <th className="py-2 px-3">Goal description</th>
+                          <th className="py-2 px-3">Macro Goals</th>
+                          <th className="py-2 px-3">Themes</th>
                           <th className="py-2 px-3 w-24">Pillar</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-surface-2 text-ink-body font-semibold">
                         {statusGoalsList.map((g) => (
                           <tr key={g.mgCode} className="hover:bg-surface-0 transition">
-                            <td className="py-2 px-3 font-mono font-bold text-navy-800 text-center">
-                              {g.mgCode}
-                            </td>
                             <td className="py-2 px-3 truncate" title={g.macroGoal}>
                               {g.macroGoal}
+                            </td>
+                            <td className="py-2 px-3 truncate" title={g.theme}>
+                              {g.theme}
                             </td>
                             <td className="py-2 px-3 text-ink-muted truncate" title={g.pillar}>
                               {PILLAR_SHORT_MAP[g.pillar] || g.pillar || 'N/A'}

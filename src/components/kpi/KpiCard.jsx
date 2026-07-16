@@ -28,7 +28,7 @@ export default function KpiCard({ title, value, icon: Icon, colorClass, borderCl
 
       {/* Professional Tabular Tooltip */}
       {tooltipItems && tooltipItems.length > 0 && (
-        <div className="absolute top-full left-0 z-50 mt-2 hidden group-hover:block w-[420px] bg-surface-1 border border-surface-border rounded-xl shadow-lg max-h-64 overflow-y-auto select-none">
+        <div className="absolute top-full left-0 z-50 mt-2 hidden group-hover:block w-[380px] bg-surface-1 border border-surface-border rounded-xl shadow-lg max-h-70 overflow-y-auto select-none">
           <div className="p-2.5 border-b border-surface-border bg-surface-0 rounded-t-xl sticky top-0 z-20">
             <p className="text-[10px] font-bold text-navy-800 uppercase tracking-wider">
               Underlying Attributes ({tooltipItems.length})
@@ -39,7 +39,7 @@ export default function KpiCard({ title, value, icon: Icon, colorClass, borderCl
             <table className="w-full text-left border-collapse text-[10px] table-fixed">
               {isStringList ? (
                 <>
-                  <thead className="sticky top-[33px] bg-surface-1 border-b border-surface-border text-navy-800 font-bold uppercase tracking-wider z-10 shadow-2xs">
+                  <thead className="sticky top-[30px] bg-surface-1 border-b border-surface-border text-navy-800 font-bold uppercase tracking-wider z-100 shadow-2xs">
                     <tr>
                       <th className="py-2 px-3 w-14 text-center">No.</th>
                       <th className="py-2 px-3">Name</th>
@@ -56,10 +56,10 @@ export default function KpiCard({ title, value, icon: Icon, colorClass, borderCl
                 </>
               ) : (
                 <>
-                  <thead className="sticky top-[33px] bg-surface-1 border-b border-surface-border text-navy-800 font-bold uppercase tracking-wider z-10 shadow-2xs">
+                  <thead className="sticky top-[3px] bg-surface-1 border-b border-surface-border text-navy-800 font-bold uppercase tracking-wider z-10 shadow-2xs">
                     <tr>
                       <th className="py-2 px-3 w-20 text-center">Code</th>
-                      <th className="py-2 px-3">Goal description</th>
+                      <th className="py-2 px-3">Macro Goals</th>
                       <th className="py-2 px-3 w-24">Pillar</th>
                     </tr>
                   </thead>
