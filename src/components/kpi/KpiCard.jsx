@@ -19,17 +19,17 @@ export default function KpiCard({ title, value, icon: Icon, colorClass, borderCl
   return (
     <div className="relative group">
       {/* KPI Card */}
-      <div className={`bg-surface-1 border border-surface-border rounded-xl p-5 flex items-center justify-between shadow-2xs hover:shadow-xs transition-all duration-300 hover:-translate-y-0.5 cursor-help`}>
+      <div className={`bg-surface-1 border border-surface-border rounded-xl p-3.5 flex items-center justify-between shadow-2xs hover:shadow-xs transition-all duration-300 hover:-translate-y-0.5 cursor-help h-full`}>
         <div className="flex flex-col gap-1">
-          <span className="text-xs font-bold text-ink-muted tracking-wider uppercase">
+          <span className="text-[11px] font-bold text-ink-muted tracking-wider uppercase leading-tight">
             {title}
           </span>
-          <span className="text-3xl font-bold font-mono-num text-navy-800 tracking-tight">
+          <span className="text-3xl font-bold font-mono-num text-navy-800 tracking-tight leading-none">
             {value}
           </span>
         </div>
-        <div className={`p-3 rounded-xl ${colorClass} ${borderClass} border transition-all duration-300 group-hover:scale-105`}>
-          <Icon className="w-6 h-6" />
+        <div className={`p-2 bg-slate-100 rounded-lg ${colorClass} ${borderClass} border transition-all duration-300 group-hover:scale-105 flex-shrink-0`}>
+          <Icon className="w-5 h-5" />
         </div>
       </div>
 

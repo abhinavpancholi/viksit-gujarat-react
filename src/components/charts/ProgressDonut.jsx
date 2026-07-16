@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
 const SliceLabel = ({ cx, cy, midAngle, outerRadius, value }) => {
   if (!value) return null
   const RADIAN = Math.PI / 180
-  const r = outerRadius + 14
+  const r = outerRadius + 4
   const x = cx + r * Math.cos(-midAngle * RADIAN)
   const y = cy + r * Math.sin(-midAngle * RADIAN)
   return (
@@ -13,7 +13,7 @@ const SliceLabel = ({ cx, cy, midAngle, outerRadius, value }) => {
       x={x} y={y}
       textAnchor={x > cx ? 'start' : 'end'}
       dominantBaseline="central"
-      fontSize={12}
+      fontSize={10}
       fontWeight="700"
       fontFamily="var(--font-mono)"
       fill="var(--color-navy-800)"
@@ -34,7 +34,7 @@ const SHORT_NAMES = {
   'On Track (gap ≤ 25%)': 'On Track',
   'Slightly Off Track (gap ≤ 50%)': 'Slightly Off Track',
   'At Risk (gap ≤ 75%)': 'At Risk',
-  'Critical (gap > 75%)': 'Critical / Behind'
+  'Critical (gap > 75%)': 'Critical'
 }
 
 export default function ProgressDonut({ title, counts = {}, activeStatus = 'All', onSelectStatus }) {
@@ -63,22 +63,22 @@ export default function ProgressDonut({ title, counts = {}, activeStatus = 'All'
   }
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col justify-between h-full">
-      <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider mb-2 border-b border-surface-2 pb-2">
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-3.5 shadow-2xs flex flex-col justify-between h-full overflow-hidden">
+      <h3 className="text-xs font-bold text-navy-800 uppercase tracking-wider mb-2 border-b border-surface-2 pb-1.5 flex-shrink-0">
         {title}
       </h3>
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+      <div className="flex flex-row items-center justify-between gap-1 mt-1 flex-1 min-h-0">
         {/* Pie Chart Section */}
-        <div className="relative w-[200px] h-[200px] flex-shrink-0">
+        <div className="relative w-[200px] h-[170px] flex-shrink-0">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={rawData}
                 cx="50%"
                 cy="50%"
-                innerRadius={50}
-                outerRadius={68}
+                innerRadius={30}
+                outerRadius={46}
                 paddingAngle={2}
                 dataKey="value"
                 animationDuration={600}
@@ -103,7 +103,7 @@ export default function ProgressDonut({ title, counts = {}, activeStatus = 'All'
                 formatter={(value, name) => [value, name]} 
                 contentStyle={{ 
                   fontFamily: 'var(--font-body)', 
-                  fontSize: '11px',
+                  fontSize: '14px',
                   borderRadius: '8px',
                   border: '1px solid var(--color-surface-border)'
                 }}
@@ -113,13 +113,13 @@ export default function ProgressDonut({ title, counts = {}, activeStatus = 'All'
           
           {/* Centered Total Indicator */}
           <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <span className="text-2xl font-bold font-mono-num text-navy-800">{total}</span>
-            <span className="text-[10px] font-bold text-ink-muted uppercase tracking-wider">Total</span>
+            <span className="text-lg font-bold font-mono-num text-navy-800 leading-none">{total}</span>
+            <span className="text-[8px] font-bold text-ink-muted uppercase tracking-wider mt-0.5">Total</span>
           </div>
         </div>
 
         {/* Custom Legend Section */}
-        <div className="flex-1 w-full flex flex-col gap-1.5 min-w-0">
+        <div className="flex-1 w-full flex flex-col gap-1 min-w-0">
           {rawData.map((item) => {
             const isDimmed = activeStatus !== 'All' && activeStatus !== item.key
             return (
@@ -134,12 +134,12 @@ export default function ProgressDonut({ title, counts = {}, activeStatus = 'All'
                     }
                   }
                 }}
-                className={`flex items-center justify-between text-[11px] border-b border-surface-2/40 pb-1 last:border-0 min-w-0 gap-2 cursor-pointer transition-all duration-300 ${
+                className={`flex items-center justify-between text-[12px] border-b border-surface-2/40 pb-1 last:border-0 min-w-0 gap-1.5 cursor-pointer transition-all duration-300 ${
                   isDimmed ? 'opacity-35 hover:opacity-75' : 'opacity-100 font-semibold'
                 }`}
               >
-                <div className="flex items-center gap-1.5 min-w-0 flex-1">
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
+                <div className="flex items-center gap-1 min-w-0 flex-1">
+                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
                   <span className="text-ink-body truncate select-none block" title={item.name}>
                     {item.name}
                   </span>

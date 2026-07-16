@@ -25,8 +25,8 @@ export default function AtRiskTable({ goals = [] }) {
     .slice(0, 10)
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col" style={{ height: 440 }}>
-      <div className="flex items-center justify-between mb-4 border-b border-surface-2 pb-2">
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full overflow-hidden">
+      <div className="flex items-center justify-between mb-3 border-b border-surface-2 pb-2">
         <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
           Top 10 Macro Goals at Risk / Critical
         </h3>
@@ -35,20 +35,20 @@ export default function AtRiskTable({ goals = [] }) {
         </span>
       </div>
 
-      <div className="flex-1 overflow-x-auto min-h-[250px]">
+      <div className="flex-1 overflow-x-auto min-h-0 overflow-y-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-surface-border text-[10px] font-bold text-ink-muted uppercase tracking-wider select-none">
-              <th className="py-2.5 pr-4 font-bold">Macro Goal</th>
-              <th className="py-2.5 px-3 font-bold hidden sm:table-cell">Pillar</th>
-              <th className="py-2.5 px-3 font-bold text-right">Gap %</th>
-              <th className="py-2.5 pl-3 font-bold text-center">Status</th>
+              <th className="py-2 pr-4 font-bold">Macro Goal</th>
+              <th className="py-2 px-3 font-bold hidden sm:table-cell">Pillar</th>
+              <th className="py-2 px-3 font-bold text-right">Gap %</th>
+              <th className="py-2 pl-3 font-bold text-center">Status</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-surface-2/60">
             {tableData.length === 0 ? (
               <tr>
-                <td colSpan="4" className="py-8 text-center text-xs text-ink-muted font-medium">
+                <td colSpan="4" className="py-4 text-center text-xs text-ink-muted font-medium">
                   No critical or at-risk goals match the current filters.
                 </td>
               </tr>
@@ -66,24 +66,21 @@ export default function AtRiskTable({ goals = [] }) {
                     onClick={() => navigate(`/goal/${goal.mgCode}`)}
                     className="hover:bg-surface-0 cursor-pointer transition duration-150 group"
                   >
-                    <td className="py-3 pr-4 text-xs font-semibold text-ink-body group-hover:text-navy-800 transition">
+                    <td className="py-2 pr-4 text-xs font-semibold text-ink-body group-hover:text-navy-800 transition">
                       <div className="flex items-center gap-1.5 align-middle">
-                        {/* <span className="font-mono text-[10px] font-bold text-navy-600 bg-surface-2 px-1 rounded-sm flex-shrink-0">
-                          {goal.mgCode}
-                        </span> */}
                         <span className="line-clamp-2 leading-tight">
                           {goal.macroGoal}
                         </span>
                         <ArrowUpRight className="w-3 h-3 text-ink-faint group-hover:text-navy-500 opacity-0 group-hover:opacity-100 transition flex-shrink-0 ml-auto" />
                       </div>
                     </td>
-                    <td className="py-3 px-3 text-xs text-ink-muted hidden sm:table-cell font-medium">
+                    <td className="py-2 px-3 text-xs text-ink-muted hidden sm:table-cell font-medium">
                       {PILLAR_SHORT_MAP[goal.pillar] || goal.pillar}
                     </td>
-                    <td className="py-3 px-3 text-xs text-right font-mono-num font-bold text-navy-800">
+                    <td className="py-2 px-3 text-xs text-right font-mono-num font-bold text-navy-800">
                       {gapPercent}
                     </td>
-                    <td className="py-3 pl-3 text-center">
+                    <td className="py-2 pl-3 text-center">
                       <span className={`inline-flex items-center justify-center px-2 py-0.5 text-[10px] font-bold rounded-md border ${badgeStyle}`}>
                         {statusLabel}
                       </span>

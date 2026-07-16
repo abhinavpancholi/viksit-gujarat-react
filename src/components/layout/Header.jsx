@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calendar, Download, RefreshCw, Home } from 'lucide-react'
+import { Calendar, Download, Home, ArrowLeft } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
@@ -88,11 +88,16 @@ export default function Header() {
             <span>Export / Print</span>
           </button>
 
-          {/* Last refreshed */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-0 text-xs font-medium text-ink-body">
-            <RefreshCw className="w-3.5 h-3.5 text-saffron-500 animate-spin-slow" />
-            <span>Refreshed: <span className="text-navy-800 font-semibold">10:30 AM</span></span>
-          </div>
+          {/* Back to Overview link (replaces Refreshed badge on goal pages) */}
+          {isGoalPage && (
+            <Link
+              to="/"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-0 text-xs font-bold text-navy-800 hover:bg-surface-2 hover:text-navy-600 transition"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Overview Dashboard</span>
+            </Link>
+          )}
         </div>
       </div>
     </header>

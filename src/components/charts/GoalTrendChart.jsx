@@ -1,30 +1,30 @@
 import React, { useMemo } from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts'
+import { Maximize2 } from 'lucide-react'
 
-export default function GoalTrendChart({ trend, horizon }) {
+export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpandClick, isExpanded }) {
   const chartData = useMemo(() => {
     if (!trend) return []
 
-    // Horizon configuration
-    const horizonKey = horizon === '2030' ? 'target2030' : 'target2047'
-    const requiredPoints = trend.requiredTrend[horizonKey] || []
-    
-    // Join actual, projected (currentTrend), and required points by year
+    const actualPoints = trend.actual || []
+    const currentPoints = horizon === '2030' ? (trend.current_2030 || []) : (trend.current_2047 || [])
+    const recommendedPoints = horizon === '2030' ? (trend.recommended_2030 || []) : (trend.recommended_2047 || [])
+
     const yearMap = {}
 
     // Populate actuals
-    trend.actual.forEach((p) => {
+    actualPoints.forEach((p) => {
       yearMap[p.fyNumeric] = {
         year: p.fyNumeric,
         name: p.fyLabel,
         actual: p.value,
         projected: null,
-        required: null
+        recommended: null
       }
     })
 
     // Populate projected (currentTrend)
-    trend.currentTrend.forEach((p) => {
+    currentPoints.forEach((p) => {
       if (yearMap[p.fyNumeric]) {
         yearMap[p.fyNumeric].projected = p.value
       } else {
@@ -33,25 +33,22 @@ export default function GoalTrendChart({ trend, horizon }) {
           name: p.fyLabel,
           actual: null,
           projected: p.value,
-          required: null
+          recommended: null
         }
       }
     })
 
-    // Populate required trend line
-    requiredPoints.forEach((p) => {
-      const year = p.fyNumeric
-      const label = `${year - 1}-${String(year).slice(-2)}`
-      
-      if (yearMap[year]) {
-        yearMap[year].required = p.value
+    // Populate recommended trend line
+    recommendedPoints.forEach((p) => {
+      if (yearMap[p.fyNumeric]) {
+        yearMap[p.fyNumeric].recommended = p.value
       } else {
-        yearMap[year] = {
-          year,
-          name: label,
+        yearMap[p.fyNumeric] = {
+          year: p.fyNumeric,
+          name: p.fyLabel,
           actual: null,
           projected: null,
-          required: p.value
+          recommended: p.value
         }
       }
     })
@@ -62,7 +59,7 @@ export default function GoalTrendChart({ trend, horizon }) {
 
   if (!trend) {
     return (
-      <div className="bg-surface-1 border border-surface-border rounded-xl p-6 shadow-2xs flex items-center justify-center min-h-[300px]">
+      <div className="bg-surface-1 border border-surface-border rounded-xl p-6 shadow-2xs flex items-center justify-center h-full">
         <span className="text-xs text-ink-muted font-medium">
           Trend visualization is not available for this macro goal.
         </span>
@@ -71,33 +68,78 @@ export default function GoalTrendChart({ trend, horizon }) {
   }
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4 border-b border-surface-2 pb-2">
-        <div>
-          <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-4 shadow-2xs flex flex-col h-full overflow-hidden">
+      {/* Header with title, horizon toggle, and expand button */}
+      <div className="flex items-center justify-between gap-2 mb-2 border-b border-surface-2 pb-2 flex-shrink-0">
+        <div className="min-w-0">
+          <h3 className={`${isExpanded ? 'text-sm' : 'text-xs'} font-bold text-navy-800 uppercase tracking-wider`}>
             Trend Analysis for Target {horizon}
           </h3>
-          <p className="text-[10px] text-ink-muted font-medium mt-0.5">
-            Compares historical & projected values (Current Trend) against the linear path to target (Required Trend)
+          <p className="text-[9px] text-ink-muted font-medium mt-0.5 truncate">
+            Historical & projected values vs. required path to target
           </p>
+        </div>
+
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {/* Embedded Horizon Toggle */}
+          {onHorizonChange && (
+            <div className="flex bg-surface-2 rounded-lg p-0.5">
+              <button
+                onClick={() => onHorizonChange('2030')}
+                className={`px-2.5 py-1 rounded-md text-[10px] font-bold transition cursor-pointer ${
+                  horizon === '2030'
+                    ? 'bg-navy-800 text-white shadow-2xs'
+                    : 'text-navy-800 hover:bg-surface-border'
+                }`}
+              >
+                2030
+              </button>
+              <button
+                onClick={() => onHorizonChange('2047')}
+                className={`px-2.5 py-1 rounded-md text-[10px] font-bold transition cursor-pointer ${
+                  horizon === '2047'
+                    ? 'bg-navy-800 text-white shadow-2xs'
+                    : 'text-navy-800 hover:bg-surface-border'
+                }`}
+              >
+                2047
+              </button>
+            </div>
+          )}
+
+          {/* Expand button */}
+          {onExpandClick && (
+            <button
+              onClick={onExpandClick}
+              className="p-1.5 rounded-lg border border-surface-border bg-surface-0 hover:bg-surface-2 text-ink-muted hover:text-navy-800 transition cursor-pointer"
+              title="Expand chart"
+            >
+              <Maximize2 className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
       </div>
 
-      <div className="flex-1 min-h-[280px] w-full mt-2">
+      {/* Chart area */}
+      <div 
+        className={`flex-1 min-h-0 w-full ${onExpandClick && !isExpanded ? 'cursor-pointer' : ''}`}
+        onClick={onExpandClick && !isExpanded ? onExpandClick : undefined}
+      >
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={chartData}
-            margin={{ top: 10, right: 15, left: -20, bottom: 5 }}
+            margin={{ top: 5, right: 15, left: -20, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-2)" />
             <XAxis 
               dataKey="name" 
-              tick={{ fill: 'var(--color-ink-muted)', fontSize: 9, fontWeight: 500 }}
+              tick={{ fill: 'var(--color-ink-muted)', fontSize: isExpanded ? 10 : 8, fontWeight: 500 }}
               axisLine={{ stroke: 'var(--color-surface-border)' }}
               tickLine={false}
+              interval={isExpanded ? 0 : 'preserveStartEnd'}
             />
             <YAxis 
-              tick={{ fill: 'var(--color-ink-muted)', fontSize: 9, fontFamily: 'var(--font-mono)' }}
+              tick={{ fill: 'var(--color-ink-muted)', fontSize: isExpanded ? 10 : 8, fontFamily: 'var(--font-mono)' }}
               axisLine={false}
               tickLine={false}
             />
@@ -109,50 +151,50 @@ export default function GoalTrendChart({ trend, horizon }) {
                 border: '1px solid var(--color-surface-border)'
               }}
               formatter={(value, name) => {
-                const label = name === 'actual' ? 'Actual Value' : name === 'projected' ? 'Current Projection' : 'Required Path'
-                return [`${value.toFixed(2)}`, label]
+                return [value !== null && typeof value === 'number' ? value.toFixed(2) : value, name]
               }}
             />
             <Legend 
               verticalAlign="top" 
-              height={36}
+              height={28}
               iconType="circle"
-              iconSize={8}
-              wrapperStyle={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-ink-body)' }}
+              iconSize={7}
+              wrapperStyle={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-ink-body)' }}
             />
             
-            {/* Actual History (Solid Navy/Blue) */}
+            {/* Actual History (Solid Grey) */}
             <Line 
               type="monotone" 
               dataKey="actual" 
-              name="actual"
-              stroke="var(--color-navy-800)" 
-              strokeWidth={3} 
-              dot={{ r: 3, fill: 'var(--color-navy-800)' }}
-              activeDot={{ r: 5 }}
+              name="Actual"
+              stroke="#6b7280" 
+              strokeWidth={isExpanded ? 3 : 2} 
+              dot={{ r: isExpanded ? 3 : 2, fill: '#6b7280' }}
+              activeDot={{ r: isExpanded ? 5 : 4 }}
             />
             
-            {/* Projected Extension (Dashed Light Blue) */}
+            {/* Projected Extension (Dashed Blue) */}
             <Line 
               type="monotone" 
               dataKey="projected" 
-              name="projected"
-              stroke="var(--color-navy-500)" 
+              name="Current Trend"
+              stroke="#2563eb" 
               strokeWidth={2} 
               strokeDasharray="4 4"
-              dot={{ r: 3, fill: 'var(--color-navy-500)' }}
-              activeDot={{ r: 5 }}
+              dot={{ r: isExpanded ? 3 : 2, fill: '#2563eb' }}
+              activeDot={{ r: isExpanded ? 5 : 4 }}
             />
             
-            {/* Required Target Path (Dashed Orange/Grey) */}
+            {/* Recommended Target Path (Dashed Orange) */}
             <Line 
               type="monotone" 
-              dataKey="required" 
-              name="required"
-              stroke="var(--color-saffron-500)" 
+              dataKey="recommended" 
+              name="Required Trend"
+              stroke="#ea580c" 
               strokeWidth={2} 
               strokeDasharray="5 5"
-              dot={false}
+              dot={{ r: isExpanded ? 3 : 2, fill: '#ea580c' }}
+              activeDot={{ r: isExpanded ? 5 : 4 }}
             />
           </LineChart>
         </ResponsiveContainer>

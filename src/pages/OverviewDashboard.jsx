@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react'
-import { Building2, Layers, Target, Trophy } from 'lucide-react'
+import React, { useMemo, useState } from 'react'
+import { Building2, Layers, Target, Trophy, SlidersHorizontal } from 'lucide-react'
 import { useFilterStore } from '../context/FilterStore'
 import FilterBar from '../components/layout/FilterBar'
 import KpiCard from '../components/kpi/KpiCard'
@@ -8,7 +8,6 @@ import ProgressDonut from '../components/charts/ProgressDonut'
 import PillarBarChart from '../components/charts/PillarBarChart'
 import ThemeTreeMap from '../components/charts/ThemeTreeMap'
 import AtRiskTable from '../components/charts/AtRiskTable'
-import AllYearsTrendChart from '../components/charts/AllYearsTrendChart'
 
 // Mapping actual themes to pillars
 const THEME_PILLAR_MAP = {
@@ -26,6 +25,7 @@ const THEME_PILLAR_MAP = {
 }
 
 export default function OverviewDashboard() {
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false)
   const {
     trendData,
     macroGoals,
@@ -38,7 +38,8 @@ export default function OverviewDashboard() {
     status2047,
     setStatus2047,
     theme,
-    resetFilters
+    resetFilters,
+    searchQuery
   } = useFilterStore()
 
   const filteredGoals = getFilteredGoals()
@@ -67,19 +68,23 @@ export default function OverviewDashboard() {
   }, [filteredGoals])
 
   // Count goals by status for donuts
-  const statusCounts2030 = useMemo(() => {
-    return filteredGoals.reduce((acc, goal) => {
-      acc[goal.status2030] = (acc[goal.status2030] || 0) + 1
-      return acc
-    }, {})
-  }, [filteredGoals])
-
   const statusCounts2047 = useMemo(() => {
     return filteredGoals.reduce((acc, goal) => {
       acc[goal.status2047] = (acc[goal.status2047] || 0) + 1
       return acc
     }, {})
   }, [filteredGoals])
+
+  // Calculate active filter count
+  const activeFilterCount = useMemo(() => {
+    let count = 0
+    if (pillar !== 'All') count++
+    if (theme !== 'All') count++
+    if (status2030 !== 'All') count++
+    if (status2047 !== 'All') count++
+    if (searchQuery && searchQuery.trim() !== '') count++
+    return count
+  }, [pillar, theme, status2030, status2047, searchQuery])
 
   // Generate lists of goals/attributes for KPI hover tooltips
   const kpiTooltips = useMemo(() => {
@@ -118,12 +123,33 @@ export default function OverviewDashboard() {
   }, [filteredGoals])
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* Search and Filters Section */}
-      <FilterBar />
+    <div className="h-[calc(100vh-130px)] flex flex-col gap-2.5 min-h-0 overflow-hidden -mt-4">
+      {/* Dashboard Top Header Control Bar */}
+      <div className="flex items-center justify-between border-b border-surface-border pb-1 flex-shrink-0">
+        <h2 className="text-xs font-bold text-navy-800 uppercase tracking-wider">
+          Overview Dashboard
+        </h2>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setIsFilterDrawerOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-1 hover:bg-surface-2 text-ink-body hover:text-navy-800 text-xs font-bold shadow-2xs hover:shadow-xs transition cursor-pointer active:scale-98"
+          >
+            <SlidersHorizontal className="w-3.5 h-3.5 text-navy-600" />
+            <span>Filters</span>
+            {activeFilterCount > 0 && (
+              <span className="bg-navy-600 text-white rounded-full px-1.5 py-0.2 text-[9px] font-bold">
+                {activeFilterCount}
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
 
-      {/* 5 KPI Cards Row with Hover Tooltips */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {/* Filter Drawer Slideover */}
+      <FilterBar isOpen={isFilterDrawerOpen} onClose={() => setIsFilterDrawerOpen(false)} />
+
+      {/* 5 KPI Cards Row - Extremely Compact Height */}
+      <div className="grid grid-cols-5 gap-3 flex-shrink-0 h-[72px] min-h-0">
         <KpiCard
           title="Pillars"
           value={kpis.pillarsCount}
@@ -170,10 +196,9 @@ export default function OverviewDashboard() {
         />
       </div>
 
-      {/* Middle Row: Status Summary (clickable, replaces 2030 donut) + 2047 Donut */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Status Summary — now clickable (filters status2030), expands to fill freed space */}
-        <div className="lg:col-span-8">
+      {/* Middle Row: Status Summary & 2047 Donut */}
+      <div className="grid grid-cols-12 gap-3 flex-shrink-0 h-[168px] min-h-0">
+        <div className="col-span-8 h-full min-h-0">
           <StatusSummaryCard
             goals={filteredGoals}
             activeStatus={status2030}
@@ -181,8 +206,7 @@ export default function OverviewDashboard() {
           />
         </div>
 
-        {/* 2047 Donut — expanded to use freed space */}
-        <div className="lg:col-span-4">
+        <div className="col-span-4 h-full min-h-0">
           <ProgressDonut
             title="Progress Toward 2047 Target"
             counts={statusCounts2047}
@@ -193,14 +217,12 @@ export default function OverviewDashboard() {
       </div>
 
       {/* Bottom Chart Row: Interactive Pillar Bar, Tree Map, At Risk Table */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Pillar Bar (Click to Cross-Highlight) */}
-        <div className="lg:col-span-4 xl:col-span-3">
+      <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
+        <div className="col-span-3 h-full min-h-0">
           <PillarBarChart goals={filteredGoals} activePillar={pillar} onSelectPillar={setPillar} />
         </div>
 
-        {/* Theme Tree Map (Vibrant Colors, Click Toggle Deselect) */}
-        <div className="lg:col-span-8 xl:col-span-5">
+        <div className="col-span-5 h-full min-h-0">
           <ThemeTreeMap 
             goals={macroGoals}
             activeTheme={theme}
@@ -209,8 +231,7 @@ export default function OverviewDashboard() {
           />
         </div>
 
-        {/* At Risk Table */}
-        <div className="lg:col-span-12 xl:col-span-4">
+        <div className="col-span-4 h-full min-h-0">
           <AtRiskTable goals={filteredGoals} />
         </div>
       </div>
