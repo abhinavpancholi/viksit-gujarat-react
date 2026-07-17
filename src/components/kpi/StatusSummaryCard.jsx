@@ -73,12 +73,12 @@ export default function StatusSummaryCard({ goals = [], activeStatus = 'All', on
   const statuses = Object.keys(STATUS_METADATA)
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs h-full">
-      <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider mb-4 border-b border-surface-2 pb-2">
-        Macro Goals Status Summary
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-3.5 shadow-2xs h-full">
+      <h3 className="text-xs font-bold text-navy-800 uppercase tracking-wider mb-2 border-b border-surface-2 pb-1.5">
+        Macro Goals 2030 Target Status
       </h3>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {statuses.map((statusKey) => {
           const count = counts[statusKey] || 0
           const meta = STATUS_METADATA[statusKey]
@@ -93,24 +93,24 @@ export default function StatusSummaryCard({ goals = [], activeStatus = 'All', on
                   // Toggle: clicking the active status resets to 'All'
                   onSelectStatus(activeStatus === statusKey ? 'All' : statusKey)
                 }}
-                className={`p-4 rounded-xl border ${meta.borderClass} ${meta.bgClass} flex flex-col justify-between transition-all duration-300 hover:shadow-sm cursor-pointer h-full ${
+                className={`p-2.5 rounded-xl border ${meta.borderClass} ${meta.bgClass} flex flex-col justify-between transition-all duration-300 hover:shadow-sm cursor-pointer h-full ${
                   activeStatus !== 'All' && activeStatus !== statusKey ? 'opacity-40' : 'opacity-100'
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <span className={`text-xs font-bold ${meta.textClass} tracking-wide`}>
+                  <div className="flex items-center justify-between mb-0.5">
+                    <span className={`text-[10px] font-bold ${meta.textClass} tracking-wide`}>
                       {meta.label}
                     </span>
-                    <span className="text-[10px] font-medium text-ink-muted bg-surface-1 px-1.5 py-0.5 rounded-sm border border-surface-border">
+                    <span className="text-[9px] font-medium text-ink-muted bg-surface-1 px-1 py-0.5 rounded-sm border border-surface-border">
                       {meta.sub}
                     </span>
                   </div>
-                  <div className="text-2xl font-bold font-mono-num text-navy-800 mt-2">
+                  <div className="text-xl font-bold font-mono-num text-navy-800 mt-0.5 leading-none">
                     {count}
                   </div>
                 </div>
-                <div className="mt-3 flex items-center gap-1.5">
+                <div className="mt-1.5 flex items-center gap-1.5">
                   <div className="w-full bg-surface-2 rounded-full h-1.5 overflow-hidden">
                     <div 
                       className="h-1.5 rounded-full" 
@@ -120,7 +120,7 @@ export default function StatusSummaryCard({ goals = [], activeStatus = 'All', on
                       }}
                     />
                   </div>
-                  <span className="text-[11px] font-bold font-mono-num text-ink-body w-10 text-right">
+                  <span className="text-[10px] font-bold font-mono-num text-ink-body w-10 text-right">
                     {pct}%
                   </span>
                 </div>

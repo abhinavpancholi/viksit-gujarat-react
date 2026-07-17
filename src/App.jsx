@@ -1,10 +1,34 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useFilterStore } from './context/FilterStore'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import OverviewDashboard from './pages/OverviewDashboard'
 import MacroGoalDetail from './pages/MacroGoalDetail'
+import NewLayout from './pages/NewLayout'
+
+function AppContent() {
+  const location = useLocation()
+  const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/')
+
+  return (
+    <div className="min-h-screen flex flex-col bg-surface-0">
+      <Header />
+      
+      {/* Main Content Area */}
+      <main className={`flex-1 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 ${isGoalPage ? 'py-2' : 'py-6'}`}>
+        <Routes>
+          <Route path="/" element={<OverviewDashboard />} />
+          <Route path="/goal/:mgCode" element={<MacroGoalDetail />} />
+          <Route path="/v2/goal/:mgCode" element={<NewLayout />} />
+        </Routes>
+      </main>
+
+      {/* Footer only on overview page */}
+      {!isGoalPage && <Footer />}
+    </div>
+  )
+}
 
 function App() {
   const { initData, loading, error } = useFilterStore()
@@ -65,19 +89,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-surface-0">
-        <Header />
-        
-        {/* Main Content Area */}
-        <main className="flex-1 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Routes>
-            <Route path="/" element={<OverviewDashboard />} />
-            <Route path="/goal/:mgCode" element={<MacroGoalDetail />} />
-          </Routes>
-        </main>
-
-        <Footer />
-      </div>
+      <AppContent />
     </BrowserRouter>
   )
 }

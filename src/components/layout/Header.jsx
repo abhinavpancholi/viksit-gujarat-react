@@ -1,10 +1,11 @@
 import React from 'react'
-import { Calendar, Download, RefreshCw, Home } from 'lucide-react'
+import { Calendar, Download, Home, ArrowLeft } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
   const location = useLocation()
   const isGoalPage = location.pathname.includes('/goal/')
+  const isOverviewPage = location.pathname === '/'
 
   return (
     <header className="bg-surface-1 border-b border-surface-border sticky top-0 z-50 shadow-xs">
@@ -73,26 +74,40 @@ export default function Header() {
         {/* Action and Info widgets */}
         <div className="flex flex-wrap items-center gap-3 self-end sm:self-center">
           {/* Data as on */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-0 text-xs font-medium text-ink-body">
+          {/* <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-0 text-xs font-medium text-ink-body">
             <Calendar className="w-3.5 h-3.5 text-navy-600" />
             <span>Data as on: <span className="text-navy-800 font-semibold">May 13, 2025</span></span>
-          </div>
+          </div> */}
 
           {/* Download Button */}
-          <button 
+          {/* <button 
             onClick={() => window.print()}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             title="Download Dashboard as PDF / Print"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Export / Print</span>
-          </button>
+          </button> */}
 
-          {/* Last refreshed */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-0 text-xs font-medium text-ink-body">
-            <RefreshCw className="w-3.5 h-3.5 text-saffron-500 animate-spin-slow" />
-            <span>Refreshed: <span className="text-navy-800 font-semibold">10:30 AM</span></span>
-          </div>
+          {/* Back to Overview link (replaces Refreshed badge on goal pages) */}
+          {isGoalPage && (
+            <Link
+              to="/"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
+            >
+              {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
+              <span>Overview Dashboard</span>
+            </Link>
+          )}
+          {isOverviewPage && (
+            <Link
+              to="/v2/goal/HM3"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
+            >
+              {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
+              <span>Macro Goals Dashboard</span>
+            </Link>
+          )}
         </div>
       </div>
     </header>
