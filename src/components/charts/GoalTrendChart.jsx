@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid, LabelList } from 'recharts'
 import { Maximize2 } from 'lucide-react'
 
 export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpandClick, isExpanded }) {
@@ -69,44 +69,18 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
 
   return (
     <div className="bg-surface-1 border border-surface-border rounded-xl p-4 shadow-2xs flex flex-col h-full overflow-hidden">
-      {/* Header with title, horizon toggle, and expand button */}
+      {/* Header with title and expand button */}
       <div className="flex items-center justify-between gap-2 mb-2 border-b border-surface-2 pb-2 flex-shrink-0">
         <div className="min-w-0">
-          <h3 className={`${isExpanded ? 'text-sm' : 'text-xs'} font-bold text-navy-800 uppercase tracking-wider`}>
+          <h3 className={`${isExpanded ? 'text-lg' : 'text-lg'} font-bold text-navy-800 uppercase tracking-wider`}>
             Trend Analysis for Target {horizon}
           </h3>
-          <p className="text-[9px] text-ink-muted font-medium mt-0.5 truncate">
+          <p className="text-[13px] text-ink-muted font-medium mt-0.5 truncate">
             Historical & projected values vs. required path to target
           </p>
         </div>
 
         <div className="flex items-center gap-2 flex-shrink-0">
-          {/* Embedded Horizon Toggle */}
-          {onHorizonChange && (
-            <div className="flex bg-surface-2 rounded-lg p-0.5">
-              <button
-                onClick={() => onHorizonChange('2030')}
-                className={`px-2.5 py-1 rounded-md text-[10px] font-bold transition cursor-pointer ${
-                  horizon === '2030'
-                    ? 'bg-navy-800 text-white shadow-2xs'
-                    : 'text-navy-800 hover:bg-surface-border'
-                }`}
-              >
-                2030
-              </button>
-              <button
-                onClick={() => onHorizonChange('2047')}
-                className={`px-2.5 py-1 rounded-md text-[10px] font-bold transition cursor-pointer ${
-                  horizon === '2047'
-                    ? 'bg-navy-800 text-white shadow-2xs'
-                    : 'text-navy-800 hover:bg-surface-border'
-                }`}
-              >
-                2047
-              </button>
-            </div>
-          )}
-
           {/* Expand button */}
           {onExpandClick && (
             <button
@@ -133,20 +107,23 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-2)" />
             <XAxis 
               dataKey="name" 
-              tick={{ fill: 'var(--color-ink-muted)', fontSize: isExpanded ? 10 : 8, fontWeight: 500 }}
+              tick={{ fill: 'var(--color-ink-muted)', fontSize: isExpanded ? 11 : 9, fontWeight: 500 }}
               axisLine={{ stroke: 'var(--color-surface-border)' }}
               tickLine={false}
-              interval={isExpanded ? 0 : 'preserveStartEnd'}
+              interval="preserveStartEnd"
+              angle={isExpanded ? -45 : 0}
+              textAnchor={isExpanded ? "end" : "middle"}
+              height={isExpanded ? 55 : 30}
             />
             <YAxis 
-              tick={{ fill: 'var(--color-ink-muted)', fontSize: isExpanded ? 10 : 8, fontFamily: 'var(--font-mono)' }}
+              tick={{ fill: 'var(--color-ink-muted)', fontSize: isExpanded ? 11 : 9, fontFamily: 'var(--font-mono)' }}
               axisLine={false}
               tickLine={false}
             />
             <Tooltip
               contentStyle={{ 
                 fontFamily: 'var(--font-body)', 
-                fontSize: '11px',
+                fontSize: '13px',
                 borderRadius: '8px',
                 border: '1px solid var(--color-surface-border)'
               }}
@@ -158,8 +135,8 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
               verticalAlign="top" 
               height={28}
               iconType="circle"
-              iconSize={7}
-              wrapperStyle={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-ink-body)' }}
+              iconSize={8}
+              wrapperStyle={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-ink-body)' }}
             />
             
             {/* Actual History (Solid Grey) */}
@@ -171,7 +148,17 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
               strokeWidth={isExpanded ? 3 : 2} 
               dot={{ r: isExpanded ? 3 : 2, fill: '#6b7280' }}
               activeDot={{ r: isExpanded ? 5 : 4 }}
-            />
+            >
+              <LabelList 
+                dataKey="actual" 
+                position="top" 
+                offset={10}
+                fill="var(--color-ink-body)"
+                fontSize={isExpanded ? 14 : 12}
+                fontWeight={600}
+                formatter={(val) => (val !== null && val !== undefined ? val.toFixed(1) : '')}
+              />
+            </Line>
             
             {/* Projected Extension (Dashed Blue) */}
             <Line 

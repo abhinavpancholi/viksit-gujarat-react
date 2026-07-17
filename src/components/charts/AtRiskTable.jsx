@@ -22,13 +22,12 @@ export default function AtRiskTable({ goals = [] }) {
   const tableData = goals
     .filter(g => g.status2030.startsWith('Critical') || g.status2030.startsWith('At Risk'))
     .sort((a, b) => (b.gap2030Ratio || 0) - (a.gap2030Ratio || 0))
-    .slice(0, 10)
 
   return (
     <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full overflow-hidden">
       <div className="flex items-center justify-between mb-3 border-b border-surface-2 pb-2">
         <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
-          Top 10 Macro Goals at Risk / Critical
+          Macro Goals at Risk / Critical
         </h3>
         <span className="text-[10px] font-bold text-ink-muted bg-surface-0 border border-surface-border px-2 py-0.5 rounded-full uppercase tracking-wider">
           2030 Target
@@ -39,10 +38,10 @@ export default function AtRiskTable({ goals = [] }) {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="order-b border-surface-border text-[10px] font-bold text-ink-muted uppercase tracking-wider select-none">
-              <th className="py-2 pr-4 font-bold">Macro Goal</th>
-              <th className="py-2 px-3 font-bold hidden sm:table-cell">Pillar</th>
+              <th className="sticky top-0 z-10 bg-white py-2 pr-4 font-bold">Macro Goal</th>
+              <th className="sticky top-0 z-10 bg-white py-2 px-3 font-bold hidden sm:table-cell">Pillar</th>
               {/* <th className="py-2 px-3 font-bold text-right">Gap %</th> */}
-              <th className="py-2 pl-3 font-bold text-center">Status</th>
+              <th className="sticky top-0 z-10 bg-white py-2 pl-3 font-bold text-center">Status</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-surface-2/60">
