@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { Building2, Layers, Target, Trophy, SlidersHorizontal } from 'lucide-react'
+import { Building2, Layers, Target, Trophy, SlidersHorizontal, GitBranch } from 'lucide-react'
 import { useFilterStore } from '../context/FilterStore'
 import FilterBar from '../components/layout/FilterBar'
 import KpiCard from '../components/kpi/KpiCard'
@@ -8,6 +8,7 @@ import ProgressDonut from '../components/charts/ProgressDonut'
 import PillarBarChart from '../components/charts/PillarBarChart'
 import ThemeTreeMap from '../components/charts/ThemeTreeMap'
 import AtRiskTable from '../components/charts/AtRiskTable'
+import HierarchyModal from '../components/layout/HierarchyModal'
 
 // Mapping actual themes to pillars
 const THEME_PILLAR_MAP = {
@@ -26,6 +27,7 @@ const THEME_PILLAR_MAP = {
 
 export default function OverviewDashboard() {
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false)
+  const [isHierarchyOpen, setIsHierarchyOpen] = useState(false)
   const {
     trendData,
     macroGoals,
@@ -142,11 +144,21 @@ export default function OverviewDashboard() {
               </span>
             )}
           </button>
+          <button
+            onClick={() => setIsHierarchyOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-1 hover:bg-surface-2 text-ink-body hover:text-navy-800 text-xs font-bold shadow-2xs hover:shadow-xs transition cursor-pointer active:scale-98"
+          >
+            <GitBranch className="w-3.5 h-3.5 text-navy-600" />
+            <span>Explore Hierarchy</span>
+          </button>
         </div>
       </div>
 
       {/* Filter Drawer Slideover */}
       <FilterBar isOpen={isFilterDrawerOpen} onClose={() => setIsFilterDrawerOpen(false)} />
+
+      {/* Hierarchy Drill-Through Modal */}
+      <HierarchyModal isOpen={isHierarchyOpen} onClose={() => setIsHierarchyOpen(false)} />
 
       {/* 5 KPI Cards Row - Extremely Compact Height */}
       <div className="grid grid-cols-5 gap-3 flex-shrink-0 h-[72px] min-h-0">
