@@ -5,10 +5,11 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import OverviewDashboard from './pages/OverviewDashboard'
 import MacroGoalDetail from './pages/MacroGoalDetail'
+import NewLayout from './pages/NewLayout'
 
 function AppContent() {
   const location = useLocation()
-  const isGoalPage = location.pathname.includes('/goal/')
+  const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/')
 
   return (
     <div className="min-h-screen flex flex-col bg-surface-0">
@@ -19,6 +20,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<OverviewDashboard />} />
           <Route path="/goal/:mgCode" element={<MacroGoalDetail />} />
+          <Route path="/v2/goal/:mgCode" element={<NewLayout />} />
         </Routes>
       </main>
 
