@@ -75,7 +75,7 @@ export default function StatusSummaryCard({ goals = [], activeStatus = 'All', on
   return (
     <div className="bg-surface-1 border border-surface-border rounded-xl p-3.5 shadow-2xs h-full">
       <h3 className="text-xs font-bold text-navy-800 uppercase tracking-wider mb-2 border-b border-surface-2 pb-1.5">
-        Macro Goals Status Summary
+        Macro Goals 2030 Target Status
       </h3>
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

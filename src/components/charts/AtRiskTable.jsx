@@ -31,17 +31,17 @@ export default function AtRiskTable({ goals = [] }) {
           Top 10 Macro Goals at Risk / Critical
         </h3>
         <span className="text-[10px] font-bold text-ink-muted bg-surface-0 border border-surface-border px-2 py-0.5 rounded-full uppercase tracking-wider">
-          2030 Horizon
+          2030 Target
         </span>
       </div>
 
       <div className="flex-1 overflow-x-auto min-h-0 overflow-y-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="border-b border-surface-border text-[10px] font-bold text-ink-muted uppercase tracking-wider select-none">
+            <tr className="order-b border-surface-border text-[10px] font-bold text-ink-muted uppercase tracking-wider select-none">
               <th className="py-2 pr-4 font-bold">Macro Goal</th>
               <th className="py-2 px-3 font-bold hidden sm:table-cell">Pillar</th>
-              <th className="py-2 px-3 font-bold text-right">Gap %</th>
+              {/* <th className="py-2 px-3 font-bold text-right">Gap %</th> */}
               <th className="py-2 pl-3 font-bold text-center">Status</th>
             </tr>
           </thead>
@@ -56,14 +56,14 @@ export default function AtRiskTable({ goals = [] }) {
               tableData.map((goal) => {
                 const badgeStyle = BADGE_CLASSES[goal.status2030] || 'bg-surface-0 text-ink-muted'
                 const statusLabel = goal.status2030.split(' (')[0]
-                const gapPercent = goal.gap2030Ratio !== null 
-                  ? `${(goal.gap2030Ratio * 100).toFixed(0)}%` 
+                const gapPercent = goal.gap2030Ratio !== null
+                  ? `${(goal.gap2030Ratio * 100).toFixed(0)}%`
                   : 'N/A'
 
                 return (
-                  <tr 
+                  <tr
                     key={goal.mgCode}
-                    onClick={() => navigate(`/goal/${goal.mgCode}`)}
+                    onClick={() => navigate(`/v2/goal/${goal.mgCode}`)}
                     className="hover:bg-surface-0 cursor-pointer transition duration-150 group"
                   >
                     <td className="py-2 pr-4 text-xs font-semibold text-ink-body group-hover:text-navy-800 transition">
@@ -77,9 +77,9 @@ export default function AtRiskTable({ goals = [] }) {
                     <td className="py-2 px-3 text-xs text-ink-muted hidden sm:table-cell font-medium">
                       {PILLAR_SHORT_MAP[goal.pillar] || goal.pillar}
                     </td>
-                    <td className="py-2 px-3 text-xs text-right font-mono-num font-bold text-navy-800">
+                    {/* <td className="py-2 px-3 text-xs text-right font-mono-num font-bold text-navy-800">
                       {gapPercent}
-                    </td>
+                    </td> */}
                     <td className="py-2 pl-3 text-center">
                       <span className={`inline-flex items-center justify-center px-2 py-0.5 text-[10px] font-bold rounded-md border ${badgeStyle}`}>
                         {statusLabel}
