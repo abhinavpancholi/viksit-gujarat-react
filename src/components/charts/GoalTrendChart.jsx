@@ -149,15 +149,49 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
               dot={{ r: isExpanded ? 3 : 2, fill: '#6b7280' }}
               activeDot={{ r: isExpanded ? 5 : 4 }}
             >
-              <LabelList 
+              {/* <LabelList 
                 dataKey="actual" 
-                position="top" 
+                position="bottom" 
                 offset={10}
                 fill="var(--color-ink-body)"
                 fontSize={isExpanded ? 14 : 12}
                 fontWeight={600}
                 formatter={(val) => (val !== null && val !== undefined ? val.toFixed(1) : '')}
-              />
+              /> */}
+              <LabelList
+              dataKey="actual"
+              fill="var(--color-ink-body)"
+              fontSize={isExpanded ? 14 : 12}
+              fontWeight={600}
+              content={(props) => {
+                const { x, y, value, index } = props;
+
+                // Don't render anything if the value is missing
+                if (value === null || value === undefined) return null;
+
+                const formattedValue = value.toFixed(1);
+                const isEven = index % 2 === 0;
+
+                // Alternate the vertical offset (dy) 
+                // Even indexes go above the dot (-15), Odd indexes go below (+22)
+                const dy = isEven ? -18 : 18;
+
+                return (
+                  <text
+                    x={x}
+                    y={y}
+                    dy={dy}
+                    fill={props.fill}
+                    fontSize={props.fontSize}
+                    fontWeight={props.fontWeight}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                  >
+                    {formattedValue}
+                  </text>
+                );
+              }}
+            />
             </Line>
             
             {/* Projected Extension (Dashed Blue) */}
