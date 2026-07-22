@@ -1,31 +1,61 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useFilterStore } from './context/FilterStore'
+import { AuthProvider } from './context/AuthContext'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import OverviewDashboard from './pages/OverviewDashboard'
 import MacroGoalDetail from './pages/MacroGoalDetail'
 import NewLayout from './pages/NewLayout'
+import LoginPage from './pages/LoginPage'
+import ProtectedRoute from './components/auth/ProtectedRoute'
 
 function AppContent() {
   const location = useLocation()
+  const isLoginPage = location.pathname === '/login'
   const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/')
 
   return (
     <div className="min-h-screen flex flex-col bg-surface-0">
-      <Header />
+      {/* Header is hidden on the login page — it shows nothing useful there */}
+      {!isLoginPage && <Header />}
       
       {/* Main Content Area */}
-      <main className={`flex-1 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 ${isGoalPage ? 'py-2' : 'py-6'}`}>
+      <main className={`flex-1 w-full ${!isLoginPage ? 'max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8' : ''} ${isGoalPage ? 'py-2' : isLoginPage ? '' : 'py-6'}`}>
         <Routes>
-          <Route path="/" element={<OverviewDashboard />} />
-          <Route path="/goal/:mgCode" element={<MacroGoalDetail />} />
-          <Route path="/v2/goal/:mgCode" element={<NewLayout />} />
+          {/* Public route */}
+          <Route path="/login" element={<LoginPage />} />
+
+          {/* Protected routes */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <OverviewDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/goal/:mgCode"
+            element={
+              <ProtectedRoute>
+                <MacroGoalDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/v2/goal/:mgCode"
+            element={
+              <ProtectedRoute>
+                <NewLayout />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
 
       {/* Footer only on overview page */}
-      {!isGoalPage && <Footer />}
+      {!isGoalPage && !isLoginPage && <Footer />}
     </div>
   )
 }
@@ -89,7 +119,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <AppContent />
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
     </BrowserRouter>
   )
 }
