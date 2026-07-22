@@ -87,8 +87,8 @@ export default function LoginPage() {
           <div className="max-w-md w-full mx-auto">
             {/* Header */}
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-800/10 text-navy-800 text-xs font-bold tracking-wide uppercase mb-3">
-                Dashboard Portal
+              <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-navy-800/10 text-navy-800 text-xl font-bold tracking-wide uppercase mb-3">
+                VIKSIT RAJYA @2047 Dashboard Portal
               </div>
               <h1 className="font-display text-3xl font-bold text-navy-800 tracking-tight">
                 Sign In
