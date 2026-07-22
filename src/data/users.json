@@ -1,0 +1,32 @@
+[
+  {
+    "username": "public_user",
+    "password": "public123",
+    "role": "public",
+    "name": "Public 1"
+  },
+  {
+    "username": "officer",
+    "password": "officer123",
+    "role": "officer",
+    "name": "Officer 1"
+  },
+  {
+    "username": "admin",
+    "password": "admin789",
+    "role": "admin",
+    "name": "Admin 123"
+  },
+  {
+    "username": "user",
+    "password": "user123",
+    "role": "public",
+    "name": "User 1"
+  },
+  {
+    "username": "test",
+    "password": "test",
+    "role": "public",
+    "name": "User 2"
+  }
+]
