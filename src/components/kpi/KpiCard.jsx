@@ -13,13 +13,16 @@ const PILLAR_SHORT_MAP = {
  *   'goals'    — object list: Pillar | Theme | Macro Goal  (no Code)
  *   default    — legacy: Code | Macro Goal | Pillar
  */
-export default function KpiCard({ title, value, icon: Icon, colorClass, borderClass, tooltipItems, tooltipMode }) {
+export default function KpiCard({ title, value, icon: Icon, colorClass, borderClass, tooltipItems, tooltipMode, onClick }) {
   const isStringList = tooltipItems && tooltipItems.length > 0 && typeof tooltipItems[0] === 'string'
 
   return (
     <div className="relative group">
       {/* KPI Card */}
-      <div className={`bg-surface-1 border border-surface-border rounded-xl p-3.5 flex items-center justify-between shadow-2xs hover:shadow-xs transition-all duration-300 hover:-translate-y-0.5 cursor-help h-full`}>
+      <div
+        onClick={onClick}
+        className={`bg-surface-1 border border-surface-border rounded-xl p-3.5 flex items-center justify-between shadow-2xs hover:shadow-xs transition-all duration-300 hover:-translate-y-0.5 ${onClick ? 'cursor-pointer' : 'cursor-help'} h-full`}
+      >
         <div className="flex flex-col gap-1">
           <span className="text-[11px] font-bold text-ink-muted tracking-wider uppercase leading-tight">
             {title}

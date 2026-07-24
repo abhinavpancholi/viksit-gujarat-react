@@ -254,12 +254,11 @@ export default function NewLayout() {
             <div className="min-w-0 flex-1">
               {/* Breadcrumb row */}
               <div className="flex items-center gap-2 mb-1.5 text-xs">
-                <Link to="/" className="text-ink-muted hover:text-navy-800 transition font-semibold flex items-center gap-1">
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  Dashboard
-                </Link>
-                <span className="text-surface-border">/</span>
-                <span className="font-semibold text-ink-muted">{goal.pillar}</span>
+                <span className="font-bold text-navy-800 uppercase tracking-wider">
+                    Analysis Dashboard
+                </span>
+                <span className="font-bold text-surface-border">/</span>
+                <span className="font-semibold text-ink-muted">Macro Goal Pillar - {goal.pillar}</span>
               </div>
 
               {/* Goal title with switcher */}

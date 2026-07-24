@@ -1,5 +1,6 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts'
+import { Table, BarChart3 } from 'lucide-react'
 
 const PILLAR_COLOR_MAP = {
   'Thriving Economy - Earning Well': 'var(--color-pillar-economy)',
@@ -13,7 +14,7 @@ const SHORT_NAMES = {
   'Key Enablers': 'Key Enablers'
 }
 
-export default function PillarBarChart({ goals = [], activePillar = 'All', onSelectPillar }) {
+export default function PillarBarChart({ goals = [], activePillar = 'All', onSelectPillar, viewMode = 'pillars', onViewChange }) {
   // Group and count goals by pillar
   const pillarCounts = goals.reduce((acc, goal) => {
     acc[goal.pillar] = (acc[goal.pillar] || 0) + 1
@@ -43,14 +44,35 @@ export default function PillarBarChart({ goals = [], activePillar = 'All', onSel
   }
 
   return (
-    <div className="bg-surface-1 border border-surface-border rounded-xl p-5 shadow-2xs flex flex-col h-full overflow-hidden">
-      <div className="flex items-center justify-between mb-4 border-b border-surface-2 pb-2">
-        <h3 className="text-sm font-bold text-navy-800 uppercase tracking-wider">
-          Number of Macro Goals by Pillars
+    <div className="bg-surface-1 border border-surface-border rounded-xl p-3.5 shadow-2xs flex flex-col h-full overflow-hidden">
+      <div className="flex items-center justify-between pb-2 mb-2 border-b border-surface-2 flex-shrink-0">
+        <h3 className="text-xs font-bold text-navy-800 uppercase tracking-wider truncate pr-1">
+          Macro Goals by Pillars
         </h3>
-        {/* <span className="text-[10px] font-bold text-ink-muted bg-surface-0 border border-surface-border px-2 py-0.5 rounded-full uppercase tracking-wider">
-          Click Bars to Filter
-        </span> */}
+        {onViewChange && (
+          <div className="flex items-center bg-surface-2/80 p-0.5 rounded-lg border border-surface-border flex-shrink-0">
+            <button
+              onClick={() => onViewChange('vision')}
+              className={`px-2 py-0.5 text-[10px] font-bold rounded-md transition flex items-center gap-1 cursor-pointer ${
+                viewMode === 'vision' ? 'bg-white text-navy-800 shadow-2xs' : 'text-ink-muted hover:text-navy-800'
+              }`}
+              title="View State Vision & Macro Strategy Table"
+            >
+              <Table className="w-3 h-3" />
+              <span>Vision</span>
+            </button>
+            <button
+              onClick={() => onViewChange('pillars')}
+              className={`px-2 py-0.5 text-[10px] font-bold rounded-md transition flex items-center gap-1 cursor-pointer ${
+                viewMode === 'pillars' ? 'bg-white text-navy-800 shadow-2xs' : 'text-ink-muted hover:text-navy-800'
+              }`}
+              title="View Macro Goals by Pillar Chart"
+            >
+              <BarChart3 className="w-3 h-3" />
+              <span>Pillars</span>
+            </button>
+          </div>
+        )}
       </div>
 
       <div style={{ flex: 1, minHeight: 0 }}>

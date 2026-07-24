@@ -29,6 +29,12 @@ const THEME_SHORT_NAMES = {
   'Governance 2.0: Reform, Perform and Transform': 'Governance 2.0'
 }
 
+const PILLAR_SHORT_NAMES = {
+  'Thriving Economy - Earning Well': 'Economy',
+  'Empowered Citizen - Living Well': 'Citizen',
+  'Key Enablers': 'Enablers'
+}
+
 /** Approximate text truncation based on tile pixel width */
 function truncateText(text, maxPx, fontSize) {
   const avgCharWidth = fontSize * 0.56
@@ -200,7 +206,7 @@ function TreemapTooltip({ tooltip }) {
             borderBottom: i < tooltip.goals.length - 1 ? '1px solid #e2e8f0' : 'none',
           }}>
             <span style={{ color: tooltip.color, fontWeight: 700, flexShrink: 0, fontSize: 9.5, marginTop: 1 }}>
-              {goal.code}
+              {PILLAR_SHORT_NAMES[goal.pillar] || goal.pillar}
             </span>
             <span>{goal.name}</span>
           </li>
@@ -222,7 +228,7 @@ export default function ThemeTreeMap({ goals = [], activeTheme = 'All', onSelect
   const themeGoalsMap = useMemo(() => {
     return goals.reduce((acc, goal) => {
       if (!acc[goal.theme]) acc[goal.theme] = []
-      acc[goal.theme].push({ code: goal.mgCode, name: goal.macroGoal })
+      acc[goal.theme].push({ code: goal.mgCode, name: goal.macroGoal, pillar: goal.pillar })
       return acc
     }, {})
   }, [goals])
