@@ -343,10 +343,6 @@ export default function MacroGoalsTableModal({ isOpen, onClose }) {
                   return (
                     <tr
                       key={goal.mgCode}
-                      onClick={() => {
-                        onClose()
-                        navigate(`/v2/goal/${goal.mgCode}`)
-                      }}
                       className="hover:bg-gray-300 cursor-pointer transition duration-50 group"
                     >
                       {/* Code */}
