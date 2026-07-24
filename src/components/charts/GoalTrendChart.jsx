@@ -57,6 +57,33 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
     return Object.values(yearMap).sort((a, b) => a.year - b.year)
   }, [trend, horizon])
 
+  // Find index of the first & last non-null values for projected & recommended lines
+  const firstProjectedIndex = useMemo(() => {
+    return chartData.findIndex(d => d.projected !== null && d.projected !== undefined)
+  }, [chartData])
+
+  const lastProjectedIndex = useMemo(() => {
+    for (let i = chartData.length - 1; i >= 0; i--) {
+      if (chartData[i].projected !== null && chartData[i].projected !== undefined) {
+        return i
+      }
+    }
+    return -1
+  }, [chartData])
+
+  const firstRecommendedIndex = useMemo(() => {
+    return chartData.findIndex(d => d.recommended !== null && d.recommended !== undefined)
+  }, [chartData])
+
+  const lastRecommendedIndex = useMemo(() => {
+    for (let i = chartData.length - 1; i >= 0; i--) {
+      if (chartData[i].recommended !== null && chartData[i].recommended !== undefined) {
+        return i
+      }
+    }
+    return -1
+  }, [chartData])
+
   if (!trend) {
     return (
       <div className="bg-surface-1 border border-surface-border rounded-xl p-6 shadow-2xs flex items-center justify-center h-full">
@@ -204,7 +231,32 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
               strokeDasharray="4 4"
               dot={{ r: isExpanded ? 3 : 2, fill: '#2563eb' }}
               activeDot={{ r: isExpanded ? 5 : 4 }}
-            />
+            >
+              <LabelList 
+                dataKey="projected"
+                content={(props) => {
+                  const { x, y, value, index } = props
+                  if (value === null || value === undefined) return null
+                  // Do NOT show first data label (overlaps with last actual history label)
+                  if (index === firstProjectedIndex) return null
+                  // Render labels on alternating points (even indices or last milestone point)
+                  if (index % 2 !== 0 && index !== lastProjectedIndex) return null
+
+                  return (
+                    <text
+                      x={x}
+                      y={y - 14}
+                      fill="#2563eb"
+                      fontSize={isExpanded ? 14 : 12}
+                      fontWeight={700}
+                      textAnchor="middle"
+                    >
+                      {Number(value).toFixed(1)}
+                    </text>
+                  )
+                }}
+              />
+            </Line>
             
             {/* Recommended Target Path (Dashed Orange) */}
             <Line 
@@ -216,7 +268,32 @@ export default function GoalTrendChart({ trend, horizon, onHorizonChange, onExpa
               strokeDasharray="5 5"
               dot={{ r: isExpanded ? 3 : 2, fill: '#ea580c' }}
               activeDot={{ r: isExpanded ? 5 : 4 }}
-            />
+            >
+              <LabelList 
+                dataKey="recommended"
+                content={(props) => {
+                  const { x, y, value, index } = props
+                  if (value === null || value === undefined) return null
+                  // Do NOT show first data label (overlaps with last actual history label)
+                  if (index === firstRecommendedIndex) return null
+                  // Render labels on alternating points (odd indices or last milestone point)
+                  if (index % 2 === 0 && index !== lastRecommendedIndex) return null
+
+                  return (
+                    <text
+                      x={x}
+                      y={y + 20}
+                      fill="#ea580c"
+                      fontSize={isExpanded ? 14 : 12}
+                      fontWeight={700}
+                      textAnchor="middle"
+                    >
+                      {Number(value).toFixed(1)}
+                    </text>
+                  )
+                }}
+              />
+            </Line>
           </LineChart>
         </ResponsiveContainer>
       </div>
