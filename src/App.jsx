@@ -77,7 +77,7 @@ function App() {
           </div>
           <div>
             <h2 className="font-display text-xl font-bold text-navy-800 tracking-tight">
-              VIKSI Rajya @ 2047
+              VIKSIT Rajya @ 2047
             </h2>
             <p className="text-s text-ink-muted mt-1 animate-pulse">
               Transforming State • Initializing Dashboard Data...

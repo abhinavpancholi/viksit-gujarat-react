@@ -1,14 +1,16 @@
 import React, { useMemo, useState } from 'react'
-import { Building2, Layers, Target, Trophy, SlidersHorizontal, GitBranch } from 'lucide-react'
+import { Building2, Layers, Target, Trophy, SlidersHorizontal, GitBranch, Table } from 'lucide-react'
 import { useFilterStore } from '../context/FilterStore'
 import FilterBar from '../components/layout/FilterBar'
 import KpiCard from '../components/kpi/KpiCard'
 import StatusSummaryCard from '../components/kpi/StatusSummaryCard'
 import ProgressDonut from '../components/charts/ProgressDonut'
 import PillarBarChart from '../components/charts/PillarBarChart'
+import StateVisionTable from '../components/charts/StateVisionTable'
 import ThemeTreeMap from '../components/charts/ThemeTreeMap'
 import AtRiskTable from '../components/charts/AtRiskTable'
 import HierarchyModal from '../components/layout/HierarchyModal'
+import MacroGoalsTableModal from '../components/layout/MacroGoalsTableModal'
 
 // Mapping actual themes to pillars
 const THEME_PILLAR_MAP = {
@@ -28,6 +30,8 @@ const THEME_PILLAR_MAP = {
 export default function OverviewDashboard() {
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false)
   const [isHierarchyOpen, setIsHierarchyOpen] = useState(false)
+  const [isGoalsTableOpen, setIsGoalsTableOpen] = useState(false)
+  const [bottomLeftView, setBottomLeftView] = useState('vision')
   const {
     trendData,
     macroGoals,
@@ -129,7 +133,7 @@ export default function OverviewDashboard() {
       {/* Dashboard Top Header Control Bar */}
       <div className="flex items-center justify-between border-b border-surface-border pb-1 flex-shrink-0">
         <h2 className="text-xs font-bold text-navy-800 uppercase tracking-wider">
-          Overview Dashboard
+          Macro Goal Dashboard
         </h2>
         <div className="flex items-center gap-3">
           <button
@@ -151,6 +155,13 @@ export default function OverviewDashboard() {
             <GitBranch className="w-3.5 h-3.5 text-navy-600" />
             <span>Explore Hierarchy</span>
           </button>
+          <button
+            onClick={() => setIsGoalsTableOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-border bg-surface-1 hover:bg-surface-2 text-ink-body hover:text-navy-800 text-xs font-bold shadow-2xs hover:shadow-xs transition cursor-pointer active:scale-98"
+          >
+            <Table className="w-3.5 h-3.5 text-navy-600" />
+            <span>All Goals Directory</span>
+          </button>
         </div>
       </div>
 
@@ -159,6 +170,9 @@ export default function OverviewDashboard() {
 
       {/* Hierarchy Drill-Through Modal */}
       <HierarchyModal isOpen={isHierarchyOpen} onClose={() => setIsHierarchyOpen(false)} />
+
+      {/* Master Macro Goals Directory Table Modal */}
+      <MacroGoalsTableModal isOpen={isGoalsTableOpen} onClose={() => setIsGoalsTableOpen(false)} />
 
       {/* 5 KPI Cards Row - Extremely Compact Height */}
       <div className="grid grid-cols-5 gap-3 flex-shrink-0 h-[72px] min-h-0">
@@ -169,6 +183,7 @@ export default function OverviewDashboard() {
           colorClass="bg-purple-500/10 text-purple-600"
           borderClass="border-purple-500/20"
           tooltipItems={kpiTooltips.pillars}
+          onClick={() => setBottomLeftView(prev => prev === 'pillars' ? 'vision' : 'pillars')}
         />
         <KpiCard
           title="Themes"
@@ -187,6 +202,7 @@ export default function OverviewDashboard() {
           borderClass="border-emerald-500/20"
           tooltipItems={kpiTooltips.goals}
           tooltipMode="goals"
+          onClick={() => setIsGoalsTableOpen(true)}
         />
         <KpiCard
           title="Near Achievement (2030)"
@@ -228,10 +244,23 @@ export default function OverviewDashboard() {
         </div>
       </div>
 
-      {/* Bottom Chart Row: Interactive Pillar Bar, Tree Map, At Risk Table */}
+      {/* Bottom Chart Row: State Vision Table / Pillar Bar Toggle (3 cols), Tree Map (5 cols), At Risk Table (4 cols) */}
       <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
         <div className="col-span-3 h-full min-h-0">
-          <PillarBarChart goals={filteredGoals} activePillar={pillar} onSelectPillar={setPillar} />
+          {bottomLeftView === 'vision' ? (
+            <StateVisionTable
+              viewMode={bottomLeftView}
+              onViewChange={setBottomLeftView}
+            />
+          ) : (
+            <PillarBarChart
+              goals={filteredGoals}
+              activePillar={pillar}
+              onSelectPillar={setPillar}
+              viewMode={bottomLeftView}
+              onViewChange={setBottomLeftView}
+            />
+          )}
         </div>
 
         <div className="col-span-5 h-full min-h-0">

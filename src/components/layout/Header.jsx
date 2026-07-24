@@ -34,7 +34,7 @@ export default function Header() {
           <div>
             <div className="flex items-center gap-2">
               <h1 className="font-display text-xl sm:text-2xl font-bold text-navy-800 tracking-tight leading-tight">
-                VIKSIT RAJYA @ 2047
+                VIKSIT RAJYA @ 2047 - MACRO GOAL DASHBOARD
               </h1>
               {isGoalPage && (
                 <Link
@@ -61,7 +61,7 @@ export default function Header() {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             >
               {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
-              <span>Overview Dashboard</span>
+              <span>Macro Goal Dashboard</span>
             </Link>
           )}
           {isOverviewPage && (
@@ -70,7 +70,7 @@ export default function Header() {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             >
               {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
-              <span>Macro Goals Dashboard</span>
+              <span>Analysis Dashboard</span>
             </Link>
           )}
 
