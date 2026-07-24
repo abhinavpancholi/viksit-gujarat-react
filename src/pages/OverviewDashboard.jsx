@@ -6,6 +6,7 @@ import KpiCard from '../components/kpi/KpiCard'
 import StatusSummaryCard from '../components/kpi/StatusSummaryCard'
 import ProgressDonut from '../components/charts/ProgressDonut'
 import PillarBarChart from '../components/charts/PillarBarChart'
+import StateVisionTable from '../components/charts/StateVisionTable'
 import ThemeTreeMap from '../components/charts/ThemeTreeMap'
 import AtRiskTable from '../components/charts/AtRiskTable'
 import HierarchyModal from '../components/layout/HierarchyModal'
@@ -228,10 +229,10 @@ export default function OverviewDashboard() {
         </div>
       </div>
 
-      {/* Bottom Chart Row: Interactive Pillar Bar, Tree Map, At Risk Table */}
+      {/* Bottom Chart Row: State Vision Table (3 cols), Tree Map (5 cols), At Risk Table (4 cols) */}
       <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
         <div className="col-span-3 h-full min-h-0">
-          <PillarBarChart goals={filteredGoals} activePillar={pillar} onSelectPillar={setPillar} />
+          <StateVisionTable />
         </div>
 
         <div className="col-span-5 h-full min-h-0">
