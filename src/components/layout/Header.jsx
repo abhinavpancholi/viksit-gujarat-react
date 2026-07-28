@@ -6,7 +6,8 @@ import { useAuth } from '../../context/AuthContext'
 
 export default function Header() {
   const location = useLocation()
-  const isGoalPage = location.pathname.includes('/goal/')
+  const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/')
+  const isFruitYieldPage = location.pathname === '/fruit-yield'
   const isOverviewPage = location.pathname === '/'
   const { currentUser, logout } = useAuth()
 
@@ -28,15 +29,15 @@ export default function Header() {
             {/* Gujarat Abstract Map Shape SVG */}
             <img src="/indiamap.png" alt="Gujarat Map" className="h-14" />
             {/* GRIT Logo Emblem SVG */}
-            <img src="/vikistrajyalogo.png" alt="GRIT Logo" className="h-14" />
+            <img src="/gritlogo.jpg" alt="GRIT Logo" className="h-14" />
           </div>
 
           <div>
             <div className="flex items-center gap-2">
               <h1 className="font-display text-xl sm:text-2xl font-bold text-navy-800 tracking-tight leading-tight">
-                VIKSIT RAJYA @ 2047 - MACRO GOAL DASHBOARD
+                VIKSIT GUJARAT @ 2047 - MACRO GOAL DASHBOARD
               </h1>
-              {isGoalPage && (
+              {(isGoalPage || isFruitYieldPage) && (
                 <Link
                   to="/"
                   className="flex items-center justify-center p-1 rounded-md text-ink-muted hover:bg-surface-2 hover:text-navy-800 transition"
@@ -47,29 +48,45 @@ export default function Header() {
               )}
             </div>
             <p className="text-xs sm:text-sm text-ink-muted font-medium">
-              Viksit Rajya Institution for Transformation (VRIT)
+              Gujarat Rajya Institution for Transformation (GRIT)
             </p>
           </div>
         </div>
 
         {/* Action and Info widgets */}
         <div className="flex flex-wrap items-center gap-3 self-end sm:self-center">
-          {/* Back to Overview link (replaces Refreshed badge on goal pages) */}
+          {/* Navigation links */}
           {isGoalPage && (
+            <>
+              <Link
+                to="/fruit-yield"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
+              >
+                <span>Deep Dive M-Goal</span>
+              </Link>
+              <Link
+                to="/"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
+              >
+                <span>Macro Goal Dashboard</span>
+              </Link>
+            </>
+          )}
+
+          {isFruitYieldPage && (
             <Link
-              to="/"
+              to="/v2/goal/HM3"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             >
-              {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
-              <span>Macro Goal Dashboard</span>
+              <span>Analysis Dashboard</span>
             </Link>
           )}
+
           {isOverviewPage && (
             <Link
               to="/v2/goal/HM3"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             >
-              {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
               <span>Analysis Dashboard</span>
             </Link>
           )}

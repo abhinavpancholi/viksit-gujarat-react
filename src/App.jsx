@@ -8,12 +8,13 @@ import OverviewDashboard from './pages/OverviewDashboard'
 import MacroGoalDetail from './pages/MacroGoalDetail'
 import NewLayout from './pages/NewLayout'
 import LoginPage from './pages/LoginPage'
+import FruitYieldDashboard from './pages/FruitYieldDashboard'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 
 function AppContent() {
   const location = useLocation()
   const isLoginPage = location.pathname === '/login'
-  const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/')
+  const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/') || location.pathname === '/fruit-yield'
 
   return (
     <div className="min-h-screen flex flex-col bg-surface-0">
@@ -21,7 +22,7 @@ function AppContent() {
       {!isLoginPage && <Header />}
 
       {/* Main Content Area */}
-      <main className={`flex-1 w-full ${!isLoginPage ? 'max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8' : ''} ${isGoalPage ? 'py-2' : isLoginPage ? '' : 'py-6'}`}>
+      <main className={`flex-1 w-full ${!isLoginPage && location.pathname !== '/fruit-yield' ? 'max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8' : ''} ${isGoalPage ? 'py-2' : isLoginPage ? '' : 'py-6'}`}>
         <Routes>
           {/* Public route */}
           <Route path="/login" element={<LoginPage />} />
@@ -32,6 +33,14 @@ function AppContent() {
             element={
               <ProtectedRoute>
                 <OverviewDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/fruit-yield"
+            element={
+              <ProtectedRoute>
+                <FruitYieldDashboard />
               </ProtectedRoute>
             }
           />

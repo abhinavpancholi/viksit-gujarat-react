@@ -8,7 +8,7 @@ export default function Footer() {
           Note: Percentages may not add up to 100% due to rounding.
         </p>
         <p className="font-bold text-navy-800 text-center sm:text-right uppercase tracking-wider text-[10px]">
-          Source: VIKSIT RAJYA Dashboard | VRIT
+          Source: VIKSIT GUJARAT Dashboard | GRIT
         </p>
       </div>
     </footer>
