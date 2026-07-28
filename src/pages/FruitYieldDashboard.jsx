@@ -176,27 +176,23 @@ export default function FruitYieldDashboard() {
   const isAllFYsSelected = selectedFYs.size === ALL_FYS.length
 
   return (
-    <div className="h-[calc(100vh-65px)] flex flex-col min-h-0 overflow-hidden bg-surface-0 font-sans antialiased text-ink-body">
-      {/* ═══════════ TOP CONTROL BAR & NAVIGATION ═══════════ */}
-      <div className="bg-white border-b border-surface-border px-5 py-2 flex-shrink-0 shadow-xs">
-        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
+    <div className="h-[calc(100vh-68px)] flex flex-col min-h-0 overflow-hidden bg-surface-0 font-sans antialiased text-ink-body">
+      {/* ═══════════ TOP CONTROL BAR (Single Unified Row) ═══════════ */}
+      <div className="bg-white border-b border-surface-border px-4 py-1.5 flex-shrink-0 shadow-xs">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           
-          {/* Centered Main Title */}
-          <div className="flex-1 text-center">
-            <h1 className="font-display text-xl sm:text-2xl font-bold text-navy-800 tracking-tight">
+          {/* Main Title */}
+          <div className="flex-shrink-0">
+            <h1 className="font-display text-2xl font-extrabold text-navy-800 tracking-tight">
               Yield of Fruits (MT/Ha)
             </h1>
           </div>
-        </div>
 
-        {/* ═══════════ FY SLICER & SUMMARY KPI BOX ═══════════ */}
-        <div className="max-w-[1600px] mx-auto mt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-          
           {/* FY Multi-Select Slicer Bar */}
-          <div className="flex-1 overflow-x-auto bg-surface-1 border border-surface-border rounded-lg p-0.5 flex items-center gap-1 shadow-xs">
+          <div className="flex-1 max-w-3xl overflow-x-auto bg-surface-1 border border-surface-border rounded-md p-0.5 flex items-center gap-1 shadow-xs">
             <button
               onClick={selectAllFYs}
-              className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition cursor-pointer flex-shrink-0 ${
+              className={`px-2 py-0.5 rounded text-[10px] font-bold transition cursor-pointer flex-shrink-0 ${
                 isAllFYsSelected 
                   ? 'bg-navy-800 text-white shadow-xs' 
                   : 'bg-white text-ink-body hover:bg-surface-2 border border-surface-border'
@@ -211,7 +207,7 @@ export default function FruitYieldDashboard() {
                 <button
                   key={fy}
                   onClick={() => toggleFY(fy)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition cursor-pointer flex-shrink-0 ${
+                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition cursor-pointer flex-shrink-0 ${
                     isSelected 
                       ? 'bg-navy-800 text-white shadow-xs' 
                       : 'bg-white text-ink-muted hover:text-navy-800 border border-surface-border'
@@ -224,30 +220,30 @@ export default function FruitYieldDashboard() {
           </div>
 
           {/* Top Right KPI Box (3 Summary Metrics - 2 Line Labels) */}
-          <div className="bg-amber-50/60 border border-amber-200/80 rounded-lg px-4 py-1 flex items-center justify-between gap-4 shadow-xs min-w-[320px] flex-shrink-0">
-            <div className="text-center flex-1 border-r border-amber-200/80 pr-3">
-              <p className="font-display text-base font-extrabold text-navy-800 font-mono-num leading-tight">
+          <div className="bg-amber-50/70 border border-amber-200/80 rounded-md px-1 py-1 flex items-center justify-between gap-1 shadow-xs min-w-[400px] flex-shrink-0">
+            <div className="text-center flex-1 border-r border-amber-200/80 pr-2">
+              <p className="font-display text-sm font-extrabold text-navy-800 font-mono-num leading-tight">
                 {kpis.totalArea}
               </p>
-              <p className="text-[9px] font-bold text-slate-600 uppercase tracking-wider leading-tight">
+              <p className="text-[8.5px] font-bold text-slate-600 uppercase tracking-wider leading-tight">
                 TOTAL AREA<br />(00 HA)
               </p>
             </div>
 
-            <div className="text-center flex-1 border-r border-amber-200/80 pr-3">
-              <p className="font-display text-base font-extrabold text-navy-800 font-mono-num leading-tight">
+            <div className="text-center flex-1 border-r border-amber-200/80 pr-2">
+              <p className="font-display text-sm font-extrabold text-navy-800 font-mono-num leading-tight">
                 {kpis.totalProd}
               </p>
-              <p className="text-[9px] font-bold text-slate-600 uppercase tracking-wider leading-tight">
+              <p className="text-[8.5px] font-bold text-slate-600 uppercase tracking-wider leading-tight">
                 TOTAL PRODUCTION<br />(00 MT)
               </p>
             </div>
 
             <div className="text-center flex-1">
-              <p className="font-display text-base font-extrabold text-navy-800 font-mono-num leading-tight">
+              <p className="font-display text-sm font-extrabold text-navy-800 font-mono-num leading-tight">
                 {kpis.yieldVal}
               </p>
-              <p className="text-[9px] font-bold text-slate-600 uppercase tracking-wider leading-tight">
+              <p className="text-[8.5px] font-bold text-slate-600 uppercase tracking-wider leading-tight">
                 YIELD<br />(MT/HA.)
               </p>
             </div>
@@ -256,16 +252,15 @@ export default function FruitYieldDashboard() {
       </div>
 
       {/* ═══════════ MAIN DASHBOARD CONTENT GRID (5 CHARTS) ═══════════ */}
-      <main className="flex-1 min-h-0 max-w-[1600px] w-full mx-auto p-3 grid grid-cols-12 gap-3 overflow-hidden">
+      <main className="flex-1 min-h-0 max-w-[1600px] w-full mx-auto p-2.5 grid grid-cols-12 gap-2.5 overflow-hidden">
         
         {/* Left Column (3 Stacked Trend Charts) */}
-        <div className="col-span-12 lg:col-span-5 flex flex-col gap-2.5 min-h-0 h-full">
+        <div className="col-span-12 lg:col-span-5 flex flex-col gap-2 min-h-0 h-full">
           
           {/* Chart 1: Total Area (00 Hectare) */}
           <div className="flex-1 min-h-0">
             <FruitAreaChart
               title="Total Area (00 Hectare)"
-              yAxisLabel="Total_Area_Dynamic"
               data={trendChartData}
               dataKey="area"
               theme="area"
@@ -276,7 +271,6 @@ export default function FruitYieldDashboard() {
           <div className="flex-1 min-h-0">
             <FruitAreaChart
               title="Production in 00 M.T."
-              yAxisLabel="Total_Production(00 MT)"
               data={trendChartData}
               dataKey="production"
               theme="production"
@@ -287,7 +281,6 @@ export default function FruitYieldDashboard() {
           <div className="flex-1 min-h-0">
             <FruitAreaChart
               title="Yield of Fruits(MT/Ha)"
-              yAxisLabel="Yield(MT/Ha.)"
               data={trendChartData}
               dataKey="yield"
               theme="yield"
@@ -296,7 +289,7 @@ export default function FruitYieldDashboard() {
         </div>
 
         {/* Right Column (Map & Waterfall Chart) */}
-        <div className="col-span-12 lg:col-span-7 flex flex-col gap-2.5 min-h-0 h-full">
+        <div className="col-span-12 lg:col-span-7 flex flex-col gap-2 min-h-0 h-full">
           
           {/* Chart 4: Gujarat District Map (Top Right) */}
           <div className="flex-[1.1] min-h-0">

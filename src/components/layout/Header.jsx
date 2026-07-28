@@ -6,7 +6,8 @@ import { useAuth } from '../../context/AuthContext'
 
 export default function Header() {
   const location = useLocation()
-  const isGoalPage = location.pathname.includes('/goal/')
+  const isGoalPage = location.pathname.includes('/goal/') || location.pathname.includes('/v2/goal/')
+  const isFruitYieldPage = location.pathname === '/fruit-yield'
   const isOverviewPage = location.pathname === '/'
   const { currentUser, logout } = useAuth()
 
@@ -36,7 +37,7 @@ export default function Header() {
               <h1 className="font-display text-xl sm:text-2xl font-bold text-navy-800 tracking-tight leading-tight">
                 VIKSIT RAJYA @ 2047 - MACRO GOAL DASHBOARD
               </h1>
-              {isGoalPage && (
+              {(isGoalPage || isFruitYieldPage) && (
                 <Link
                   to="/"
                   className="flex items-center justify-center p-1 rounded-md text-ink-muted hover:bg-surface-2 hover:text-navy-800 transition"
@@ -55,32 +56,37 @@ export default function Header() {
         {/* Action and Info widgets */}
         <div className="flex flex-wrap items-center gap-3 self-end sm:self-center">
           {/* Navigation links */}
-          <Link
-            to="/fruit-yield"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98 ${
-              location.pathname === '/fruit-yield'
-                ? 'bg-saffron-500 text-white font-bold'
-                : 'bg-surface-2 hover:bg-surface-3 text-navy-800'
-            }`}
-          >
-            <span>Yield of Fruits</span>
-          </Link>
-
           {isGoalPage && (
+            <>
+              <Link
+                to="/fruit-yield"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
+              >
+                <span>Yield of Fruits</span>
+              </Link>
+              <Link
+                to="/"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
+              >
+                <span>Macro Goal Dashboard</span>
+              </Link>
+            </>
+          )}
+
+          {isFruitYieldPage && (
             <Link
-              to="/"
+              to="/v2/goal/HM3"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             >
-              {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
-              <span>Macro Goal Dashboard</span>
+              <span>Analysis Dashboard</span>
             </Link>
           )}
+
           {isOverviewPage && (
             <Link
               to="/v2/goal/HM3"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98"
             >
-              {/* <ArrowLeft className="w-3.5 h-3.5" /> */}
               <span>Analysis Dashboard</span>
             </Link>
           )}

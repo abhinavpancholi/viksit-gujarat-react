@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { getExcelDistrictName, getTopoDistrictName, normalizeDistrict } from '../../utils/districtNameMapper'
 
 // Yield range color mapping matching Power BI mockup
@@ -19,6 +19,7 @@ export default function GujaratDistrictMap({
   const [topology, setTopology] = useState(null)
   const [hoveredInfo, setHoveredInfo] = useState(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
+  const containerRef = useRef(null)
 
   useEffect(() => {
     fetch('/gujarat.json')
@@ -37,7 +38,6 @@ export default function GujaratDistrictMap({
     const { arcs, objects } = topology
     const geometries = objects.districts.geometries
 
-    // Decode an arc index into longitude/latitude coordinates
     const decodeArc = (arcIdx) => {
       const rawArc = arcs[arcIdx >= 0 ? arcIdx : ~arcIdx]
       const coords = []
@@ -47,28 +47,25 @@ export default function GujaratDistrictMap({
         y += rawArc[i][1]
         const lon = x * scale[0] + translate[0]
         const lat = y * scale[1] + translate[1]
-        coords.append ? coords.append([lon, lat]) : coords.push([lon, lat])
+        coords.push([lon, lat])
       }
       if (arcIdx < 0) coords.reverse()
       return coords
     }
 
-    // Determine geographic bounds for projection
     let minLon = 180, maxLon = -180, minLat = 90, maxLat = -90
 
-    // First pass to get coordinates for each geometry
     const decodedGeoms = geometries.map(geom => {
       const topoName = geom.properties.district
       const excelName = getExcelDistrictName(topoName)
 
-      const polygonCoordsList = [] // Array of rings
+      const polygonCoordsList = []
 
       const processPolygonRings = (rings) => {
         return rings.map(ring => {
           let ringCoords = []
           ring.forEach(arcIdx => {
             const decoded = decodeArc(arcIdx)
-            // Skip first point of subsequent arcs if matching last point
             if (ringCoords.length > 0 && decoded.length > 0) {
               ringCoords = ringCoords.concat(decoded.slice(1))
             } else {
@@ -100,20 +97,16 @@ export default function GujaratDistrictMap({
       }
     })
 
-    // SVG Canvas dimensions
     const width = 600
-    const height = 480
-    const padding = 20
+    const height = 450
+    const padding = 15
 
-    // Projection function: Lon/Lat -> SVG (x, y)
     const project = ([lon, lat]) => {
       const x = padding + ((lon - minLon) / (maxLon - minLon)) * (width - 2 * padding)
-      // Invert Y axis for screen space
       const y = padding + ((maxLat - lat) / (maxLat - minLat)) * (height - 2 * padding)
       return [x, y]
     }
 
-    // Convert decoded rings into SVG 'd' path strings
     return decodedGeoms.map(dGeom => {
       const svgPaths = dGeom.rings.map(ring => {
         if (ring.length === 0) return ''
@@ -133,37 +126,36 @@ export default function GujaratDistrictMap({
 
   if (!topology) {
     return (
-      <div className="w-full h-full min-h-[350px] flex items-center justify-center bg-surface-0/50 rounded-xl border border-surface-border">
-        <div className="flex flex-col items-center gap-2 text-ink-muted">
-          <div className="w-6 h-6 border-2 border-navy-600 border-t-transparent rounded-full animate-spin" />
-          <span className="text-xs font-semibold">Loading Map Geometry...</span>
+      <div className="w-full h-full flex items-center justify-center bg-white rounded-xl border border-surface-border p-3">
+        <div className="flex flex-col items-center gap-1.5 text-ink-muted">
+          <div className="w-5 h-5 border-2 border-navy-600 border-t-transparent rounded-full animate-spin" />
+          <span className="text-[11px] font-semibold">Loading Map...</span>
         </div>
       </div>
     )
   }
 
-  const handleMouseMove = (e, dName, dData) => {
-    const rect = e.currentTarget.getBoundingClientRect()
+  // Smooth mouse tracking relative to main container
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return
+    const rect = containerRef.current.getBoundingClientRect()
     setTooltipPos({
       x: e.clientX - rect.left,
       y: e.clientY - rect.top
     })
-    setHoveredInfo({ name: dName, data: dData })
-  }
-
-  const handleMouseLeave = () => {
-    setHoveredInfo(null)
   }
 
   return (
-    <div className="relative w-full h-full flex flex-col justify-between bg-white border border-surface-border rounded-xl p-3 shadow-xs min-h-[360px]">
-      {/* Header & Title */}
-      <div className="flex items-start justify-between mb-1">
-        <div>
-          <h3 className="font-display text-sm font-bold text-navy-800 leading-tight">
-            Average of Yield of Fruits(MT/Ha) by District and Yield Range
-          </h3>
-        </div>
+    <div 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative w-full h-full flex flex-col bg-white border border-surface-border rounded-xl px-3 py-2 shadow-xs overflow-hidden"
+    >
+      {/* Header & Title (Size text-sm as requested) */}
+      <div className="flex items-center justify-between flex-shrink-0 mb-1">
+        <h3 className="font-display text-sm font-bold text-navy-900 leading-tight">
+          Average of Yield of Fruits(MT/Ha) by District and Yield Range
+        </h3>
         {selectedDistrict && (
           <button
             onClick={() => onDistrictSelect(null)}
@@ -174,93 +166,113 @@ export default function GujaratDistrictMap({
         )}
       </div>
 
-      {/* Legend Row */}
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 my-1 px-1 text-[11px] font-semibold text-slate-700">
-        {Object.entries(YIELD_COLOR_MAP).map(([label, color]) => (
-          <div key={label} className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full shadow-xs flex-shrink-0" style={{ backgroundColor: color }} />
-            <span>{label}</span>
-          </div>
-        ))}
-      </div>
+      {/* Main Map Body with Floating RHS Vertical Legends */}
+      <div className="relative flex-1 w-full min-h-0 flex items-center justify-between overflow-hidden">
+        
+        {/* SVG Gujarat Map */}
+        <div className="flex-1 h-full min-w-0 flex items-center justify-center">
+          <svg
+            viewBox="0 0 600 450"
+            className="w-full h-full max-h-full drop-shadow-xs"
+            onMouseLeave={() => setHoveredInfo(null)}
+          >
+            <g>
+              {districtPaths.map(({ topoName, excelName, pathD }) => {
+                const dData = districtDataMap[excelName] || districtDataMap[topoName] || {}
+                const yieldRange = dData.yieldRange || 'Between 10 and 15 MT'
+                const baseColor = YIELD_COLOR_MAP[yieldRange] || DEFAULT_COLOR
 
-      {/* Interactive Map SVG Container */}
-      <div className="relative flex-1 w-full min-h-0 flex items-center justify-center overflow-hidden">
-        <svg
-          viewBox="0 0 600 480"
-          className="w-full h-full max-h-[380px] drop-shadow-xs"
-          onMouseLeave={handleMouseLeave}
-        >
-          <g>
-            {districtPaths.map(({ topoName, excelName, pathD }) => {
-              const dData = districtDataMap[excelName] || districtDataMap[topoName] || {}
-              const yieldRange = dData.yieldRange || 'Between 10 and 15 MT'
-              const baseColor = YIELD_COLOR_MAP[yieldRange] || DEFAULT_COLOR
+                const isSelected = selectedDistrict && (
+                  normalizeDistrict(selectedDistrict) === normalizeDistrict(excelName) ||
+                  normalizeDistrict(selectedDistrict) === normalizeDistrict(topoName)
+                )
+                const isAnySelected = Boolean(selectedDistrict)
 
-              const isSelected = selectedDistrict && (
-                normalizeDistrict(selectedDistrict) === normalizeDistrict(excelName) ||
-                normalizeDistrict(selectedDistrict) === normalizeDistrict(topoName)
-              )
-              const isAnySelected = Boolean(selectedDistrict)
+                let opacity = 0.9
+                let stroke = '#FFFFFF'
+                let strokeWidth = 1.2
+                let filter = 'none'
 
-              // Opacity logic for cross-filtering dimming
-              let opacity = 0.9
-              let stroke = '#FFFFFF'
-              let strokeWidth = 1.2
-              let filter = 'none'
-
-              if (isAnySelected) {
-                if (isSelected) {
-                  opacity = 1.0
-                  stroke = '#000000'
-                  strokeWidth = 2.5
-                  filter = 'drop-shadow(0px 3px 6px rgba(0,0,0,0.4))'
-                } else {
-                  opacity = 0.22
-                  stroke = '#CBD5E1'
-                  strokeWidth = 0.8
+                if (isAnySelected) {
+                  if (isSelected) {
+                    opacity = 1.0
+                    stroke = '#000000'
+                    strokeWidth = 2.5
+                    filter = 'drop-shadow(0px 3px 6px rgba(0,0,0,0.4))'
+                  } else {
+                    opacity = 0.22
+                    stroke = '#CBD5E1'
+                    strokeWidth = 0.8
+                  }
                 }
-              }
 
-              return (
-                <path
-                  key={topoName}
-                  d={pathD}
-                  fill={baseColor}
-                  opacity={opacity}
-                  stroke={stroke}
-                  strokeWidth={strokeWidth}
-                  style={{ filter, transition: 'all 200ms ease' }}
-                  className="cursor-pointer hover:opacity-100 transition-opacity"
-                  onClick={() => {
-                    if (isSelected) {
-                      onDistrictSelect(null)
-                    } else {
-                      onDistrictSelect(excelName)
-                    }
-                  }}
-                  onMouseMove={(e) => handleMouseMove(e, excelName, dData)}
-                />
-              )
-            })}
-          </g>
-        </svg>
+                return (
+                  <path
+                    key={topoName}
+                    d={pathD}
+                    fill={baseColor}
+                    opacity={opacity}
+                    stroke={stroke}
+                    strokeWidth={strokeWidth}
+                    style={{ filter, transition: 'all 200ms ease' }}
+                    className="cursor-pointer hover:opacity-100 transition-opacity"
+                    onClick={() => {
+                      if (isSelected) {
+                        onDistrictSelect(null)
+                      } else {
+                        onDistrictSelect(excelName)
+                      }
+                    }}
+                    onMouseEnter={() => setHoveredInfo({ name: excelName, data: dData })}
+                  />
+                )
+              })}
+            </g>
+          </svg>
+        </div>
 
-        {/* Hover Tooltip Box */}
+        {/* Vertical Order Legends on the RHS of Map */}
+        <div className="w-[185px] flex-shrink-0 bg-slate-50/80 border border-slate-200 rounded-lg p-2.5 shadow-2xs space-y-2 self-center ml-2">
+          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">
+            Yield Range Category
+          </span>
+          {Object.entries(YIELD_COLOR_MAP).map(([label, color]) => (
+            <div key={label} className="flex items-center gap-2 text-[11px] font-semibold text-slate-700">
+              <span className="w-3 h-3 rounded-md shadow-2xs flex-shrink-0" style={{ backgroundColor: color }} />
+              <span className="leading-tight">{label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Dynamic Smooth Plain White Cursor Tooltip */}
         {hoveredInfo && (
           <div
-            className="pointer-events-none absolute z-30 bg-navy-900/90 text-white rounded-lg px-3 py-2 text-xs shadow-xl backdrop-blur-xs border border-white/20"
+            className="pointer-events-none absolute z-40 bg-white border border-slate-200 text-navy-900 rounded-lg px-3 py-2 text-xs shadow-xl font-sans"
             style={{
-              left: Math.min(tooltipPos.x + 15, 420),
-              top: Math.max(tooltipPos.y - 40, 10)
+              left: Math.min(tooltipPos.x + 15, 340),
+              top: Math.max(tooltipPos.y - 45, 10)
             }}
           >
-            <p className="font-bold text-saffron-400 text-sm mb-1">{hoveredInfo.name}</p>
-            <div className="space-y-0.5 text-[11px] font-mono-num">
-              <p><span className="text-slate-300">Yield Range:</span> <span className="font-bold text-white">{hoveredInfo.data.yieldRange || 'N/A'}</span></p>
-              <p><span className="text-slate-300">Yield:</span> <span className="font-bold text-emerald-400">{hoveredInfo.data.yield ? hoveredInfo.data.yield.toFixed(2) : 'N/A'} MT/Ha</span></p>
-              <p><span className="text-slate-300">Production:</span> <span className="font-bold text-blue-300">{hoveredInfo.data.production ? hoveredInfo.data.production.toLocaleString('en-IN', { maximumFractionDigits: 2 }) : 'N/A'} (00 MT)</span></p>
-              <p><span className="text-slate-300">Area:</span> <span className="font-bold text-amber-300">{hoveredInfo.data.area ? hoveredInfo.data.area.toLocaleString('en-IN', { maximumFractionDigits: 2 }) : 'N/A'} (00 Ha)</span></p>
+            <p className="font-bold text-navy-900 text-sm mb-1 border-b border-slate-100 pb-0.5">
+              {hoveredInfo.name}
+            </p>
+            <div className="space-y-1 font-mono-num text-[11px]">
+              <p className="flex justify-between gap-3">
+                <span className="text-slate-500 font-sans font-medium">Category:</span>
+                <span className="font-bold text-navy-900">{hoveredInfo.data.yieldRange || 'N/A'}</span>
+              </p>
+              <p className="flex justify-between gap-3">
+                <span className="text-slate-500 font-sans font-medium">Yield:</span>
+                <span className="font-bold text-emerald-600">{hoveredInfo.data.yield ? hoveredInfo.data.yield.toFixed(2) : 'N/A'} MT/Ha</span>
+              </p>
+              <p className="flex justify-between gap-3">
+                <span className="text-slate-500 font-sans font-medium">Production:</span>
+                <span className="font-bold text-blue-600">{hoveredInfo.data.production ? hoveredInfo.data.production.toLocaleString('en-IN', { maximumFractionDigits: 2 }) : 'N/A'} (00 MT)</span>
+              </p>
+              <p className="flex justify-between gap-3">
+                <span className="text-slate-500 font-sans font-medium">Area:</span>
+                <span className="font-bold text-amber-600">{hoveredInfo.data.area ? hoveredInfo.data.area.toLocaleString('en-IN', { maximumFractionDigits: 2 }) : 'N/A'} (00 Ha)</span>
+              </p>
             </div>
           </div>
         )}

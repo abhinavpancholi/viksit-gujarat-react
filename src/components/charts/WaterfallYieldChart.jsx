@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import ReactDOM from 'react-dom'
 
 export default function WaterfallYieldChart({ 
   yearlyYieldData, 
@@ -176,7 +177,6 @@ export default function WaterfallYieldChart({
     let maxLvl = -Infinity
 
     waterfallSteps.forEach(s => {
-      // For total bars, evaluate top level (end) for baseline scaling
       const low = s.type === 'total' ? s.end : s.start
       const high = s.end
       if (low < minLvl) minLvl = low
@@ -187,14 +187,12 @@ export default function WaterfallYieldChart({
 
     if (minLvl === Infinity) return { minY: 0, maxY: 1000 }
 
-    // If viewing state-level totals (around 80k-95k), start baseline near 80k/84k
     if (minLvl >= 40000) {
-      const calcMin = Math.floor((minLvl - 500) / 2000) * 2000 // e.g. 80,000 or 84,000
-      const calcMax = Math.ceil((maxLvl + 500) / 2000) * 2000  // e.g. 98,000 or 100,000
+      const calcMin = Math.floor((minLvl - 500) / 2000) * 2000
+      const calcMax = Math.ceil((maxLvl + 500) / 2000) * 2000
       return { minY: Math.max(0, calcMin), maxY: calcMax }
     }
 
-    // For single district or smaller numbers:
     const range = maxLvl - minLvl || 100
     const padding = range * 0.2
     const calcMin = Math.max(0, Math.floor((minLvl - padding) / 10) * 10)
@@ -203,36 +201,46 @@ export default function WaterfallYieldChart({
     return { minY: calcMin, maxY: Math.max(10, calcMax) }
   }, [waterfallSteps])
 
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    setTooltipPos({
-      x: Math.min(e.clientX - rect.left + 15, rect.width - 440),
-      y: Math.max(e.clientY - rect.top - 120, 10)
-    })
+  // Screen-space mouse move tracker for Portal Tooltip
+  const handleBarMouseMove = (e) => {
+    let x = e.clientX + 15
+    let y = e.clientY - 140
+
+    // Prevent clipping against right/bottom window boundaries
+    if (x + 430 > window.innerWidth) {
+      x = e.clientX - 435
+    }
+    if (y + 360 > window.innerHeight) {
+      y = window.innerHeight - 370
+    }
+    if (y < 10) {
+      y = 10
+    }
+
+    setTooltipPos({ x, y })
   }
 
-  // Width calculation for horizontal scroll (approx 60px per bar)
-  const barWidth = 40
-  const gap = 20
-  const totalSvgWidth = Math.max(700, waterfallSteps.length * (barWidth + gap) + 60)
+  const barWidth = 36
+  const gap = 16
+  const totalSvgWidth = Math.max(650, waterfallSteps.length * (barWidth + gap) + 40)
 
   return (
-    <div className="relative w-full h-full flex flex-col bg-white border border-surface-border rounded-xl p-3 shadow-xs min-h-[360px]">
+    <div className="relative w-full h-full flex flex-col bg-white border border-surface-border rounded-xl px-3 py-2 shadow-xs overflow-hidden">
       {/* Title & Legend */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-        <h3 className="font-display text-sm font-bold text-navy-800">
+      <div className="flex items-center justify-between gap-2 mb-1 flex-shrink-0">
+        <h3 className="font-display text-sm font-bold text-navy-900">
           District-wise Increase and Decrease in Production Between Financial Years
         </h3>
-        <div className="flex items-center gap-3 text-[10px] font-bold flex-shrink-0">
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-emerald-500 rounded-xs" /> Increase</span>
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-rose-500 rounded-xs" /> Decrease</span>
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-blue-500 rounded-xs" /> Total</span>
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-amber-500 rounded-xs" /> Other</span>
+        <div className="flex items-center gap-2.5 text-[9.5px] font-bold flex-shrink-0">
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-emerald-500 rounded-xs" /> Increase</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-rose-500 rounded-xs" /> Decrease</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-blue-500 rounded-xs" /> Total</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 bg-amber-500 rounded-xs" /> Other</span>
         </div>
       </div>
 
       {/* Main Chart Container with Sticky Y-Axis & Horizontal Scroll */}
-      <div className="relative flex-1 w-full min-h-0 flex items-stretch border-t border-slate-100 pt-2 cursor-pointer">
+      <div className="relative flex-1 w-full min-h-0 flex items-stretch border-t border-slate-100 pt-1">
         {waterfallSteps.length === 0 ? (
           <div className="w-full h-full flex items-center justify-center text-xs text-ink-muted">
             No data available for the selected filters.
@@ -240,43 +248,42 @@ export default function WaterfallYieldChart({
         ) : (
           <>
             {/* Sticky Y-Axis Label Column */}
-            <div className="w-[52px] flex-shrink-0 h-full flex flex-col justify-between pr-2 border-r border-slate-200 bg-white z-10 select-none pb-12">
+            <div className="w-[46px] flex-shrink-0 h-full flex flex-col justify-between pr-1.5 border-r border-slate-200 bg-white z-10 select-none pb-8 pt-1">
               {[1, 0.75, 0.5, 0.25, 0].map((ratio, i) => {
                 const yVal = minY + (maxY - minY) * ratio
                 return (
-                  <span key={i} className="text-[10px] font-mono-num font-bold text-slate-500 text-right">
+                  <span key={i} className="text-[9px] font-mono-num font-bold text-slate-500 text-right leading-none">
                     {yVal >= 1000 ? `${(yVal / 1000).toFixed(0)}K` : Math.round(yVal)}
                   </span>
                 )
               })}
             </div>
 
-            {/* Scrollable Waterfall SVG Area (Shows max ~4 years visible at a time) */}
+            {/* Scrollable Waterfall SVG Area */}
             <div className="flex-1 min-w-0 h-full overflow-x-auto overflow-y-hidden scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-50">
-              <svg className="h-full" style={{ width: `${totalSvgWidth}px` }} viewBox={`0 0 ${totalSvgWidth} 280`}>
+              <svg className="h-full" style={{ width: `${totalSvgWidth}px` }} viewBox={`0 0 ${totalSvgWidth} 210`}>
                 {/* Horizontal Gridlines */}
                 {[0, 0.25, 0.5, 0.75, 1].map((ratio, i) => {
-                  const yPos = 220 - ratio * 190
+                  const yPos = 165 - ratio * 145
                   return (
                     <line key={i} x1="0" y1={yPos} x2={totalSvgWidth} y2={yPos} stroke="#F1F5F9" strokeDasharray="3 3" />
                   )
                 })}
 
                 {/* X-Axis Baseline */}
-                <line x1="0" y1="220" x2={totalSvgWidth} y2="220" stroke="#CBD5E1" strokeWidth="1.5" />
+                <line x1="0" y1="165" x2={totalSvgWidth} y2="165" stroke="#CBD5E1" strokeWidth="1.5" />
 
                 {/* Waterfall Bars */}
                 {waterfallSteps.map((step, idx) => {
-                  const xPos = 25 + idx * (barWidth + gap)
+                  const xPos = 20 + idx * (barWidth + gap)
 
-                  // Determine start and end levels relative to minY baseline
                   const startLvl = step.type === 'total' ? minY : step.start
                   const endLvl = step.end
 
-                  const yStart = 220 - ((startLvl - minY) / (maxY - minY)) * 190
-                  const yEnd = 220 - ((endLvl - minY) / (maxY - minY)) * 190
+                  const yStart = 165 - ((startLvl - minY) / (maxY - minY)) * 145
+                  const yEnd = 165 - ((endLvl - minY) / (maxY - minY)) * 145
 
-                  const barHeight = Math.max(Math.abs(yStart - yEnd), 6)
+                  const barHeight = Math.max(Math.abs(yStart - yEnd), 5)
                   const barY = Math.min(yStart, yEnd)
 
                   let barColor = '#3B82F6' // Total Blue
@@ -290,17 +297,17 @@ export default function WaterfallYieldChart({
                       className="hover:opacity-85 transition-opacity cursor-pointer"
                       onMouseEnter={(e) => {
                         setShowTooltip(true)
-                        handleMouseMove(e)
+                        handleBarMouseMove(e)
                       }}
-                      onMouseMove={handleMouseMove}
+                      onMouseMove={handleBarMouseMove}
                       onMouseLeave={() => setShowTooltip(false)}
                     >
                       {/* Top Numeric Value Label */}
                       <text
                         x={xPos + barWidth / 2}
-                        y={barY - 6}
-                        fill="#1E293B"
-                        fontSize="10"
+                        y={barY - 5}
+                        fill="#0F172A"
+                        fontSize="9"
                         fontWeight="800"
                         textAnchor="middle"
                         className="font-mono-num"
@@ -315,19 +322,19 @@ export default function WaterfallYieldChart({
                         width={barWidth}
                         height={barHeight}
                         fill={barColor}
-                        rx="4"
-                        ry="4"
+                        rx="3"
+                        ry="3"
                       />
 
                       {/* Sublabel below X-Axis (Year / District Name) */}
                       <text
                         x={xPos + barWidth / 2}
-                        y="238"
+                        y="180"
                         fill="#334155"
-                        fontSize="10"
+                        fontSize="9"
                         fontWeight="700"
                         textAnchor="end"
-                        transform={`rotate(-40, ${xPos + barWidth / 2}, 238)`}
+                        transform={`rotate(-40, ${xPos + barWidth / 2}, 180)`}
                       >
                         {step.subLabel}
                       </text>
@@ -339,14 +346,14 @@ export default function WaterfallYieldChart({
           </>
         )}
 
-        {/* ── STATIC TOOLTIP TABLE FROM SHEET 2 ── */}
-        {showTooltip && staticTooltipData && staticTooltipData.length > 0 && (
+        {/* ── STATIC TOOLTIP TABLE FROM SHEET 2 (Rendered via Body Portal to eliminate clipping & hiding) ── */}
+        {showTooltip && staticTooltipData && staticTooltipData.length > 0 && ReactDOM.createPortal(
           <div
-            className="pointer-events-none absolute z-40 bg-white border border-navy-800 shadow-2xl rounded-lg p-3 text-xs w-[420px]"
+            className="pointer-events-none fixed z-[9999] bg-white border border-navy-900 shadow-2xl rounded-xl p-3 text-xs w-[420px]"
             style={{ left: tooltipPos.x, top: tooltipPos.y }}
           >
             {/* Tooltip Header */}
-            <div className="bg-teal-700 text-white font-bold text-xs p-2 rounded-t-md mb-1 text-center">
+            <div className="bg-teal-700 text-white font-bold text-xs p-2 rounded-t-lg mb-1.5 text-center">
               Surat - Area('00' Ha,) and Production('00' MT)
             </div>
 
@@ -377,7 +384,8 @@ export default function WaterfallYieldChart({
                 ))}
               </tbody>
             </table>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
     </div>
