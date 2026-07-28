@@ -54,7 +54,18 @@ export default function Header() {
 
         {/* Action and Info widgets */}
         <div className="flex flex-wrap items-center gap-3 self-end sm:self-center">
-          {/* Back to Overview link (replaces Refreshed badge on goal pages) */}
+          {/* Navigation links */}
+          <Link
+            to="/fruit-yield"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-xs hover:shadow-sm cursor-pointer transition active:scale-98 ${
+              location.pathname === '/fruit-yield'
+                ? 'bg-saffron-500 text-white font-bold'
+                : 'bg-surface-2 hover:bg-surface-3 text-navy-800'
+            }`}
+          >
+            <span>Yield of Fruits</span>
+          </Link>
+
           {isGoalPage && (
             <Link
               to="/"

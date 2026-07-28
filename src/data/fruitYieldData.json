@@ -1,0 +1,3387 @@
+{
+  "yearlyYield": [
+    {
+      "district": "Ahmedabad",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 55.89,
+      "production": 708.48,
+      "yield": 12.6763285024155,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 298.0,
+      "production": 4168.17,
+      "yield": 13.9871476510067,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 64.83,
+      "production": 930.78,
+      "yield": 14.3572420175845,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 193.32,
+      "production": 1993.08,
+      "yield": 10.3097454996896,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 202.75,
+      "production": 2923.48,
+      "yield": 14.4191368680641,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 27.59,
+      "production": 405.91,
+      "yield": 14.7122145704966,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 413.82,
+      "production": 5537.47,
+      "yield": 13.381349378957,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 49.67,
+      "production": 631.42,
+      "yield": 12.7123011878397,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 22.91,
+      "production": 277.34,
+      "yield": 12.1056307289393,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 28.04,
+      "production": 335.56,
+      "yield": 11.9671897289586,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 45.67,
+      "production": 654.27,
+      "yield": 14.3260345960149,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 41.56,
+      "production": 603.91,
+      "yield": 14.5310394610202,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 298.36,
+      "production": 4225.41,
+      "yield": 14.162119587076,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 13.06,
+      "production": 161.29,
+      "yield": 12.3499234303216,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 65.19,
+      "production": 923.18,
+      "yield": 14.1613744439331,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 258.4,
+      "production": 2803.96,
+      "yield": 10.8512383900929,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 201.39,
+      "production": 2301.71,
+      "yield": 11.4291176324544,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 207.52,
+      "production": 3003.97,
+      "yield": 14.4755686198921,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 36.78,
+      "production": 534.68,
+      "yield": 14.5372485046221,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 449.03,
+      "production": 6072.47,
+      "yield": 13.5235284947554,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 50.04,
+      "production": 664.29,
+      "yield": 13.2751798561151,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 25.91,
+      "production": 324.79,
+      "yield": 12.5353145503667,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 28.15,
+      "production": 333.94,
+      "yield": 11.8628774422735,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 50.02,
+      "production": 723.98,
+      "yield": 14.4738104758097,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 43.13,
+      "production": 616.26,
+      "yield": 14.2884303269186,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 287.97,
+      "production": 3973.14,
+      "yield": 13.7970621939785,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 15.89,
+      "production": 201.7,
+      "yield": 12.6935179358087,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 58.7,
+      "production": 695.41,
+      "yield": 11.8468483816014,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 25.02,
+      "production": 279.22,
+      "yield": 11.1598721023181,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 206.56,
+      "production": 2077.26,
+      "yield": 10.056448489543,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 208.6,
+      "production": 3007.32,
+      "yield": 14.4166826462128,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 47.92,
+      "production": 696.73,
+      "yield": 14.5394407345576,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 454.67,
+      "production": 5992.53,
+      "yield": 13.1799546924143,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 25.59,
+      "production": 308.97,
+      "yield": 12.073856975381,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 21.3,
+      "production": 226.83,
+      "yield": 10.6492957746479,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 54.18,
+      "production": 674.2,
+      "yield": 12.4437061646364,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 44.46,
+      "production": 636.89,
+      "yield": 14.3250112460639,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 280.67,
+      "production": 3845.12,
+      "yield": 13.6997897887198,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 20.25,
+      "production": 264.07,
+      "yield": 13.0404938271605,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 59.53,
+      "production": 702.03,
+      "yield": 11.7928775407358,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 26.37,
+      "production": 351.5,
+      "yield": 13.3295411452408,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 211.76,
+      "production": 2198.38,
+      "yield": 10.3814695882131,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 210.72,
+      "production": 3051.3,
+      "yield": 14.4803530751708,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 55.82,
+      "production": 741.45,
+      "yield": 13.2828735220351,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 462.83,
+      "production": 6095.72,
+      "yield": 13.17053777845,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 50.14,
+      "production": 694.23,
+      "yield": 13.8458316713203,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 26.2,
+      "production": 315.01,
+      "yield": 12.0232824427481,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 21.03,
+      "production": 243.77,
+      "yield": 11.5915359010937,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 56.72,
+      "production": 706.13,
+      "yield": 12.4494005641749,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 46.34,
+      "production": 660.98,
+      "yield": 14.2637030643073,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 281.15,
+      "production": 3833.96,
+      "yield": 13.6367063844923,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 22.46,
+      "production": 291.36,
+      "yield": 12.9723953695459,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 59.87,
+      "production": 706.25,
+      "yield": 11.7963921830633,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 214.68,
+      "production": 2257.67,
+      "yield": 10.5164430780697,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 213.68,
+      "production": 3026.2,
+      "yield": 14.1622987645077,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 62.79,
+      "production": 824.25,
+      "yield": 13.1270903010033,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 463.63,
+      "production": 6064.97,
+      "yield": 13.0814873929642,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 47.97,
+      "production": 558.89,
+      "yield": 11.6508234313112,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 26.65,
+      "production": 341.1,
+      "yield": 12.7992495309568,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 23.91,
+      "production": 269.59,
+      "yield": 11.2751986616478,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 59.04,
+      "production": 645.74,
+      "yield": 10.9373306233062,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 49.96,
+      "production": 699.18,
+      "yield": 13.9947958366693,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 237.85,
+      "production": 3009.66,
+      "yield": 12.6536052133698,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 25.72,
+      "production": 336.43,
+      "yield": 13.0804821150855,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 58.68,
+      "production": 675.84,
+      "yield": 11.5173824130879,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 216.84,
+      "production": 3033.34,
+      "yield": 13.9888396974728,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 66.69,
+      "production": 862.62,
+      "yield": 12.9347728295097,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 46.72,
+      "production": 535.3,
+      "yield": 11.4576198630137,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 27.22,
+      "production": 346.91,
+      "yield": 12.7446730345334,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 25.72,
+      "production": 288.38,
+      "yield": 11.2122861586314,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 51.75,
+      "production": 727.79,
+      "yield": 14.0635748792271,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 245.23,
+      "production": 3040.09,
+      "yield": 12.3968927129633,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 26.12,
+      "production": 389.66,
+      "yield": 14.9180704441041,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 12.46,
+      "production": 138.56,
+      "yield": 11.1203852327448,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 58.74,
+      "production": 679.59,
+      "yield": 11.5694586312564,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 26.31,
+      "production": 270.29,
+      "yield": 10.2732801216268,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 210.37,
+      "production": 2733.27,
+      "yield": 12.9926795645767,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 71.21,
+      "production": 917.73,
+      "yield": 12.8876562280579,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 49.08,
+      "production": 589.73,
+      "yield": 12.0156886715566,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 27.92,
+      "production": 357.27,
+      "yield": 12.7962034383954,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 25.93,
+      "production": 275.81,
+      "yield": 10.6367142306209,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 52.69,
+      "production": 740.97,
+      "yield": 14.0628202695009,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 251.17,
+      "production": 3103.31,
+      "yield": 12.3554166500776,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 26.96,
+      "production": 402.32,
+      "yield": 14.9228486646884,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 13.04,
+      "production": 147.98,
+      "yield": 11.3481595092025,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 59.59,
+      "production": 699.44,
+      "yield": 11.7375398556805,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 26.36,
+      "production": 315.23,
+      "yield": 11.9586494688923,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 224.34,
+      "production": 2279.25,
+      "yield": 10.1598020861193,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 211.08,
+      "production": 2827.88,
+      "yield": 13.3971953761607,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 76.25,
+      "production": 1000.58,
+      "yield": 13.1223606557377,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 54.13,
+      "production": 591.7,
+      "yield": 10.9310918159985,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 28.74,
+      "production": 395.6,
+      "yield": 13.7647877522617,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 23.82,
+      "production": 240.44,
+      "yield": 10.0940386230059,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 54.32,
+      "production": 752.11,
+      "yield": 13.845913107511,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 256.39,
+      "production": 3156.74,
+      "yield": 12.3122586684348,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 12.52,
+      "production": 140.35,
+      "yield": 11.2100638977636,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 48.99,
+      "production": 594.15,
+      "yield": 12.1279853031231,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 25.71,
+      "production": 318.91,
+      "yield": 12.4041229093738,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 229.15,
+      "production": 2306.43,
+      "yield": 10.0651538293694,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 606.0,
+      "production": 8567.74,
+      "yield": 14.1381848184818,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 208.17,
+      "production": 2707.26,
+      "yield": 13.0050439544603,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 79.98,
+      "production": 1054.12,
+      "yield": 13.1797949487372,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 54.14,
+      "production": 602.71,
+      "yield": 11.1324344292575,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 29.5,
+      "production": 404.46,
+      "yield": 13.7105084745763,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 24.18,
+      "production": 282.2,
+      "yield": 11.6708023159636,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Ahmedabad",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 54.54,
+      "production": 750.23,
+      "yield": 13.7555922258893,
+      "location": "Ahmedabad, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Bhavnagar",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 247.51,
+      "production": 3162.57,
+      "yield": 12.7775443416428,
+      "location": "Bhavnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 76.68,
+      "production": 768.58,
+      "yield": 10.0232133541993,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 13.5,
+      "production": 150.49,
+      "yield": 11.1474074074074,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Gandhinagar",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 49.93,
+      "production": 610.59,
+      "yield": 12.2289204886842,
+      "location": "Gandhinagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 14.23,
+      "production": 183.26,
+      "yield": 12.8784258608573,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 232.2,
+      "production": 2459.27,
+      "yield": 10.5911714039621,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 625.56,
+      "production": 9033.61,
+      "yield": 14.440837010039,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Mahesana",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 173.05,
+      "production": 2288.34,
+      "yield": 13.2235770008668,
+      "location": "Mahesana, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Morbi",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 90.83,
+      "production": 1226.3,
+      "yield": 13.5010459099416,
+      "location": "Morbi, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 54.86,
+      "production": 620.17,
+      "yield": 11.3045935107546,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Patan",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 18.11,
+      "production": 221.7,
+      "yield": 12.2418553285478,
+      "location": "Patan, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Rajkot",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 23.95,
+      "production": 302.02,
+      "yield": 12.6104384133612,
+      "location": "Rajkot, Gujarat",
+      "yieldRange": "Between 10 and 15 MT"
+    },
+    {
+      "district": "Anand",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 230.93,
+      "production": 9267.2,
+      "yield": 40.1299094963842,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 46.18,
+      "production": 1129.46,
+      "yield": 24.4577739281074,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 188.18,
+      "production": 9868.11,
+      "yield": 52.4397385481985,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 103.89,
+      "production": 4495.7,
+      "yield": 43.2736548272211,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 13.73,
+      "production": 284.85,
+      "yield": 20.7465404224326,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 125.4,
+      "production": 6067.25,
+      "yield": 48.3831738437002,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Surat",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 205.33,
+      "production": 6991.06,
+      "yield": 34.0479228558905,
+      "location": "Surat, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 100.1,
+      "production": 2717.75,
+      "yield": 27.1503496503497,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 190.68,
+      "production": 6193.56,
+      "yield": 32.4814348646948,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 230.95,
+      "production": 9255.27,
+      "yield": 40.0747780904958,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 47.01,
+      "production": 1156.81,
+      "yield": 24.6077430333971,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 189.2,
+      "production": 9925.47,
+      "yield": 52.460200845666,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 107.01,
+      "production": 4709.1,
+      "yield": 44.0061676478834,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 13.83,
+      "production": 286.87,
+      "yield": 20.7425885755604,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 126.23,
+      "production": 6149.73,
+      "yield": 48.7184504475957,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 60.81,
+      "production": 1240.01,
+      "yield": 20.3915474428548,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Surat",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 219.57,
+      "production": 7814.09,
+      "yield": 35.588149565059,
+      "location": "Surat, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 101.39,
+      "production": 2786.9,
+      "yield": 27.4869316500641,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 192.53,
+      "production": 6328.05,
+      "yield": 32.8678647483509,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 229.82,
+      "production": 9400.96,
+      "yield": 40.9057523279088,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 47.38,
+      "production": 1175.75,
+      "yield": 24.8153229210637,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 189.17,
+      "production": 10166.04,
+      "yield": 53.7402336522705,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 112.45,
+      "production": 5015.03,
+      "yield": 44.5978657180969,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 14.96,
+      "production": 347.01,
+      "yield": 23.1958556149733,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 130.07,
+      "production": 6428.78,
+      "yield": 49.4255400937956,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 61.27,
+      "production": 1226.87,
+      "yield": 20.0239921658234,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Surat",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 222.55,
+      "production": 8257.62,
+      "yield": 37.10456077286,
+      "location": "Surat, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 103.13,
+      "production": 2821.24,
+      "yield": 27.3561524289731,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 192.62,
+      "production": 6394.82,
+      "yield": 33.1991485827017,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 229.24,
+      "production": 9493.25,
+      "yield": 41.4118391205723,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 48.01,
+      "production": 1196.26,
+      "yield": 24.9168923141012,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 187.29,
+      "production": 9998.65,
+      "yield": 53.3859255699717,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 119.76,
+      "production": 5615.82,
+      "yield": 46.8922845691383,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 15.41,
+      "production": 355.95,
+      "yield": 23.0986372485399,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 82.45,
+      "production": 1817.42,
+      "yield": 22.0426925409339,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 134.86,
+      "production": 6814.68,
+      "yield": 50.5315141628355,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 62.75,
+      "production": 1282.02,
+      "yield": 20.4305976095618,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Surat",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 216.87,
+      "production": 7409.88,
+      "yield": 34.1673813805506,
+      "location": "Surat, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 104.01,
+      "production": 2844.8,
+      "yield": 27.3512162292087,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 195.14,
+      "production": 6508.95,
+      "yield": 33.3552833862868,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 229.35,
+      "production": 9729.03,
+      "yield": 42.4200130804447,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 48.88,
+      "production": 1220.47,
+      "yield": 24.9686988543372,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 184.95,
+      "production": 9955.94,
+      "yield": 53.8304406596377,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 122.7,
+      "production": 5906.84,
+      "yield": 48.1405052974735,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 14.89,
+      "production": 350.67,
+      "yield": 23.5507051712559,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 75.33,
+      "production": 1680.48,
+      "yield": 22.3082437275986,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 136.11,
+      "production": 7092.5,
+      "yield": 52.1085886415399,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 43.71,
+      "production": 896.47,
+      "yield": 20.5094943948753,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Surat",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 213.57,
+      "production": 7166.76,
+      "yield": 33.5569602472257,
+      "location": "Surat, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 101.2,
+      "production": 2431.99,
+      "yield": 24.0315217391304,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 195.99,
+      "production": 6734.15,
+      "yield": 34.3596612072044,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 229.53,
+      "production": 9751.07,
+      "yield": 42.482769136932,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 47.75,
+      "production": 1314.31,
+      "yield": 27.5248167539267,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 166.28,
+      "production": 8673.16,
+      "yield": 52.1599711330286,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 121.32,
+      "production": 5918.17,
+      "yield": 48.7814869765908,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Devbhumi Dwarka",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 15.11,
+      "production": 328.12,
+      "yield": 21.7154202514891,
+      "location": "Devbhumi Dwarka, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 66.79,
+      "production": 1375.01,
+      "yield": 20.5870639317263,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 140.57,
+      "production": 7418.17,
+      "yield": 52.7720708543786,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 109.94,
+      "production": 2515.54,
+      "yield": 22.8810260141896,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 200.12,
+      "production": 6851.06,
+      "yield": 34.2347591445133,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 230.47,
+      "production": 9819.74,
+      "yield": 42.6074543324511,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 50.04,
+      "production": 1401.5,
+      "yield": 28.0075939248601,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 170.6,
+      "production": 8915.48,
+      "yield": 52.2595545134818,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 122.26,
+      "production": 6068.15,
+      "yield": 49.6331588418125,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 66.83,
+      "production": 1379.37,
+      "yield": 20.6399820439922,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 142.73,
+      "production": 7547.55,
+      "yield": 52.8799131226792,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 117.5,
+      "production": 2656.18,
+      "yield": 22.6057872340426,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 202.41,
+      "production": 6964.75,
+      "yield": 34.4091201027617,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 232.7,
+      "production": 9945.15,
+      "yield": 42.7380747743876,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 51.98,
+      "production": 1492.09,
+      "yield": 28.705078876491,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 168.53,
+      "production": 8763.4,
+      "yield": 51.999050614134,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 125.05,
+      "production": 6174.21,
+      "yield": 49.3739304278289,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 67.28,
+      "production": 1396.6,
+      "yield": 20.7580261593341,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 143.66,
+      "production": 7627.14,
+      "yield": 53.0916051788946,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 126.28,
+      "production": 2653.43,
+      "yield": 21.0122743110548,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 202.97,
+      "production": 6983.71,
+      "yield": 34.4075971818495,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 234.22,
+      "production": 9937.92,
+      "yield": 42.4298522756383,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 55.42,
+      "production": 1620.35,
+      "yield": 29.2376398412126,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 165.28,
+      "production": 9135.86,
+      "yield": 55.2750484027106,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 125.32,
+      "production": 6150.38,
+      "yield": 49.0774018512608,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 67.84,
+      "production": 1411.14,
+      "yield": 20.8010023584906,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 146.22,
+      "production": 8011.18,
+      "yield": 54.7885378197237,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 130.57,
+      "production": 2814.6,
+      "yield": 21.5562533506931,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 204.03,
+      "production": 7001.19,
+      "yield": 34.3145125716806,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Anand",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 206.72,
+      "production": 10499.02,
+      "yield": 50.7886029411765,
+      "location": "Anand, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Arvalli",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 57.14,
+      "production": 1726.55,
+      "yield": 30.2161358067903,
+      "location": "Arvalli, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Bharuch",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 172.37,
+      "production": 9788.03,
+      "yield": 56.7849973893369,
+      "location": "Bharuch, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Chhota Udepur",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 125.79,
+      "production": 6304.37,
+      "yield": 50.1182128945067,
+      "location": "Chhota Udepur, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 66.94,
+      "production": 1444.49,
+      "yield": 21.5788766059157,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 39.67,
+      "production": 856.54,
+      "yield": 21.5916309553819,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Narmada",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 147.57,
+      "production": 8106.67,
+      "yield": 54.9344040116555,
+      "location": "Narmada, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 46.17,
+      "production": 968.48,
+      "yield": 20.9763915962746,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Tapi",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 117.38,
+      "production": 2651.11,
+      "yield": 22.585704549327,
+      "location": "Tapi, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Vadodara",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 189.97,
+      "production": 6173.23,
+      "yield": 32.4958151287045,
+      "location": "Vadodara, Gujarat",
+      "yieldRange": "More than 20"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 92.02,
+      "production": 885.15,
+      "yield": 9.61910454249076,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 62.11,
+      "production": 523.61,
+      "yield": 8.43036548059894,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 241.19,
+      "production": 2305.51,
+      "yield": 9.55889547659522,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 15.18,
+      "production": 134.08,
+      "yield": 8.83267457180501,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 64.01,
+      "production": 365.68,
+      "yield": 5.71285736603656,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 456.48,
+      "production": 4470.19,
+      "yield": 9.79274009814231,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 93.52,
+      "production": 932.41,
+      "yield": 9.97016680923867,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 60.14,
+      "production": 513.53,
+      "yield": 8.53890921183904,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 15.5,
+      "production": 143.09,
+      "yield": 9.23161290322581,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 64.98,
+      "production": 387.28,
+      "yield": 5.95998768851954,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 492.44,
+      "production": 4800.64,
+      "yield": 9.74868004223865,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 93.04,
+      "production": 876.06,
+      "yield": 9.41595012897678,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 60.19,
+      "production": 517.9,
+      "yield": 8.60441933876059,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 273.86,
+      "production": 2490.07,
+      "yield": 9.09249251442343,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 15.51,
+      "production": 147.58,
+      "yield": 9.51515151515152,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 66.21,
+      "production": 393.75,
+      "yield": 5.94698685999094,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 469.67,
+      "production": 3646.72,
+      "yield": 7.76443034471011,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 95.13,
+      "production": 901.94,
+      "yield": 9.48113108378009,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 60.68,
+      "production": 533.19,
+      "yield": 8.78691496374423,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 287.39,
+      "production": 2809.24,
+      "yield": 9.77500956887853,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 14.97,
+      "production": 141.59,
+      "yield": 9.45824983299933,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 66.42,
+      "production": 387.47,
+      "yield": 5.83363444745559,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 471.97,
+      "production": 3765.68,
+      "yield": 7.97864271034176,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 97.54,
+      "production": 929.51,
+      "yield": 9.52952634816485,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 65.11,
+      "production": 581.13,
+      "yield": 8.92535708800492,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 299.04,
+      "production": 2856.85,
+      "yield": 9.55340422685928,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 24.79,
+      "production": 236.63,
+      "yield": 9.54538120209762,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 15.22,
+      "production": 141.68,
+      "yield": 9.30880420499343,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 70.58,
+      "production": 400.61,
+      "yield": 5.67597052989515,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 477.1,
+      "production": 3813.86,
+      "yield": 7.99383776985957,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 86.22,
+      "production": 749.62,
+      "yield": 8.69427047088842,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 69.39,
+      "production": 600.36,
+      "yield": 8.65196714223952,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 252.03,
+      "production": 1579.87,
+      "yield": 6.26857913740428,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 25.63,
+      "production": 246.9,
+      "yield": 9.6332422941865,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 216.63,
+      "production": 1993.61,
+      "yield": 9.20283432580898,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 443.19,
+      "production": 3008.92,
+      "yield": 6.78923260903901,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 16.18,
+      "production": 150.53,
+      "yield": 9.30346106304079,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 57.63,
+      "production": 484.75,
+      "yield": 8.4114176644109,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 74.67,
+      "production": 417.7,
+      "yield": 5.59394669880809,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 476.75,
+      "production": 3431.94,
+      "yield": 7.1986156266387,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 87.71,
+      "production": 787.01,
+      "yield": 8.97286512370311,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 74.94,
+      "production": 693.54,
+      "yield": 9.25460368294636,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 260.17,
+      "production": 1554.84,
+      "yield": 5.97624630049583,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Junagadh",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 219.62,
+      "production": 2088.7,
+      "yield": 9.51051816774429,
+      "location": "Junagadh, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 443.01,
+      "production": 2987.03,
+      "yield": 6.74257917428501,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 16.76,
+      "production": 156.57,
+      "yield": 9.34188544152745,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 58.68,
+      "production": 500.93,
+      "yield": 8.53663940013633,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 75.75,
+      "production": 430.23,
+      "yield": 5.67960396039604,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 479.39,
+      "production": 2841.78,
+      "yield": 5.92790838357079,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 90.84,
+      "production": 817.87,
+      "yield": 9.00341259357111,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 75.99,
+      "production": 740.22,
+      "yield": 9.74101855507304,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 295.95,
+      "production": 2060.85,
+      "yield": 6.96350734921439,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 444.33,
+      "production": 2492.96,
+      "yield": 5.61060473071816,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 17.51,
+      "production": 156.66,
+      "yield": 8.94688749286122,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 59.17,
+      "production": 505.11,
+      "yield": 8.53658948791617,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 76.98,
+      "production": 446.44,
+      "yield": 5.799428422967,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 484.47,
+      "production": 2880.01,
+      "yield": 5.94466117613062,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 93.24,
+      "production": 829.29,
+      "yield": 8.89414414414414,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Dahod",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 76.07,
+      "production": 742.0,
+      "yield": 9.75417378730117,
+      "location": "Dahod, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 311.51,
+      "production": 2331.78,
+      "yield": 7.48540977817727,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 447.66,
+      "production": 3523.73,
+      "yield": 7.87144261269714,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 17.96,
+      "production": 164.08,
+      "yield": 9.1358574610245,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 64.85,
+      "production": 583.6,
+      "yield": 8.99922898997687,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 78.78,
+      "production": 459.66,
+      "yield": 5.83472962680884,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 487.88,
+      "production": 3170.54,
+      "yield": 6.49860621464294,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Amreli",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 101.47,
+      "production": 914.94,
+      "yield": 9.01685227160737,
+      "location": "Amreli, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Gir-Somnath",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 330.71,
+      "production": 2617.67,
+      "yield": 7.91530343805751,
+      "location": "Gir-Somnath, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Navsari",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 451.29,
+      "production": 3780.91,
+      "yield": 8.37800527377074,
+      "location": "Navsari, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Porbandar",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 19.11,
+      "production": 183.18,
+      "yield": 9.58555729984301,
+      "location": "Porbandar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Surendranagar",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 80.74,
+      "production": 754.33,
+      "yield": 9.34270497894476,
+      "location": "Surendranagar, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "The Dangs",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 80.29,
+      "production": 496.97,
+      "yield": 6.18968738323577,
+      "location": "The Dangs, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Valsad",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 494.89,
+      "production": 3873.2,
+      "yield": 7.82638566146012,
+      "location": "Valsad, Gujarat",
+      "yieldRange": "Less than Equal to 10 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 102.08,
+      "production": 1917.61,
+      "yield": 18.7853644200627,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 12.26,
+      "production": 198.27,
+      "yield": 16.1721044045677,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 21.62,
+      "production": 353.71,
+      "yield": 16.3603145235893,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 411.06,
+      "production": 7460.04,
+      "yield": 18.1482995183185,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 79.04,
+      "production": 1512.03,
+      "yield": 19.1299342105263,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 32.31,
+      "production": 503.27,
+      "yield": 15.5762921696069,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2015-2016",
+      "yearAgainstFy": 2016,
+      "area": 57.9,
+      "production": 1118.9,
+      "yield": 19.3246977547496,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 106.45,
+      "production": 2031.05,
+      "yield": 19.0798496946923,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Jamnagar",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 22.71,
+      "production": 348.53,
+      "yield": 15.3469837076178,
+      "location": "Jamnagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 457.58,
+      "production": 8223.13,
+      "yield": 17.9709121902181,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 79.56,
+      "production": 1506.97,
+      "yield": 18.9413021618904,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2016-2017",
+      "yearAgainstFy": 2017,
+      "area": 37.25,
+      "production": 636.31,
+      "yield": 17.0821476510067,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 119.76,
+      "production": 2245.8,
+      "yield": 18.75250501002,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 516.92,
+      "production": 9271.43,
+      "yield": 17.9359088446955,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kheda",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 80.13,
+      "production": 1527.47,
+      "yield": 19.0623986022713,
+      "location": "Kheda, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 37.87,
+      "production": 648.73,
+      "yield": 17.1304462635331,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Panch Mahals",
+      "fy": "2017-2018",
+      "yearAgainstFy": 2018,
+      "area": 51.11,
+      "production": 772.31,
+      "yield": 15.1107415378595,
+      "location": "Panch Mahals, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 146.81,
+      "production": 2718.97,
+      "yield": 18.5203324024249,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 559.06,
+      "production": 9689.11,
+      "yield": 17.3310735878081,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2018-2019",
+      "yearAgainstFy": 2019,
+      "area": 40.34,
+      "production": 727.43,
+      "yield": 18.0324739712444,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 180.6,
+      "production": 3268.44,
+      "yield": 18.0976744186047,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 578.11,
+      "production": 9624.93,
+      "yield": 16.6489595405719,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2019-2020",
+      "yearAgainstFy": 2020,
+      "area": 41.47,
+      "production": 765.69,
+      "yield": 18.463708705088,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 194.18,
+      "production": 3471.6,
+      "yield": 17.8782572870532,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 575.71,
+      "production": 9979.77,
+      "yield": 17.3347171318893,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 42.66,
+      "production": 797.06,
+      "yield": 18.6840131270511,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 43.24,
+      "production": 788.36,
+      "yield": 18.2321924144311,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Surat",
+      "fy": "2020-2021",
+      "yearAgainstFy": 2021,
+      "area": 154.09,
+      "production": 3015.9,
+      "yield": 19.5723278603414,
+      "location": "Surat, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 196.66,
+      "production": 3511.81,
+      "yield": 17.8572663480118,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 586.75,
+      "production": 9724.43,
+      "yield": 16.5733787814231,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 43.94,
+      "production": 832.86,
+      "yield": 18.954483386436,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 44.47,
+      "production": 814.14,
+      "yield": 18.3076231167079,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Surat",
+      "fy": "2021-2022",
+      "yearAgainstFy": 2022,
+      "area": 154.32,
+      "production": 3018.07,
+      "yield": 19.5572187662001,
+      "location": "Surat, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 194.34,
+      "production": 3437.14,
+      "yield": 17.6862200267572,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Kachchh",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 599.55,
+      "production": 9101.31,
+      "yield": 15.1802351763823,
+      "location": "Kachchh, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 45.46,
+      "production": 885.6,
+      "yield": 19.4808622965244,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 45.8,
+      "production": 849.89,
+      "yield": 18.5565502183406,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Surat",
+      "fy": "2022-2023",
+      "yearAgainstFy": 2023,
+      "area": 147.12,
+      "production": 2904.8,
+      "yield": 19.7444263186514,
+      "location": "Surat, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 159.81,
+      "production": 2812.88,
+      "yield": 17.6014016644766,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 27.41,
+      "production": 417.28,
+      "yield": 15.2236410069318,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Mahisagar",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 45.17,
+      "production": 881.0,
+      "yield": 19.5040956386982,
+      "location": "Mahisagar, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Sabar Kantha",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 48.44,
+      "production": 901.2,
+      "yield": 18.6044591246903,
+      "location": "Sabar Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Surat",
+      "fy": "2023-2024",
+      "yearAgainstFy": 2024,
+      "area": 142.78,
+      "production": 2486.57,
+      "yield": 17.415394312929,
+      "location": "Surat, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Banas Kantha",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 147.58,
+      "production": 2593.25,
+      "yield": 17.5718254506031,
+      "location": "Banas Kantha, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Botad",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 26.84,
+      "production": 412.23,
+      "yield": 15.3587928464978,
+      "location": "Botad, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    },
+    {
+      "district": "Surat",
+      "fy": "2024-2025",
+      "yearAgainstFy": 2025,
+      "area": 145.63,
+      "production": 2503.48,
+      "yield": 17.1906887317174,
+      "location": "Surat, Gujarat",
+      "yieldRange": "Between 15 and 20 MT"
+    }
+  ],
+  "staticTooltip": [
+    {
+      "taluka": "Olpad",
+      "area1920": 9.2,
+      "prod1920": 128.6,
+      "area2021": 8.4,
+      "prod2021": 85.0,
+      "diffArea": -0.800000000000001,
+      "pctChange": -0.0869565217391305
+    },
+    {
+      "taluka": "Mangrol",
+      "area1920": 11.0,
+      "prod1920": 402.9,
+      "area2021": 6.0,
+      "prod2021": 70.0,
+      "diffArea": -5.0,
+      "pctChange": -0.454545454545455
+    },
+    {
+      "taluka": "Umarpada",
+      "area1920": 3.4,
+      "prod1920": 30.9,
+      "area2021": 3.1,
+      "prod2021": 26.5,
+      "diffArea": -0.3,
+      "pctChange": -0.0882352941176471
+    },
+    {
+      "taluka": "Mandvi",
+      "area1920": 16.2,
+      "prod1920": 598.4,
+      "area2021": 10.9,
+      "prod2021": 259.9,
+      "diffArea": -5.3,
+      "pctChange": -0.327160493827161
+    },
+    {
+      "taluka": "Kamrej",
+      "area1920": 62.3,
+      "prod1920": 3567.9,
+      "area2021": 27.9,
+      "prod2021": 1135.0,
+      "diffArea": -34.4,
+      "pctChange": -0.552166934189406
+    },
+    {
+      "taluka": "Choryasi",
+      "area1920": 12.7,
+      "prod1920": 464.8,
+      "area2021": 9.6,
+      "prod2021": 223.9,
+      "diffArea": -3.1,
+      "pctChange": -0.244094488188976
+    },
+    {
+      "taluka": "Palsana",
+      "area1920": 19.7,
+      "prod1920": 825.5,
+      "area2021": 14.4,
+      "prod2021": 432.7,
+      "diffArea": -5.3,
+      "pctChange": -0.269035532994924
+    },
+    {
+      "taluka": "Bardoli",
+      "area1920": 16.8,
+      "prod1920": 595.9,
+      "area2021": 15.9,
+      "prod2021": 424.4,
+      "diffArea": -0.9,
+      "pctChange": -0.0535714285714286
+    },
+    {
+      "taluka": "Mahuva",
+      "area1920": 62.3,
+      "prod1920": 544.9,
+      "area2021": 58.0,
+      "prod2021": 361.4,
+      "diffArea": -4.3,
+      "pctChange": -0.0690208667736758
+    }
+  ]
+}
