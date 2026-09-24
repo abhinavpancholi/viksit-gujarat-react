@@ -69,14 +69,14 @@ export default function LoginPage() {
           </div>
 
           {/* Bottom Overlay Info Banner */}
-          <div className="relative z-10 mt-auto pt-12">
+          {/* <div className="relative z-10 mt-auto pt-12">
             <div className="bg-navy-950/75 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/15 max-w-2xl shadow-2xl">
               <h2 className="font-display text-2xl sm:text-4xl font-bold text-navy-700 tracking-tight leading-tight">
-                VIKSIT GUJARAT @2047
+                VIKSIT RAJYA @2047
               </h2>
              
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* ── Right Form Section ────────────────────────────────────────── */}
@@ -88,7 +88,7 @@ export default function LoginPage() {
             {/* Header */}
             <div className="mb-8">
               <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-navy-800/10 text-navy-800 text-xl font-bold tracking-wide uppercase mb-3">
-                VIKSIT GUJARAT @2047 Dashboard Portal
+                VIKSIT RAJYA @2047 Dashboard Portal
               </div>
               <h1 className="font-display text-3xl font-bold text-navy-800 tracking-tight">
                 Sign In
@@ -190,7 +190,7 @@ export default function LoginPage() {
             {/* Footer info note */}
             <div className="mt-8 text-center text-xs text-ink-faint border-t border-surface-border pt-4">
               <p>State Transformation & Strategic Planning Unit</p>
-              <p className="mt-0.5 text-[11px] font-mono">VIKSIT GUJARAT @2047</p>
+              <p className="mt-0.5 text-[11px] font-mono">VIKSIT RAJYA @2047</p>
             </div>
           </div>
         </div>

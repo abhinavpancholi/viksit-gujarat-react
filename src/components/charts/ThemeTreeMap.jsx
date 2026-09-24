@@ -9,7 +9,7 @@ const THEME_COLORS = {
   'City Agglomerations: Vibrant Socio-Economic Epicenters': { fill: '#6c5ce7', border: '#3b3b98' },
   'Healthcare and Nutrition for all': { fill: '#d9534f', border: '#b52b27' },
   'Industries of the Future': { fill: '#2e7d32', border: '#1b5e20' },
-  'Gujarat as Tourism Hub': { fill: '#e67e22', border: '#d35400' },
+  'Tourism Hub': { fill: '#e67e22', border: '#d35400' },
   'Transport and Logistics Infrastructure': { fill: '#138d75', border: '#0e6655' },
   'Services of the Future': { fill: '#0288d1', border: '#01579b' },
   'Governance 2.0: Reform, Perform and Transform': { fill: '#00838f', border: '#006064' }
@@ -23,7 +23,7 @@ const THEME_SHORT_NAMES = {
   'City Agglomerations: Vibrant Socio-Economic Epicenters': 'City Agglomerations',
   'Healthcare and Nutrition for all': 'Healthcare & Nutrition',
   'Industries of the Future': 'Industries of Future',
-  'Gujarat as Tourism Hub': 'Gujarat Tourism Hub',
+  'Tourism Hub': 'Tourism Hub',
   'Transport and Logistics Infrastructure': 'Transport & Logistics',
   'Services of the Future': 'Services of Future',
   'Governance 2.0: Reform, Perform and Transform': 'Governance 2.0'

@@ -15,7 +15,7 @@ import MacroGoalsTableModal from '../components/layout/MacroGoalsTableModal'
 // Mapping actual themes to pillars
 const THEME_PILLAR_MAP = {
   'Healthcare and Nutrition for all': 'Empowered Citizen - Living Well',
-  'Gujarat as Tourism Hub': 'Thriving Economy - Earning Well',
+  'Tourism Hub': 'Thriving Economy - Earning Well',
   'Agriculture, Irrigation and Rural Development': 'Thriving Economy - Earning Well',
   'Human Capital: Education and Skilling': 'Empowered Citizen - Living Well',
   'Art Culture and Sports': 'Empowered Citizen - Living Well',

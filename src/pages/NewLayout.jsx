@@ -35,7 +35,7 @@ const THEME_DEPARTMENT_MAP = {
   'City Agglomerations: Vibrant Socio-Economic Epicenters': 'Urban Development & Urban Housing Dept.',
   'Healthcare and Nutrition for all': 'Health & Family Welfare Dept.',
   'Industries of the Future': 'Industries & Mines Dept.',
-  'Gujarat as Tourism Hub': 'Tourism & Civil Aviation Dept.',
+  'Tourism Hub': 'Tourism & Civil Aviation Dept.',
   'Transport and Logistics Infrastructure': 'Ports & Transport / Roads & Buildings',
   'Services of the Future': 'Science & Technology Dept.',
   'Governance 2.0: Reform, Perform and Transform': 'General Administration / Finance Dept.'
@@ -91,7 +91,7 @@ const THEME_INITIATIVES_MAP = {
     'Single Window Clearance Portal.',
     'Startup Gujarat seed funding.'
   ],
-  'Gujarat as Tourism Hub': [
+  'Tourism Hub': [
     'Khushboo Gujarat Ki brand campaigns.',
     'Rann Utsav tent city in Kutch.',
     'Statue of Unity tourism zone.',
@@ -137,7 +137,7 @@ const THEME_ICON_MAP = {
   'City Agglomerations: Vibrant Socio-Economic Epicenters': '🏙️',
   'Healthcare and Nutrition for all': '🏥',
   'Industries of the Future': '🏭',
-  'Gujarat as Tourism Hub': '✈️',
+  'Tourism Hub': '✈️',
   'Transport and Logistics Infrastructure': '🚆',
   'Services of the Future': '💡',
   'Governance 2.0: Reform, Perform and Transform': '⚙️'
@@ -152,7 +152,7 @@ const THEME_SHORT = {
   'City Agglomerations: Vibrant Socio-Economic Epicenters': 'City Agglomerations',
   'Healthcare and Nutrition for all': 'Healthcare & Nutrition',
   'Industries of the Future': 'Future Industries',
-  'Gujarat as Tourism Hub': 'Tourism',
+  'Tourism Hub': 'Tourism',
   'Transport and Logistics Infrastructure': 'Transport & Logistics',
   'Services of the Future': 'Future Services',
   'Governance 2.0: Reform, Perform and Transform': 'Governance 2.0'

@@ -29,13 +29,13 @@ export default function Header() {
             {/* Gujarat Abstract Map Shape SVG */}
             <img src="/indiamap.png" alt="Gujarat Map" className="h-14" />
             {/* GRIT Logo Emblem SVG */}
-            <img src="/gritlogo.jpg" alt="GRIT Logo" className="h-14" />
+            {/* <img src="/gritlogo.jpg" alt="GRIT Logo" className="h-14" /> */}
           </div>
 
           <div>
             <div className="flex items-center gap-2">
               <h1 className="font-display text-xl sm:text-2xl font-bold text-navy-800 tracking-tight leading-tight">
-                VIKSIT GUJARAT @ 2047 - MACRO GOAL DASHBOARD
+                VIKSIT RAJYA @ 2047 - MACRO GOAL DASHBOARD
               </h1>
               {(isGoalPage || isFruitYieldPage) && (
                 <Link
@@ -48,7 +48,7 @@ export default function Header() {
               )}
             </div>
             <p className="text-xs sm:text-sm text-ink-muted font-medium">
-              Gujarat Rajya Institution for Transformation (GRIT)
+              Viksit Rajya Institution for Transformation (VRIT)
             </p>
           </div>
         </div>

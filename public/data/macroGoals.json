@@ -25,7 +25,7 @@
   {
     "mgCode": "GTHM1",
     "pillar": "Thriving Economy - Earning Well",
-    "theme": "Gujarat as Tourism Hub",
+    "theme": "Tourism Hub",
     "macroGoal": "Share of international tourist visits out of total footfall in the state",
     "direction": "UP",
     "baseline": 1.32,
@@ -1290,7 +1290,7 @@
   {
     "mgCode": "GTHM4",
     "pillar": "Thriving Economy - Earning Well",
-    "theme": "Gujarat as Tourism Hub",
+    "theme": "Tourism Hub",
     "macroGoal": "Ranking in number of domestic tourists in India",
     "direction": "DOWN",
     "baseline": 5.0,
@@ -1313,7 +1313,7 @@
   {
     "mgCode": "GTHM5",
     "pillar": "Thriving Economy - Earning Well",
-    "theme": "Gujarat as Tourism Hub",
+    "theme": "Tourism Hub",
     "macroGoal": "Ranking in number of foreign tourists in India",
     "direction": "DOWN",
     "baseline": 1.0,
@@ -1336,7 +1336,7 @@
   {
     "mgCode": "GTHM7",
     "pillar": "Thriving Economy - Earning Well",
-    "theme": "Gujarat as Tourism Hub",
+    "theme": "Tourism Hub",
     "macroGoal": "Average annual footfall for Top 5 tourism spots",
     "direction": "UP",
     "baseline": 7.5,
@@ -1345,8 +1345,8 @@
     "sortOrder": 66,
     "gap2030Ratio": 0.4,
     "gap2047Ratio": 0.833333333,
-    "status2030": "Slightly Off Track (gap ≤ 50%)",
-    "status2047": "Critical (gap > 75%)",
+    "status2030": "On Track (gap ≤ 25%)",
+    "status2047": "On Track (gap ≤ 25%)",
     "hasCagrAnalysis": true,
     "cagr": {
       "currentCagr": 0.357366,
@@ -1369,7 +1369,7 @@
     "gap2030Ratio": 0.2,
     "gap2047Ratio": 0.6,
     "status2030": "On Track (gap ≤ 25%)",
-    "status2047": "At Risk (gap ≤ 75%)",
+    "status2047": "On Track (gap ≤ 25%)",
     "hasCagrAnalysis": true,
     "cagr": {
       "currentCagr": 0.041704,
@@ -1391,8 +1391,8 @@
     "sortOrder": 68,
     "gap2030Ratio": 0.625,
     "gap2047Ratio": 0.85,
-    "status2030": "At Risk (gap ≤ 75%)",
-    "status2047": "Critical (gap > 75%)",
+    "status2030": "On Track (gap ≤ 25%)",
+    "status2047": "On Track (gap ≤ 25%)",
     "hasCagrAnalysis": true,
     "cagr": {
       "currentCagr": 0.132897,
@@ -1414,7 +1414,7 @@
     "sortOrder": 70,
     "gap2030Ratio": 0.5,
     "gap2047Ratio": 0.933333333,
-    "status2030": "Slightly Off Track (gap ≤ 50%)",
+    "status2030": "Critical (gap > 75%)",
     "status2047": "Critical (gap > 75%)",
     "hasCagrAnalysis": true,
     "cagr": {
@@ -1896,7 +1896,7 @@
   {
     "mgCode": "GTHM2",
     "pillar": "Thriving Economy - Earning Well",
-    "theme": "Gujarat as Tourism Hub",
+    "theme": "Tourism Hub",
     "macroGoal": "Contribution of Tourism to State GVA",
     "direction": "UP",
     "baseline": 8.0,
@@ -1913,7 +1913,7 @@
   {
     "mgCode": "GTHM6",
     "pillar": "Thriving Economy - Earning Well",
-    "theme": "Gujarat as Tourism Hub",
+    "theme": "Tourism Hub",
     "macroGoal": "Average length of stay for tourists (days)",
     "direction": "UP",
     "baseline": 2.2,
