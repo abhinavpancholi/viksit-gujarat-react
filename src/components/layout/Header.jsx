@@ -47,9 +47,9 @@ export default function Header() {
                 </Link>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-ink-muted font-medium">
+            {/* <p className="text-xs sm:text-sm text-ink-muted font-medium">
               Viksit Rajya Institution for Transformation (VRIT)
-            </p>
+            </p> */}
           </div>
         </div>
 
