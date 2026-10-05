@@ -85,14 +85,12 @@ const THEME_INITIATIVES_MAP = {
     'Community-Level Nutrition expansion.'
   ],
   'Industries of the Future': [
-    'Vibrant Gujarat Global Summit.',
     'MSME Policy — interest subsidy & cluster funding.',
     'GIDC industrial estate expansion.',
     'Single Window Clearance Portal.',
-    'Startup Gujarat seed funding.'
+    'Vibrant Gujarat Global Summit.'
   ],
   'Tourism Hub': [
-    'Khushboo Gujarat Ki brand campaigns.',
     'Rann Utsav tent city in Kutch.',
     'Statue of Unity tourism zone.',
     'Dwarka-Somnath spiritual circuit.',
@@ -100,7 +98,6 @@ const THEME_INITIATIVES_MAP = {
   ],
   'Transport and Logistics Infrastructure': [
     'GSHP high-density road widening.',
-    'PM GatiShakti Gujarat Portal.',
     'DMIC logistics parks.',
     'RO-RO Ferry Ghogha–Dahej.',
     'Dholera International Airport.'

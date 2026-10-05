@@ -18,12 +18,26 @@ def clean_float(v):
     except ValueError:
         return None
 
-# Load master
+# Load master (macrogoal_cagrbasedstatus.json replaces mg_master_final.csv)
 master_rows = []
-with open(SCRIPT_DIR / "mg_master_final.csv", "r", encoding="utf-8-sig") as f:
-    reader = csv.DictReader(f)
-    for row in reader:
-        master_rows.append(row)
+json_master_path = SCRIPT_DIR / "macrogoal_cagrbasedstatus.json"
+alt_json_master_path = SCRIPT_DIR / "mg_master_final.json"
+csv_master_path = SCRIPT_DIR / "mg_master_final.csv"
+
+if json_master_path.exists():
+    print(f"Loading master data from {json_master_path.name}")
+    with open(json_master_path, "r", encoding="utf-8") as f:
+        master_rows = json.load(f)
+elif alt_json_master_path.exists():
+    print(f"Loading master data from {alt_json_master_path.name}")
+    with open(alt_json_master_path, "r", encoding="utf-8") as f:
+        master_rows = json.load(f)
+else:
+    print(f"Loading master data from {csv_master_path.name}")
+    with open(csv_master_path, "r", encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            master_rows.append(row)
 
 # Load target_summary
 ts_rows = []
