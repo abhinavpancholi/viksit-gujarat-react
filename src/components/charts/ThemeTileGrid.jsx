@@ -50,7 +50,7 @@ const THEME_STYLES = {
     countColor: 'text-blue-900',
     shortName: 'Industry & MSME'
   },
-  'Gujarat as Tourism Hub': {
+  'Tourism Hub': {
     gradient: 'from-yellow-600/10 to-amber-600/15',
     border: 'border-amber-600/25',
     text: 'text-amber-800',

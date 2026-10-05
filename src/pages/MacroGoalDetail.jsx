@@ -14,7 +14,7 @@ const THEME_DEPARTMENT_MAP = {
   'City Agglomerations: Vibrant Socio-Economic Epicenters': 'Urban Development & Urban Housing Dept.',
   'Healthcare and Nutrition for all': 'Health & Family Welfare Dept.',
   'Industries of the Future': 'Industries & Mines Dept.',
-  'Gujarat as Tourism Hub': 'Tourism & Civil Aviation Dept.',
+  'Tourism Hub': 'Tourism & Civil Aviation Dept.',
   'Transport and Logistics Infrastructure': 'Ports & Transport / Roads & Buildings',
   'Services of the Future': 'Science & Technology Dept.',
   'Governance 2.0: Reform, Perform and Transform': 'General Administration / Finance Dept.'
@@ -71,7 +71,7 @@ const THEME_INITIATIVES_MAP = {
     'Single Window Clearance System (Investor Facilitation Portal).',
     'Startup Gujarat Scheme - seed funding and incubator networking.'
   ],
-  'Gujarat as Tourism Hub': [
+  'Tourism Hub': [
     'Khushboo Gujarat Ki - global brand promotion campaigns.',
     'Rann Utsav - development of tent city and tourism infra in Dhordo, Kutch.',
     'Statue of Unity & Kevadia (Ekta Nagar) tourism zone development.',
